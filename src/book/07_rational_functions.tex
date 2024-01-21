@@ -1,0 +1,397 @@
+\documentclass[../book.tex]{subfiles}
+\graphicspath{{\subfix{../images/}}}
+
+\begin{document}
+\chapter{Rational Functions}
+\begin{introduction}[Contents]
+\item Rational Expressions \& Manipulation
+\item Complex Fractions
+\item Polynomial Division
+\item Rational Equations
+\item Rational Functions
+\item Graphing Rational Expressions
+\end{introduction}
+\noindent For the past several chapters we've been discussing functions and equations in which we add/multiply variables together - polynomials. These types of functions are relatively simple to understand; however, we must move on to more complex functions. Now, we will study rational functions. As an example, instead of looking at say $f(x)=x^2+2x$ we may discuss $g(x)=\dfrac{2}{x+1}$.
+
+Rational functions hold many of the same properties as polynomial functions.  This makes sense when you consider the definition seen in \hyperlink{section.7.1}{Section 7.1}.  The denominator is the only factor that has changed; we will see how to account for this throughout the chapter.
+\section{Rational Expressions \& Manipulation}
+\noindent Before we get started, we need a more concrete definition of what a rational function is.
+\begin{definition}{Definition of a Rational Function}{ratfunc}
+Given polynomial functions $P_1(x)$ and $P_2(x)$, where $P_2(x)\neq 0$, we define rational function $R(x)$ such that $$R(x)=\dfrac{P_1(x)}{P_2(x)}.$$
+\end{definition}
+Let’s take a look at some examples of functions and determine whether or not they are rational functions.
+\begin{example}
+Determine which of the following are rational functions. \newline (a) $f(x)=\dfrac{x+2}{x^2}$ \hspace{\stretch{1}} (b) $f(x)=\dfrac{\sqrt{x}+2}{x}$ \hspace{\stretch{1}} (c) $f(x)=\dfrac{2}{x^2+2x+1}$ \newline \hspace{20mm} (d) $f(x)=\dfrac{x(x+2)}{x+2}$ \hspace{18mm} (e) $f(x)=\dfrac{x+\frac{1}{x}}{x+2}$.
+\end{example}
+\begin{solution}
+We take this one part at a time.
+
+(a) Yes, because both $x+2$ and $x^2$ are polynomials.
+
+(b)	No, because $\sqrt{x}+2$ is not a polynomial. No manipulation will be able to achieve the criteria of having a polynomial numerator and denominator.
+
+(c)	Yes, because $2$ and $x^2+2x+1$ are polynomials (yes, technically constant functions can be considered to be polynomials).
+
+(d)	Yes, because both $x(x+2)$ and $x+2$ are polynomials.
+
+(e)	Yes, because $\dfrac{x+\dfrac{1}{x}}{x+2}=\dfrac{x^2+1}{x^2+2x}$. If this is not at all obvious why this is true, don’t worry, the next section will cover this specific type of rational functions. $\Box$
+\end{solution}
+Now that we’ve got the hang of what rational functions are, we can move on to manipulating them. Starting simple, let’s add and subtract rational functions. To understand the process behind adding and subtracting these functions, let’s first observe how we add and subtract rational numbers (a.k.a. fractions). For example, what process would you use to simplify $\dfrac{2}{5}+\dfrac{1}{7}$? Well, we need a common denominator. So that we can later extrapolate to variables, we will use the method in which we multiply the two denominators together.  Thus, we know the common denominator to be $5\cdot 7=35$.
+
+To get this as a denominator for each fraction, we must multiply each fraction by a "fancy form of one". The first fraction will be multiplied by $\dfrac{7}{7}$ and the second by $\dfrac{5}{5}$, this will achieve our common denominator as detailed below.
+$$\dfrac{2}{5}+\dfrac{1}{7}=\left(\dfrac{2}{5}\cdot 1\right)+\left(\dfrac{1}{7}+1\right)=\left(\dfrac{2}{5}\cdot\dfrac{5}{5}\right)+\left(\dfrac{1}{7}\cdot\dfrac{7}{7}\right).$$
+Now we can combine the fractions together by adding the numerators to get our final answer.
+$$\left(\dfrac{14}{35}\right)+\left(\dfrac{5}{35}\right)=\dfrac{14+5}{35}=\dfrac{19}{35}.$$
+Let’s repeat the same process, but this time with variables.
+\begin{example}
+Combine $\dfrac{a_1}{a_2}+\dfrac{b_1}{b_2}$ into a single fraction.
+\end{example}
+\begin{solution}
+Our first step is to find a common denominator.  One method (in this case, the only method) is to multiply the denominators together, leaving us with $a_2b_2$.
+
+Now, we must make that common denominator in both fractions using the steps shown below. $$\dfrac{a_1}{a_2}+\dfrac{b_1}{b_2}=\dfrac{a_1(b_2)}{a_2(b_2)}+\dfrac{b_1(a_2)}{b_2(a_2)}=\dfrac{a_1b_2}{a_2b_2}+\dfrac{a_2b_1}{a_2b_2}.$$  Finally, we add the fractions together to get $$\dfrac{a_1b_2}{a_2b_2}+\dfrac{a_2b_1}{a_2b_2}=\dfrac{a_1b_2+a_2b_1}{a_2b_2}.$$ $\Box$
+\end{solution}
+\begin{example}
+Combine the following expressions into a single fraction: \newline (a) $\dfrac{1}{x}+\dfrac{1}{x+2}$ \hspace{\stretch{1}} (b) $\dfrac{y}{x-3}-\dfrac{xy}{x+2}$ \hspace{\stretch{1}} (c) $\dfrac{a}{b}+\dfrac{b}{c}+\dfrac{c}{a}$.
+\end{example}
+\begin{solution}
+Again, we do these parts one at a time.  Not much explanation is needed; it's very much the same process as before.
+
+(a) $\displaystyle \dfrac{1}{x}+\dfrac{1}{x+2}=\dfrac{(x+2)}{x(x+2)}+\dfrac{(x)}{x(x+2)}=\dfrac{x+2}{x(x+2)}+\dfrac{x}{x(x+2)}=\dfrac{2x+2}{x(x+2)}$.
+
+(b) $\displaystyle \dfrac{y}{x-3}-\dfrac{xy}{x+2}=\dfrac{y(x+2)}{(x-3)(x+2)}-\dfrac{xy(x-3)}{(x+2)(x-3)}=\dfrac{y(x+2)-xy(x-3)}{(x+2)(x-3)}$.
+
+(c) $\displaystyle \dfrac{a}{b}+\dfrac{b}{c}+\dfrac{c}{a}=\dfrac{a(ac)}{b(ac)}+\dfrac{b(ab)}{c(ab)}+\dfrac{c(bc)}{a(bc)}=\dfrac{a^2c+ab^2+bc^2}{abc}$. $\Box$
+\end{solution}
+\begin{remark}
+If there are more than two fractions to be combined, a possible common denominator is the result of multiplying all the denominators together.
+\end{remark}
+From our experience, we understand that many of you will prefer to work with decimals than fractions. Both decimal notation and fraction notation have their pros and cons. Decimals are easy to manipulate when adding and subtracting; however, they can be tedious to deal with when multiplying or dividing. At the same time, while fractions can be irritating when adding or subtracting as seen through the problems above, the process of multiplying and dividing fractions is far simpler.
+
+The general method for multiplying fractions is as follows: $$\dfrac{a_1}{a_2}\cdot\dfrac{b_1}{b_2}=\dfrac{a_1a_2}{b_1b_2}.$$
+Division is just like multiplication, but with one more step. This method is characterized by the following acronym: KFC $-$ Keep, Flip, Change. $$\dfrac{a_1}{a_2}\div\dfrac{b_1}{b_2}=\dfrac{a_1}{a_2}\cdot\dfrac{b_2}{b_1}=\dfrac{a_1b_2}{a_2b_1}.$$
+When dividing two fractions, Keep the first fraction the same, Flip the numerator and denominator of the second fraction, then change the sign from division to multiplication. Then, simply carry out the method above for multiplying fractions together.
+\begin{example}
+Simply the following expressions into one rational expression. Also, keep track of the discontinuities.\newline
+(a) $\dfrac{x+y}{x}\cdot \dfrac{x-y}{y}$ \hspace{\stretch{1}} (b) $\dfrac{1}{x^2}\div\dfrac{1}{x}$ \hspace{\stretch{1}} (c) $\dfrac{x^2+1}{x-1}\div\dfrac{x}{x-1}$.
+\end{example}
+\begin{solution}
+Again, we do these parts one at a time.  Not much explanation is needed; it's following the methods seen above.
+
+(a) $\dfrac{x+y}{x}\cdot\dfrac{x-y}{y}=\dfrac{(x+y)(x-y)}{xy}=\dfrac{x^2-y^2}{xy}$, $x\neq 0$, $y\neq 0$.
+
+(b) $\dfrac{1}{x^2}\div\dfrac{1}{x}=\dfrac{1}{x^2}\cdot\dfrac{x}{1}=\dfrac{1}{x}$, $x\neq 0$.
+
+(c) $\dfrac{x^2+1}{x-2}\div\dfrac{x}{x-1}=\dfrac{x^2+1}{x-1}\cdot\dfrac{x-1}{x}=\dfrac{x^2+1}{x}$, $x\neq 0,1$.
+\end{solution}
+Using this knowledge of the operations associated with rational functions, let's discuss \textit{complex fractions}, where we have fractions inside of fractions.
+\section{Complex Fractions}
+\noindent So how do we deal with fractions inside of fractions? There are multiple methods of dealing with these kinds of problems, most of them come from being familiar and comfortable with fractions and algebraic manipulation.
+
+Most people would consider to follow the division rules stated in the \hyperlink{section.7.1}{previous} section since fractions are inherently dividing two things, and they would be mostly right! All we need to do is implement this idea and we'll arrive at the right answer in no time.
+\subsection{Method 1: Convert to Multiplication}
+While there is not a general form of a complex fraction, here is one possible case demonstrating the first method. $$\dfrac{\left(\dfrac{f_1(x)}{f_2(x)}\right)}{\left(\dfrac{g_1(x)}{g_2(x)}\right)}=\dfrac{f_1(x)}{f_2(x)}\div\dfrac{g_1(x)}{g_2(x)}=\dfrac{f_1(x)}{f_2(x)}\cdot\dfrac{g_2(x)}{g_1(x)}.$$
+What must be done after this step in terms of simplification depends on the four functions within it. Let’s look at some examples.
+\begin{example}
+Simplify $\dfrac{1+\frac{1}{x}}{x^2-x}$ into a single rational expression.  Note any discontinuities.
+\end{example}
+\begin{solution}
+We first notice that there are two discontinuities (one at $x=0$ and the other at $x=1$).  Then, let's complete the first step of turning this complex fraction into a multiplication problem. $$\dfrac{1+\frac{1}{x}}{x^2-x}=\left(1+\dfrac{1}{x}\right)\div\left(\dfrac{x^2-x}{1}\right)=\left(1+\dfrac{1}{x}\right)\cdot\left(\dfrac{1}{x^2-x}\right).$$ There are two ways to combine this expression into a single fraction, either to (1) use distributive property then add the resulting fractions together or (2) combine the first term into a single fraction then multiply. The latter process will end up being easier and quicker.
+
+So, to combine the first term into a single fraction: $$1+\dfrac{1}{x}=\dfrac{x}{x}+\dfrac{1}{x}=\dfrac{x+1}{x}.$$ We can now plug this simplified term into the expression. Finally, we can then use the method for multiplying fractions described in the previous section to combine everything into a single rational expression. $$\left(1+\dfrac{1}{x}\right)\cdot\left(\dfrac{1}{x^2-x}\right)=\left(\dfrac{x+1}{x}\right)\left(\dfrac{1}{x^2-x}\right)=\dfrac{x+1}{x(x^2-x)}=\dfrac{x+1}{x^3-x^2}.$$ $\Box$
+\end{solution}
+\begin{example}
+Simplify $\dfrac{\dfrac{1-x}{x}+1}{\dfrac{1}{x}+\dfrac{x}{\frac{1}{x}+x}}$ into a single rational expression.  Note any discontinuities.
+\end{example}
+\begin{solution}
+While this problem looks far more complicated than the previous, the same process can be used to simplify each layer of the expression.
+
+First, we simplify the numerator. $$\dfrac{1-x}{x}+1=\dfrac{1-x}{x}+\dfrac{x}{x}=\dfrac{1}{x}.$$ Now, we simplify the denominator one term at a time.  The first time is already completely simplified, now we simplify the second term.  $$\dfrac{x}{\frac{1}{x}+x}=\dfrac{x}{\frac{1}{x}+\frac{x^2}{x}}=\dfrac{x}{\frac{x^2+1}{x}}=\dfrac{x^2}{x^2+1}.$$  Now, we put it all together. $$\dfrac{\frac{1}{x}}{\frac{1}{x}+\frac{x^2}{x^2+1}}=\dfrac{\frac{1}{x}}{\frac{x^2+1}{x(x^2+1)}+\frac{x^3}{x(x^2+1)}}=\dfrac{\frac{1}{x}}{\frac{x^3+x^2+1}{x(x^2+1)}}=\dfrac{1}{x}\div\dfrac{x^3+x^2+1}{x(x^2+1)}=\dfrac{1}{x}\cdot\dfrac{x(x^2+1)}{x^3+x^2+1}$$ $$=\dfrac{x^2+1}{x^3+x^2+1}.$$ 
+Throughout the problem, we see $x=0$ as a discontinuity, but the entire denominator ($\dfrac{1}{x}+\dfrac{x}{\frac{1}{x}+x}$) has a root around $x=-1.47$ as well.$\Box$
+\end{solution}
+Now, let's consider the other way of solving problems like this.  This is a bit more intuitive and less obvious, but it can be a bit quicker. 
+\subsection{Method 2: Multiply by a Fancy Form of One}
+\noindent Consider again the general form of a complex fraction: $$\dfrac{\left(\dfrac{f_1(x)}{f_2(x)}\right)}{\left(\dfrac{g_1(x)}{g_2(x)}\right)}=\dfrac{f_1(x)}{f_2(x)}\div\dfrac{g_1(x)}{g_2(x)}=\dfrac{f_1(x)}{f_2(x)}\cdot\dfrac{g_2(x)}{g_1(x)}.$$
+While this new method does the exact same thing computationally, it’s just another way you can simplify complex fractions.
+
+As a trick, to simplify everything, we can multiply the complex fractions by the product of its denominators (divided by itself, so everything stays constant). This cancels out the denominators of the two fractions within the expression.
+\begin{example}
+Simplify $\dfrac{x-\frac{x-1}{x+1}}{x}$ into a single rational expression.  Note any discontinuities.
+\end{example}
+\begin{solution}
+Since the overall denominator ($x$) is already simplified, we only need to multiply by $x+1$. $$\dfrac{x-\frac{x-1}{x+1}}{x}\cdot\dfrac{x+1}{x+1}=\dfrac{x(x+1)-(x-1)}{x(x+1)}=\dfrac{x^2+x-x+1}{x^2+x}=\dfrac{x^2+1}{x^2+x}.$$ For discontinuities, we see that $x\neq 0$ and $x\neq -1$.$\Box$
+\end{solution}
+\begin{example}
+Simplify $\dfrac{\frac{1}{1-x}+\frac{1}{x+1}}{\frac{1}{1-x}-\frac{1}{x+1}}$ into a single rational expression.  Note any discontinuities.
+\end{example}
+\begin{solution}
+While $1-x$ and $x+1$ both appear twice, we only need to multiply by each once.
+$$\dfrac{\frac{1}{1-x}+\frac{1}{x+1}}{\frac{1}{1-x}-\frac{1}{x+1}}\cdot\dfrac{(1-x)(x+1)}{(1-x)(x+1)}=\dfrac{(x+1)+(1-x)}{(x+1)-(1-x)}=\dfrac{2}{2x}=\dfrac{1}{x}.$$ For discontinuities, we see that $x\neq 1$ and $x\neq -1$ from the initial problem, and $x\neq 0$ from the final answer.  (Also, if you set the entire denominator of the original problem equal to $0$, you get $x\neq 0$ as well.$\Box$
+\end{solution}
+\begin{remark}
+As seen in the previous example, we only multiply by \textit{unique} denominator terms.  In mathematical terms, find the least common denominator.
+\end{remark}
+We've covered simplifying fractions and complex fractions.  When fractions are taught in elementary school, students are also taught to convert to mixed numbers using long division.  The next section will cover this same idea with polynomials.
+\section{Polynomial Division}
+\noindent In \hyperlink{section.7.1}{Section 7.1} we saw how to simplify an expression such as $x+\dfrac{x+1}{x^2+1}$ into a single rational expression (which in this case would be $\dfrac{x^3+x^2+1}{x^2+1}$. A necessary piece of knowledge for the future is how to do this process in reverse.
+
+Note that this reverse process can only be done when the degree of the numerator is at least as large as the degree of the denominator. For example, $\dfrac{x^3+1}{x+2}$ can be simplified while $\dfrac{2}{2x^2-1}$ cannot.
+
+There are multiple methods of doing this $-$ primarily the standard long division method used for arithmetic and “synthetic” division. Each of these have their pros and cons: the method of standard division is difficult to remember, while synthetic division is easy to remember but only works in certain cases. What will be presented here is a method which does not need to be memorized but understood. For this reason, it can be used/re-derived in the far future without having to have it all memorized.
+\subsection{Method 1: Factoring the Numerator}
+\noindent The idea of this method is to factor the numerator such that it contains multiples of the denominator.  That way, when you divide by the denominator, all terms cancel except the remainder.  Let's see this method in action.
+\begin{example}
+Factor the numerator in order to divide the expression $\dfrac{x^2-2x+3}{x-3}$.
+\end{example}
+\begin{solution}
+What we initially want to do is be able to factor out an $x-3$ term from part of the numerator. We are already close to being able to do this with the first two terms ($x^2-2x$); what we need instead is $(x^2-3x)$ so we can factor out an $x$-term, leaving us $x(x-3)$. While we don’t have this currently, we can force this into the equation by adding a fancy form of zero: $$\dfrac{x^2-2x+3}{x-3}=\dfrac{x^2+(-3x+x)-3}{x-3}=\dfrac{(x^2-3x)+(x-3)}{x-3}=\dfrac{x(x-3)+1(x-3)}{x-3}.$$ We can now break this down by dividing: $$\dfrac{x(x-3)+1(x-3)}{x-3}=\dfrac{x(x-3)}{x-3}+\dfrac{x-3}{x-3}=x+1.$$ $\Box$
+\end{solution}
+Let's use this on another example.  This time, the denominator won't be linear.
+\begin{example}
+Divide the expression $\dfrac{x^4-3x^2+x}{x^2+1}$ by factoring the numerator.
+\end{example}
+\begin{solution}
+Let's factor the numerator first. $$x^4-3x^2+x=x^2(x^2+1)-4x^2+x=x^2(x^2+1)-4(x^2+1)+4+x.$$ Now, implement this and divide. $$\dfrac{x^2(x^2+1)-4(x^2+1)+4+x}{x^2+1}=x^2-4x+\dfrac{4+x}{x^2+1}.$$ $\Box$
+\end{solution}
+Note that in this example we still have a fraction left! This is equivalent to the remainder seen in arithmetic fractions.
+
+Now, let's move on to the next method $-$ typical long division.
+\subsection{Method 2: Standard Long Division}
+\noindent Our goal in this section is to follow long division how it was taught in elementary school.  For example, when dividing $7812$ by $7$, we get:
+
+\longdiv{7812}{7}
+
+\noindent Our goal is to do this with polynomials.  It very much follows the same process; to ensure maximum accuracy, it is imperative to align the terms by their degree.  Lets look at some examples.
+\begin{example}
+Compute $\dfrac{x^5+x^4-3x^3+x-2}{x^2+x-1}$.
+\end{example}
+\begin{solution}
+Note that the numerator doesn't have an $x^2$ term.  To fix this, we chose to put a space indicating where the term belongs.  Other texts would write $0x^2$ instead.  Either is acceptable.  Look at the long division illustrated below to see how polynomial long division works.
+
+\polylongdiv{x^5+x^4-3x^3+x-2}{x^2+x-1}
+
+\noindent Note that this process is nearly the exact same as regular division.  This is not meant to be difficult.  Using the long division, we see the final answer is $$\dfrac{x^5+x^4-3x^3+x-2}{x^2+x-1}=x^3-2x+2-\dfrac{3x}{x^2+x-1}.$$ $\Box$
+\end{solution}
+\subsection{Method 3: Synthetic Division}
+\noindent Synthetic division is a method of dividing a polynomial by a linear function and is extremely useful in root-finding.  Rather than using the remainder theorem, which often results in large numbers, synthetic division offers a simple solution to this.  It can be used for both root-finding and generic long division.
+
+For formatting purposes, the layout of the synthetic division shown will be slightly different than the type taught by most teachers.  Don't be confused; the numbers are essentially in the same place $-$ the only thing that moves are the lines.
+
+The easiest way to do this is by example.  Let's get started.
+\begin{example}
+Divide $\dfrac{x^2-6x+8}{x-3}$ using synthetic division.
+\end{example}
+\begin{solution}
+To start this, we write the coefficients of the polynomial across the top row.  Be sure that if any degrees are missing, they are indicated with a zero. Then, leave an empty line and draw a horizontal line under it.  Put the divisor to the left of the coefficients (in this case, we put it on the second line).  Draw a vertical line to separate the divisor from the coefficients.
+
+Bring down the leading coefficient under the line.  Multiply it by the divisor and write it on the empty line in the second column.  Add the column and write the result under the line.  Multiply this by the divisor and write it in the middle line in the third column.  Add.
+
+Below is the illustration of this process.  Now, we need to interpret the result.
+
+\polyhornerscheme[x=3]{x^2-6x+8}
+
+We know that the result must be a polynomial of degree $1$ (since degree $2$ divided by degree $1$ results in degree $2-1=1$).  We only used coefficients; thus, the bottom line must be coefficients, where the last number is the remainder.  This means that the answer is $x-3-\dfrac{1}{x-3}$. $\Box$
+\end{solution}
+\begin{remark}
+Two things to mention here.  First, note that we put $3$ instead of $1$ for the divisor.  We are dividing by $x-3$, essentially meaning $x=3$.  This is the only time in which we don't use a coefficient.  Secondly, the process illustrated in the second paragraph of the solution can be repeated for an infinite number of degrees.  Continue the process until there are no columns left.
+\end{remark}
+Since this is an easier topic, we'll only do this one more time.  Let's try a longer example.
+\begin{example}
+Divide $\dfrac{x^4-13x^3+51x^2-35x-100}{x-8}$ using synthetic division.
+\end{example}
+\begin{solution}
+Following the process illustrated in the last example, we get:
+
+\polyhornerscheme[x=8]{x^4-13x^3+51x^2-35x-100}
+
+This means that the answer is $x^3-5x^2+11x+53+\dfrac{324}{x-8}$. $\Box$
+\end{solution}
+\noindent Now that we've discussed how to divide these polynomials, we need to discuss how to solve equations with rational functions.  Since a rational function is built on polynomials, this process won't be much different than solving polynomial equations.
+\section{Rational Equations}
+\noindent Now that we’ve shown how to manipulate rational expressions, let’s look at how to solve equations which contain them. At a high level, you want to manipulate the equation in such a way (using the methods taught in the previous three sections) to achieve the following form: $$\dfrac{P_1(x)}{P_2(x)}=0\text{, where }P_1(x)\text{ and }P_2(x)\text{ are polynomials.}$$
+Once everything is coalesced into a single simplified rational expression you can multiply both sides by $P_2(x)$, leaving us with the polynomial equation $P_1(x)=0$. This can then be solved for the solutions using the procedures taught in the previous three chapters.
+
+\begin{remark}
+Note that you must solve $P_2(x)=0$ for $x$ to find any extraneous solutions. Any solution where $P_1(x)=0$ matches $P_2(x)=0$ is extraneous.
+\end{remark}
+
+Let's look at some examples regarding this.
+\begin{example}
+Solve the rational equation $\dfrac{x+1}{x+2}=\dfrac{1-x}{x+2}$.
+\end{example}
+\begin{solution}
+To get this equation into the form discussed above, let’s move everything over to the left side. We can then easily simplify since there is already a common denominator.
+$$\dfrac{x+1}{x+2}=\dfrac{1-x}{x+2}\implies \dfrac{x+1}{x+2}-\frac{1-x}{x+2}=0 \implies \dfrac{2x}{x+2}=0.$$ First, we solve the denominator and get $x\neq -2$.  Solving the top, we get $x=0$.  Since the two do not match, the final answer is $x=0$. $\Box$
+\end{solution}
+\begin{example}
+Solve the equation $\dfrac{1}{x-1}+\dfrac{x}{x+1}=2.$
+\end{example}
+\begin{solution}
+First, we need to combine everything on the left side of the equation. $$\dfrac{1}{x-1}+\dfrac{x}{x+1}=2 \implies \dfrac{(x+1)}{(x-1)(x+1)}+\dfrac{x(x-1)}{(x-1)(x+1)}=2 \implies \dfrac{x^2+1}{x^2-1}=2.$$ Now, we need to combine the $2$ into the rational function. $$\dfrac{x^2+1}{x^2-1}-\dfrac{2(x^2-1)}{x^2-1}=0 \implies \dfrac{3-x^2}{x^2-1}=0.$$
+Solving the denominator for $x$, we get $x\neq -1,1$.  Solving the numerator for $x$, we get $x=-\sqrt{3},\sqrt{3}$.  Since there are no correspondences, the final answer is $x=-\sqrt{3},\sqrt{3}$. $\Box$
+\end{solution}
+\begin{example}
+Solve the equation $\dfrac{x^2+3x}{x+1}=-\dfrac{2}{x+1}.$
+\end{example}
+\begin{solution}
+Since the two fractions have the same denominator, they will be easy to combine.  $$\dfrac{x^2+3x}{x+1}+\dfrac{2}{x+1}=0 \implies \dfrac{x^2+3x+2}{x+1}=0.$$ Solving the denominator for $x$, we get $x\neq -1$.  Solving the numerator for $x$, we get $(x+2)(x+1)=0$, or $x=-2,-1$.  Since there is a match, we must not include $x=-1$.  Thus, the only answer is $x=-2$. $\Box$
+\end{solution}
+Let's discuss the reason why we don't consider $x=-1$ from an abstract perspective.
+
+Any number divided by zero is an \textit{undefined} value. In more detail, no value has been assigned by mathematicians to be “equal to” this expression. The full reason why will be completely flushed out early on when you take Calculus as this problem brings up calculus-related topics such as \textit{limits} and \textit{continuity}. If you take this undefined characteristic of dividing by zero to be true, then you could translate the previous expression into the following: $$\dfrac{-2}{0}=\dfrac{-2}{0} \implies \text{undefined}=\text{undefined}.$$
+The reason why this isn't considered to be a solution to the problem is because when we equate two things in math (whether they be numbers, algebraic expressions, matrices, etc…) these two things are never strictly “ideas.” Here in the expression above, however, we are equating two ideas—the idea of being undefined. Therefore, it does not make sense to call $x=-1$ a solution to the problem because the concept of equating two things at this point breaks down.
+
+If you managed to make sense of the past two paragraphs, congratulations; this is a very abstract line of reasoning to follow for what we expect at this mathematical level. 
+\begin{note}
+If you are to take anything away from this, $x=-1$ is an extraneous solution because it leads to an expression in which we divide by zero. 
+\end{note}
+Finally, let's take a look at graphing rational functions, the part of this chapter that is almost completely different from the polynomial chapter.
+\section{Graphing Rational Expressions}
+\noindent For the past three sections we've been exploring rational expressions from a more abstract point of view: how to manipulate and solve for them algebraically. What hasn't been looked at so far is what these expressions actually "look like" graphically. Graphing a rational expression is one of, if not the most complex graphing problem you will find in a Pre-calculus course. This does not necessarily mean they are the most "difficult," many may attest that conical or polar expressions are harder; what is meant by "most complex" is that you must keep track of and be able to find a wide variety of characteristics a given rational expression may have.
+
+Whereas when you want to graph, for example, a parabola, you only need to find the vertex, the $y$-intercept, and the $x$-intercepts (if there are any). With rational expressions, you will need to find all of the following: 
+
+\begin{table}[!h]
+    \centering
+    \begin{tabular}{|c|c|c|}
+        \toprule
+        \textbf{Start-Behavior} & \textbf{End-Behavior} & \textbf{Discontinuities} \\
+        \midrule
+        $x$-intercepts & Horizontal Asymptotes & Vertical Asymptotes \\
+        $y$-intercepts & Oblique Asymptotes & Holes \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\noindent It is not expected that you know what all or even most of these mean; right now, we only expect you to be familiar with $x$ and $y$-intercepts.
+
+We’ll start with the discontinuities section since it is both the easiest to understand and to compute. A vertical asymptote appears in a graph whenever (in the most simplified form of the function) you divide by zero. For example, for the function $f(x)=\dfrac{1}{x+1}$ there exists a vertical asymptote at $x=-1$ since at this point the expression becomes $\frac{1}{0}$. In general, the vertical asymptotes can be found by setting the denominator equal to zero. Around the vertical asymptote the magnitude of the function will be very large since we are dividing by a number close to zero.
+\begin{note}
+When asked for the asymptote(s) of a function, never give a value. Asymptotes should always be given as the equation of a line.
+\end{note}
+
+Below we can see the graph of the function $f(x)=\dfrac{1}{x-1}$ in red and its vertical asymptote $x=1$ in blue. The closer $x$ gets to $1$ the larger (in magnitude) the function becomes; this is because at these values of $x$ we divide by a number close to zero, leaving a large result. This is a defining characteristic of all vertical asymptotes.
+
+Here we can see the graph of a function with two vertical asymptotes; more specifically, the function is given by $f(x)=\dfrac{1}{(x-1)(x+2)}$.
+\begin{figure}[!h]
+    \centering
+    \begin{tikzpicture}[xscale=0.20,yscale=0.20]
+      \draw[<->] (-10,0) -- (10,0) node[right] {$x$};
+      \draw[<->] (0,-10) -- (0,10) node[above] {$y(x)$};
+      \draw[scale=1,domain=-10:0.9,variable=\x,blue] plot ({\x},{1/(\x-1)});
+      \draw[scale=1,domain=1.1:10,variable=\x,blue] plot ({\x},{1/(\x-1)}) node[above] {$f(x)=\dfrac{1}{x-1}$};
+    \end{tikzpicture}
+    \begin{tikzpicture}[xscale=0.20,yscale=0.20]
+      \draw[<->] (-10,0) -- (10,0) node[right] {$x$};
+      \draw[<->] (0,-10) -- (0,10) node[above] {$y(x)$};
+      \draw[scale=1,domain=-10:-1.03,variable=\x,blue] plot ({\x},{1/((\x+1)*(\x-2))});
+      \draw[scale=1,domain=-0.96:1.96,variable=\x,blue] plot ({\x},{1/((\x+1)*(\x-2))});
+      \draw[scale=1,domain=2.03:10,variable=\x,blue] plot ({\x},{1/((\x+1)*(\x-2))}) node[above right] {$f(x)=\dfrac{1}{(x+1)(x-2)}$};
+    \end{tikzpicture}
+\end{figure}
+\begin{note}
+Notice how both functions change sign as $x$ goes from one side of a vertical asymptote to the other. While this is not a rule, it’s something to keep in mind for later.
+\end{note}
+\begin{wrapfigure}{r}{4cm}
+    \begin{tikzpicture}[xscale=0.20,yscale=0.20]
+      \draw[<->] (-10,0) -- (10,0) node[right] {$x$};
+      \draw[<->] (0,-10) -- (0,10) node[above] {$y(x)$};
+      \draw[scale=1,domain=-10:0.9,variable=\x,blue] plot ({\x},{1/(\x-1)});
+      \draw[scale=1,domain=1.1:10,variable=\x,blue] plot ({\x},{1/(\x-1)}) node[above] {$f(x)=\dfrac{1}{x-1}$};
+      \draw[red] (1,-10) -- (1,10);
+    \end{tikzpicture}
+\end{wrapfigure}
+Now, we have the graph of the function $f(x)=\dfrac{x+2}{(x-1)(x+2)}$. The reason this specific function was chosen was to show the differences between holes and vertical asymptotes. According to our method of finding vertical asymptotes we should see two of them in the graph $-$ at $x=-2,1$. Instead, we only see the second one with a "hole" at the point $(-2,-\frac{1}{2})$. Why? Well, there’s one exception to the vertical asymptote rule: if at a given point the expression becomes $\frac{0}{0}$ you will have a hole, if the expression is any other non-zero constant divided by zero there will be an asymptote.
+
+In this case, when we plug in $x=-2$, the expression becomes $f(-2)=\dfrac{-2+2}{(-2-1)(-2+2)}=\dfrac{0}{0}$; this indicates that there is a hole at this point.  On the other hand, when we plug in $x=1$, the expression becomes $f(1)=\dfrac{1+2}{(1-1)(1+2)}=\dfrac{0}{0}$. Since the numerator is not also zero, we know that we have an asymptote instead of a hole at $x=1$.
+\begin{note}
+Whereas asymptotes are always given as the equation of a line, holes should always be given as a point.
+\end{note}
+So in this case we know the $x$-coordinate of the hole, but not the $y$-coordinate. How do we find it? The first reasonable thing to do would be to plug this $x$-value into the function, but this just gives us $\frac{0}{0}$ (undefined). The trick to getting rid of this undefined value is to cancel out the terms in the equation which causes the whole. In this case, the expression becomes: $$\dfrac{x+2}{(x-1)(x+2)}=\dfrac{1}{x-1}.$$
+Plugging in $x=-2$ into this new expression gives us the $y$-value for the hole: $\dfrac{1}{(-2)-1}=-\dfrac{1}{3}$. The coordinates of the hole are $(-2,-\frac{1}{3})$.
+
+This is also a useful trick for graphing the rest of the function, the function behaves exactly the same as this new expression except for the hole at $(-2,-\frac{1}{3})$.
+
+Now we have to go over the three (horizontal/oblique) asymptote rules: Big Bottom, Big Top, and Both Same. These three rules refer to comparing the degrees of the numerator versus the denominator. 
+\begin{itemize}
+    \item \textbf{Big Top}. This rule applies when the degree of the numerator is large than the degree of the denominator. In this case, you will need to undergo the process of polynomial long-division. After this process the expression should become of the form $P(x)$+$B(x)$. $P(x)$ is a regular polynomial and $B(x)$ is a rational expression which follows the big bottom rule. After all this, you can determine that there will be an oblique asymptote with an equation $y(x)=P(x)$.  For example, $f(x)=\dfrac{x^2-2x+3}{x-3}=x+1+\dfrac{6}{x-3}$ will have an oblique asymptote with an equation $y(x)=x+1$.
+    \item \textbf{Big Bottom}. This rule applies when the degree of the denominator is larger than that of the numerator. There will be a horizontal asymptote at $y=0$. For example, there will be a horizontal asymptote at $y=0$ for the function $f(x)=\dfrac{2x+1}{x^3-2x+3}.$
+    \item \textbf{Both Same}. This rule applies when the degree of the numerator is equal to the degree of the denominator. There will be a horizontal asymptote with a $y$-value of the ratio between the leading coefficient of the numerator and that of the denominator. For example, there will be a horizontal asymptote at $y=\dfrac{3}{2}$ for the function $f(x)=\dfrac{3x^2-x+5}{2x^2-7}$.
+\end{itemize}
+\begin{remark}
+All rational functions will only ever have one horizontal or oblique asymptote.  This also excludes any graph from having both a horizontal and an oblique asymptote.
+\end{remark}
+\begin{example}
+Find the horizontal/oblique asymptotes of the functions $f(x)=\dfrac{x^2-2x+1}{x+2}$, $g(x)=\dfrac{2x^2-6x+1}{3x^2-4x}$, and $h(x)=\dfrac{x+2}{x^3+2}$.
+\end{example}
+\begin{solution}
+Here are the solutions to each part.
+
+(a)	Since the degree of the numerator is two, which is smaller than the degree of the denominator (1), we can apply the Big Top rule. We must undergo the process of long division.
+
+\polylongdiv{x^2-2x+1}{x+2}
+
+This means that $y(x)=x-4$ is the oblique asymptote for $f(x)$.
+
+(b) Since both the degree of the numerator and denominator are equal to two, the Both Same rule applies. We must divide the leading coefficients of the numerator and denominator to get our answer of a horizontal asymptote $y(x)=\dfrac{2}{3}$ on the graph of $g(x)$.
+
+(c) Since the degree of the numerator is smaller than that of the denominator, we know the Big Bottom rule applies. Thus, we know there is a horizontal asymptote $y(x)=0$ on the graph of $h(x)$. $\Box$
+\end{solution}
+By now, you should have the knowledge to understand the processes to graph more complicated examples of rational functions. We will be taking a look at three such examples which collectively work in all of the intricacies of start behavior, end behavior, and discontinuities.
+\begin{example}
+Graph the function $f(x)=\dfrac{x(x-2)}{(3x-1)(x+2)}$.
+\end{example}
+\begin{solution}
+Remember, we need to go through the three different sections mentioned above; we'll begin with start behavior which is comprised of $x$ and $y$-intercepts.
+\begin{itemize}
+    \item For the $x$-intercepts, we need to find when $f(x)=0$.  This means that we need to find when the numerator equals zero, which happens when $x=0$ and $x=2$.
+    \item For the $y$-intercept, we plug in $x=0$ to get the point at $(0,0)$.
+\end{itemize}
+Now, we need to determine the discontinuities.  To do this, we set the denominator equal to $0$ and find that $x\neq -2$ and $x\neq\dfrac{1}{3}$.  Since they are non-removable (they can't be cancelled), there are two asymptotes at $x=-2$ and $x=\dfrac{1}{3}$.
+
+Now, let's determine the end behavior.  The easiest way to do this is to FOIL.  This gives us $$\dfrac{x(x-2)}{(3x-1)(x+2)}=\dfrac{x^2-2x}{3x^2+5x-2}.$$ From this expression, we can determine that there will be a horizontal asymptote given by $y(x)=\dfrac{1}{3}$.
+
+Let’s now put all of this information onto a graph, then slowly fill in the remainder based on information we can easily deduce.
+
+For the two regions on the end we can essentially fill these in like the parent function $\frac{1}{x}$. Since we see a zero on the right-most section (a point below the horizontal asymptote), we know the graph must curve down towards negative infinity. Since there is no zero on the left-most section, we know the graph must curve towards positive infinity near the other asymptote. This is seen in the left graph.
+
+Any section between vertical asymptotes will look like either a quadratic or cubic equation. To determine which of these it will looks like we suggest plugging in values. $f(-1.999)$ will be some large negative number; likewise, $f(.333)$ will be some large positive number. Therefore, because of this difference, we know the section between will look like a cubic. The right graph shows the final graph. $\Box$
+\end{solution}
+Congratulations! These types of problems are quite difficult and take a lot of time.  Please continue to attempt these problems, for they will be plentiful in pre-calculus and beyond.  
+\begin{figure}[!h]
+    \centering
+    \begin{tikzpicture}[xscale=0.30,yscale=0.20]
+      \draw[<->] (-10,0) -- (10,0) node[right] {$x$};
+      \draw[<->] (0,-10) -- (0,10) node[above] {$y(x)$};
+      \draw[scale=1,domain=-10:-2.11,variable=\x,blue] plot ({\x},{(\x*(\x-2))/((3*\x-1)*(\x+2))});
+      \draw[scale=1,domain=0.343:10,variable=\x,blue] plot ({\x},{(\x*(\x-2))/((3*\x-1)*(\x+2))});
+      \draw[red] (1/3,-10) -- (1/3,10);
+      \draw[red] (-2,-10) -- (-2,10);
+    \end{tikzpicture}
+    \begin{tikzpicture}[xscale=0.30,yscale=0.20]
+      \draw[<->] (-10,0) -- (10,0) node[right] {$x$};
+      \draw[<->] (0,-10) -- (0,10) node[above] {$y(x)$};
+      \draw[scale=1,domain=-10:-2.11,variable=\x,blue] plot ({\x},{(\x*(\x-2))/((3*\x-1)*(\x+2))});
+      \draw[scale=1,domain=-1.88:0.325,variable=\x,blue] plot ({\x},{(\x*(\x-2))/((3*\x-1)*(\x+2))});
+      \draw[scale=1,domain=0.343:10,variable=\x,blue] plot ({\x},{(\x*(\x-2))/((3*\x-1)*(\x+2))});
+      \draw[red] (1/3,-10) -- (1/3,10);
+      \draw[red] (-2,-10) -- (-2,10);
+    \end{tikzpicture}
+\end{figure}
+\begin{reviewset}
+\item Use synthetic division to divide the following polynomials. \newline \vspace{1mm}
+(a) $\dfrac{2x^4-x^2+3x-5}{x+1}$ \hspace{\stretch{1}} (b) $\dfrac{1+2x-x^2+3x^3}{x+4}$ \hspace{\stretch{1}} (c) $\dfrac{x^5+x^2+x-1}{2x-3}$ [$\star$] \hspace{\stretch{1}} \vspace{3mm}
+\item Use long division to divide the following polynomials. \newline \vspace{1mm}
+(a) $\dfrac{2x^2-3x+2}{2x-1}$ \hspace{\stretch{1}} (b) $\dfrac{3x^3-x^2+4x-1}{x^2+x+1}$ \hspace{\stretch{1}} (c) $\dfrac{x^5+3x^3+1}{x^3-x^2+x}$ \hspace{\stretch{1}} \vspace{3mm}
+\item Find the value of $k$ such that $f(x)$ is has no remainder: $\dfrac{4x^3-2x^2+kx-1}{x^2+2}$. \vspace{3mm}
+\item Solve the equation $\dfrac{1}{x-2}+\dfrac{1}{4x-5}=\dfrac{1}{3x-1}+\dfrac{1}{2x-6}.$
+\end{reviewset}
+\begin{challengeset}
+\item Graph the function $f(x)=\dfrac{2x^2-x}{x^4+1}$. (NOTE: This is in the challenge section for a reason!) \vspace{3mm}
+\item Graphically, explain why there are no other solutions to the system $\begin{cases} \dfrac{1}{1+\sqrt{x}} \\ \dfrac{1}{1-\sqrt{x}} \end{cases}$ other than $x=0$.
+\item Given the definitions of $S_1$, $S_2$, and $S_3$, determine the value of $k$ such that $S_1\cup S_2\cup S_3=\mathbb{R}$. \newline 
+$S_1:=$ the range of $f(x)=\dfrac{x(x+2)(2-x)}{x(x+2)}$. \newline 
+$S_2:=$ $\{k\}$ \newline 
+$S_3:=$ the set containing the $y$-coordinate(s) to the solution of $\begin{cases} f(x) \\ k(x+1)-2\end{cases}$. \vspace{3mm}
+\end{challengeset}
+\end{document}
