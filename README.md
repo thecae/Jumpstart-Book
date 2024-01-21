@@ -2,7 +2,7 @@
 
 This book was designed to fill the gap between an online virtual environment for Algebra II and Suncoast High School's rigorous pre-calculus curriculum.  Knowing that virtual Algebra II was causing students to not have the necessary knowledge to be successful in pre-calculus, Suncoast designed a two-week summer program to help reinforce the essential Algebra II skills and serve as a welcome to Suncoast.  This book is a curriculum companion to that program.
 
-> *Suncoast High School is a magnet school for math, science, and engineering.  The school is located in Riviera Beach, Florida.  The school's website is [here](http://www.suncoasthighschool.us/).*
+> *Suncoast High School is a magnet school for math, science, and engineering.  The school is located in Riviera Beach, Florida.  The school's website is [here](http://www.suh.palmbeachschools.org/).*
 
 ## Book Contents
 
