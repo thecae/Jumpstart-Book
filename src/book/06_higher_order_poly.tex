@@ -27,7 +27,7 @@ The next thing we need to understand are \textit{extrema}.  Polynomials can have
     \item Local extrema are the maximum and minimum of a function in a given interval. For example, many cubic graphs have two turns as seen below.  The local maximum is at the top of the left "crest" and the local minimum is at the bottom of the right "trough".
     \item Global extrema are the highest and lowest points of a function over its entire domain.  For example, on the cubic graph below, we see that the global maximum is $\infty$ and the global minimum is $-\infty$.
 \end{itemize}
-\begin{figure}[!h]
+\begin{figure}[!ht]
     \centering
     \hspace{\stretch{1}}
     \begin{tikzpicture}[xscale=0.4,yscale=0.4]
@@ -54,7 +54,7 @@ This theorem is really common sense of you think about it. If a function is belo
 This concludes our discussion of theories regarding graphing. You may be wondering; this wasn't that bad? Well for starters, whenever math is easy, it has to get hard. And secondly, why did you jinx it? 
 
 \section{Theory in Solving Higher-Order Polynomials, Part I}
-\noindent In this section, we’re going to delve into the theories of solving polynomial equations and inequalities. Now a lingering question may remain from the last section: you showed me how to graph this, but how do I actually figure out things about the function rather than guessing how it looks? We're now going to do just that.
+\noindent In this section, we're going to delve into the theories of solving polynomial equations and inequalities. Now a lingering question may remain from the last section: you showed me how to graph this, but how do I actually figure out things about the function rather than guessing how it looks? We're now going to do just that.
 
 Polynomial equations are often in the form $k=a_0+a_0+a_1x+a_2x^2+a_3x^3+\ldots+a_nx^n$.  We seek to solve functions in the form $f(x)=0$, so we subtract. $$0=(a_0-k)+a_1x+a_2x^2+a_3x^3+\ldots+a_nx^n \implies 0=a_0'+a_1x+a_2x^2+a_3x^3+\ldots+a_nx^n,$$ where $a_0'=a_0-k$.  There are loads of methods to solve these, but in order to hone in on those methods, we need to discuss any attributes of these zeroes first.  First, we want to count how many there are.  Is there a general form for that?
 
@@ -86,7 +86,7 @@ This will be useful for predicting what roots a polynomial has.
 Remember that complex roots come in pairs.  This means that if there is one positive real solution for a cubic, and no negatives, then the other two must be complex conjugate roots.
 \end{remark}
 
-Why is there an "at least"? ”. Well remember above, Descartes’ Rule of Signs gives us expectations, so we cannot know for sure how many.  Let’s apply it on the example above: $f(x)=1-x+x^2-x^3$.
+Why is there an "at least"? ”. Well remember above, Descartes' Rule of Signs gives us expectations, so we cannot know for sure how many.  Let's apply it on the example above: $f(x)=1-x+x^2-x^3$.
 
 There are three sign changes, meaning that there is at least $1$ positive real root (but there could be up to $3$).  Finding $f(-x)$, we get that $f(-x)=1+x+x^2+x^3$, which has no sign changes.  This means that there are no negative real solutions. Note that this result means there can't be $2$ positive roots since the complex roots must come in pairs.
 
@@ -94,14 +94,14 @@ Summing up the two options, $f(x)$ could have: \begin{enumerate}
     \item $1$ positive real root and $2$ complex conjugate roots, or
     \item $3$ positive real roots.
 \end{enumerate}
-So how do we actually figure out what the roots are? Well there are many strategies for this, and they will be broken up into many sections.  But before we close, let’s speak about he importance of Descartes’ Rules of Signs and the Fundamental Theorem of Algebra.
+So how do we actually figure out what the roots are? Well there are many strategies for this, and they will be broken up into many sections.  But before we close, let's speak about he importance of Descartes' Rules of Signs and the Fundamental Theorem of Algebra.
 
-For starters, the Fundamental Theorem of Algebra is important because I should let us know how many solutions we have after going through the solving process. So, if we don’t have that many solutions, we did something wrong. 
+For starters, the Fundamental Theorem of Algebra is important because I should let us know how many solutions we have after going through the solving process. So, if we don't have that many solutions, we did something wrong. 
 
-Secondly, Descartes’ Rule of Signs may seem unnecessary upon seeing how to solve these in the following sections, but when we get to the process of synthetic division and Rational Root Theorem, Descartes’ Rule of Signs may lower the number of numbers we have to test in each. These processes may seem like words for now, but in the next few sections we’ll see how they can be implemented to solve polynomial equations.
+Secondly, Descartes' Rule of Signs may seem unnecessary upon seeing how to solve these in the following sections, but when we get to the process of synthetic division and Rational Root Theorem, Descartes' Rule of Signs may lower the number of numbers we have to test in each. These processes may seem like words for now, but in the next few sections we'll see how they can be implemented to solve polynomial equations.
 
 \section{Theories in Solving Higher-Order Polynomials, Part II}
-\noindent We’ve been dancing around the bush for two lessons now, how do we actually solve these equations? Well to start, let’s begin with the \textit{Rational Root Theorem}.
+\noindent We've been dancing around the bush for two lessons now, how do we actually solve these equations? Well to start, let's begin with the \textit{Rational Root Theorem}.
 \begin{theorem}{The Rational Root Theorem}{ratroot}
 Given a polynomial equation of the form $0=a_0+a_1x+a_2x^2+\ldots+a_{n-1}x^{n-1}+a_nx^n$, the possible real roots are in the form $x=\pm\dfrac{p}{q}$, where $p$ is the set of integral facots of $|a_0|$ and $q$ is the set of integral factors of $|a_n|$.
 \end{theorem}
@@ -134,7 +134,7 @@ Either way, when we divide these, we get $x-2$ with no remainder.  If we did $\d
 
 which translates to $x-4+\frac{7}{x+1}$.  Not too bad.
 
-Now, let's go over the the general process.  Suppose $Q(x)$ represents the quotient of the division $D(x)$, the dividend, and $d(x)$, the divisor. Assuming this divides perfectly, as in there’s no remainder, we would have $$\dfrac{D(x)}{d(x)}=Q(x).$$ But if there is a remainder, our function turns into this (where $R(x)$ is the remainder function): $$\dfrac{D(x)}{d(x)}=Q(x)+R(x).$$ We know that $R(x)=\dfrac{r(x)}{d(x)}$, where $r(x)$ is the remainder.  Solving for $D(x)$, we get $D(x)=Q(x)d(x)+r(x)$.  If there exists some value $c$ such that $d(c)=0$, the $D(c)=r(c)$.
+Now, let's go over the the general process.  Suppose $Q(x)$ represents the quotient of the division $D(x)$, the dividend, and $d(x)$, the divisor. Assuming this divides perfectly, as in there's no remainder, we would have $$\dfrac{D(x)}{d(x)}=Q(x).$$ But if there is a remainder, our function turns into this (where $R(x)$ is the remainder function): $$\dfrac{D(x)}{d(x)}=Q(x)+R(x).$$ We know that $R(x)=\dfrac{r(x)}{d(x)}$, where $r(x)$ is the remainder.  Solving for $D(x)$, we get $D(x)=Q(x)d(x)+r(x)$.  If there exists some value $c$ such that $d(c)=0$, the $D(c)=r(c)$.
 
 If we apply this to the function above, we get $$\dfrac{x^2-3x+2}{x-1}=x-2+\dfrac{0}{x-1}.$$ If we follow the steps above for the general case, we get $$x^2-3x+2=\left((x-2)+\dfrac{0}{x-1}\right)(x-1) \implies x^2-3x+2=(x-2)(x-1).$$ If we plug in $x=1$, we get $D(1)=0.$ We could even do this if there's a remainder: $$\dfrac{x^2-3x+3}{x+1}=x-4+\frac{7}{x+1} \implies x^2-3x+3=(x-4)(x+1)+7.$$ Plugging in $x=3$, we get that $f(3)=2$. This means that whenever we plug in a value, we get the remainder when you divide by the corresponding root! This is called the \textit{Remainder Theorem}.
 \begin{theorem}{Remainder Theorem}{remthe}
@@ -244,7 +244,7 @@ Given $x$ and $y$ and positive real constant $n$, we define the binomial theorem
 \end{theorem}
 So what does this mean? You've probably seen summations before, but what's the stacked term? Well it's not a fraction.  That's what we call the "choose function" and it has its own formula: $$\binom{n}{k}=\dfrac{n!}{k!(n-k)!},$$ where $x!=x(x-1)(x-2)\ldots(3)(2)(1).$ How can we use this? It's primary use is for expanding polynomials but you can use it to factor as well.  We do have a nice trick though, called \textit{Pascal's Triangle}.  This may be a familiar term, and it tells us the coefficients (the "choose function" values) that we need.  Below is a depiction of the first seven rows of the triangle.
 
-\begin{figure}[!h]
+\begin{figure}[!ht]
     \centering
     \[
     \begin{array}{{ccccccccccccccc}}
@@ -282,7 +282,7 @@ With this, we conclude our study on special cases.  Let's bring this all togethe
 \noindent We've made it to the end.  This section is going to be very example-based because we find it important for you to practice (plus, there's not much more to teach).  Before we begin, we need to go back to multiplicity and understand the theory behind it.
 
 To do this, let's consider basic cases: $f_1(x)=x$, $f_2(x)=x^2$, and $f_3(x)=x^3$.  They all have one intercept at $(0,0)$ and its multiplicity equals the order of the polynomial.  Let's look at the graphs of each:
-\begin{figure}[!h]
+\begin{figure}[!ht]
     \centering
     \begin{tikzpicture}[xscale=0.2,yscale=0.2]
         \draw[<->] (-10,0) -- (10,0) node[right] {$x$};

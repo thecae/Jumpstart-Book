@@ -9,11 +9,11 @@
 \item Properties of Graphs
 \item Using a Graphing Calculator
 \end{introduction}
-\noindent This chapter will begin to look into how Algebra 2 can manifest itself in real life situations. And the easiest way to see that is through the study of physics! Now what is physics you may ask? Well since this isn't physics class, I’ll give you a mathematical definition. \textit{Physics attempts to condense our world into a model upon which we can predict things with mathematics}. For example, when you say “whatever comes up, must come down”, that involves math. Now we’re not going to delve too much into this but we'll graze some things that would be nice to know. So without further ado, let’s jump into the world of actual applications (now you can’t say Algebra 2 has no point).
+\noindent This chapter will begin to look into how Algebra 2 can manifest itself in real life situations. And the easiest way to see that is through the study of physics! Now what is physics you may ask? Well since this isn't physics class, I'll give you a mathematical definition. \textit{Physics attempts to condense our world into a model upon which we can predict things with mathematics}. For example, when you say “whatever comes up, must come down”, that involves math. Now we're not going to delve too much into this but we'll graze some things that would be nice to know. So without further ado, let's jump into the world of actual applications (now you can't say Algebra 2 has no point).
 \section{Vectors}
 \noindent We begin our discussion of physics by discussing vectors.
 
-Now you may be asking what is a vector? Now depending on how many math classes you have taken, or how many you will take, there are varying levels of complexity to this definition. Since you are an incoming freshman, let’s give you a simple one that will work for our purposes: \textit{A vector represents number or quantity in a specific direction}. 
+Now you may be asking what is a vector? Now depending on how many math classes you have taken, or how many you will take, there are varying levels of complexity to this definition. Since you are an incoming freshman, let's give you a simple one that will work for our purposes: \textit{A vector represents number or quantity in a specific direction}. 
 
 \begin{wrapfigure}{r}{5cm}
     \begin{tikzpicture}[xscale=0.4,yscale=0.4]
@@ -38,13 +38,13 @@ For simplicity, we will stick to the first two (primarily the second) to avoid c
 
 Now you may have noticed the $\hat{i}$ (pronounced $i$-hat) and $\hat{j}$ (pronounced $j$-hat) next to the variables $a$ and $b$ respectively. What do those mean? Well those represent unit vectors. Unit vectors are basically a fancy word for saying a vector has a length of $1$ and has some direction. Now these are next to the variables $a$ and $b$ because they tell us how far to go in each direction.  $\hat{i}$ represents the $+x$-direction, so we go $a$ units in the $+x$ direction. $\hat{j}$ represents the $+y$-direction, so we go $b$ units in the $+y$ direction. And as a result, we obtain the vector, $<a,b>$.
 
-When we discuss the difference between scalars and vectors, this question will be answered: what are some physical concepts that might be vectors or scalars? Well since we’re in physics let’s start with two easy concepts $-$ \textit{distance} versus \textit{displacement}. Below, we list the definitions of each: \begin{itemize}
+When we discuss the difference between scalars and vectors, this question will be answered: what are some physical concepts that might be vectors or scalars? Well since we're in physics let's start with two easy concepts $-$ \textit{distance} versus \textit{displacement}. Below, we list the definitions of each: \begin{itemize}
     \item \textit{Distance} measures the total steps traveled from the starting point to the end point.
     \item \textit{Displacement} measures your position \textbf{relative} to the starting point.
 \end{itemize}
-To emphasize the difference between the two, let’s suppose we had a $1-D$ system (a line). Let’s say Quinn wants to walk across the line for his daily dose of exercise. Suppose he walks $5$ metres in the $+x$ direction and $10$ metres in the $-x$ direction. What is the distance Quinn traveled? Also what is Quinn’s displacement?
+To emphasize the difference between the two, let's suppose we had a $1-D$ system (a line). Let's say Quinn wants to walk across the line for his daily dose of exercise. Suppose he walks $5$ metres in the $+x$ direction and $10$ metres in the $-x$ direction. What is the distance Quinn traveled? Also what is Quinn's displacement?
 
-To calculate the distance Quinn traveled, we say he went $5$ metres, so he’s at $5$, then he traveled an additional $10$ metres, so his total distance traveled is $15$ metres.  To calculate Quinn’s displacement, we say he went $5$ metres in the positive $x$-direction, then he traveled back $10$ metres in the negative $x$-direction. So, his displacement is $5-10=-5$ meter.
+To calculate the distance Quinn traveled, we say he went $5$ metres, so he's at $5$, then he traveled an additional $10$ metres, so his total distance traveled is $15$ metres.  To calculate Quinn's displacement, we say he went $5$ metres in the positive $x$-direction, then he traveled back $10$ metres in the negative $x$-direction. So, his displacement is $5-10=-5$ meter.
 
 Notice the difference between he two? Distance doesn't care for direction; it just cares that you traveled. Displacement however cares about how you travel. So going back and forth can affect the sign of our displacement.  This means that displacement is a vector and distance is a scalar.
 \subsection{Vector and Scalar Properties}
@@ -54,7 +54,7 @@ Vectors exhibit interesting behavior when we do operations with them.  Let's beg
 
 Consider vectors $\vec{v_1}=<a,b>$ and $\vec{v_2}=<c,d>$.  Similar to complex numbers, you should assume that we add each component.  This means that $\vec{v_1}+\vec{v_2}=<a+c,b+d>$.  It's important to also understand how this is graphed since vectors are a very visual subject.  Below are images of how they are graphed.
 
-\begin{figure}[!h]
+\begin{figure}[!ht]
     \centering
     \begin{tikzpicture}[xscale=0.4,yscale=0.4]
         \draw[->,red,thick] (-3,-3) -- (-1,2) node[midway,left=0.5mm] {$\vec{v_2}$};
@@ -75,7 +75,7 @@ Consider vectors $\vec{v_1}=<a,b>$ and $\vec{v_2}=<c,d>$.  Similar to complex nu
 \end{figure}
 Now, let's understand the concept of a scalar multiple. A scalar multiple is a non-zero scalar being multiplied by a vector. For example, using $\vec{v_1}$ above, multiplying the vector by a scalar would mean multiplying $\vec{v_1}$ by a non-zero real constant $k$ (where $k$ could equal $2$, $\dfrac{1}{5}$, $\sqrt{3}$,$-1$, etc.). Mathematically, given $\vec{v_1}=<a,b>$, we define the scalar multiply by a factor of $k$ as $k\vec{v_1}=<ka,kb>$. Below is a depiction if $k=3$: 
 
-\begin{figure}[!h]
+\begin{figure}[!ht]
     \centering
     \hspace{\stretch{1}}
     \begin{tikzpicture}[xscale=0.4,yscale=0.4]
@@ -91,7 +91,7 @@ Now, let's understand the concept of a scalar multiple. A scalar multiple is a n
 
 Here is a picture of what would happen if $k<0$.  It would flip the direction of the vector.
 
-\begin{figure}[!h]
+\begin{figure}[!ht]
     \centering
     \hspace{\stretch{1}}
     \begin{tikzpicture}[xscale=0.4,yscale=0.4]
@@ -104,7 +104,7 @@ Here is a picture of what would happen if $k<0$.  It would flip the direction of
 \end{figure}
 
 Now, let's learn to subtract the vectors.  Essentially, we need to do the "head-to-tail" method in reverse. Mathematically, given $\vec{v_1}=<a,b>$ and $\vec{v_2}=<c,d>$, we get $$\vec{v_1}-\vec{v_2}=\vec{v_1}+(-\vec{v_2})=<a,b>+<-c,-d>=<a-c,b-d>.$$ Below is the graphical representation.
-\begin{figure}[!h]
+\begin{figure}[!ht]
     \centering
     \begin{tikzpicture}[xscale=0.4,yscale=0.4]
         \draw[->,red,thick] (-3,-3) -- (-1,2) node[midway,left=0.5mm] {$\vec{v_2}$};
@@ -130,7 +130,7 @@ Simon kicked a soccer ball at a $15$-degree angle above the horizontal, and the 
 \begin{solution}
 We first draw the diagram indicating the ball's velocity.  This is shown at the top of the next page.
 
-\begin{figure}[!h]
+\begin{figure}[!ht]
     \centering
     \begin{tikzpicture}[xscale=0.6,yscale=0.6]
         \draw (-5,0) -- (5,0);
@@ -176,7 +176,7 @@ Josh startes from rest and accelerates down a football field at $3.20 \frac{\tex
 \begin{solution}
 Let's first draw a picture of the area and an origin for the problem. Typically denote the object in motion as a ball or a block; this case, we use a ball.
 
-\begin{figure}[!h]
+\begin{figure}[!ht]
     \centering
     \begin{tikzpicture}[xscale=0.5,yscale=0.5]
         \draw (-10,0) -- (10,0);
@@ -237,7 +237,7 @@ Note how we use $|y|$ instead of $y$.  This is because the object could travel i
 The slope of this graph represents velocity.  We know this since velocity, by definition, is the change in displacement over time.  If the graph is horizontal, this means that the object is not moving ($v=0$).
 
 If the graph is concave up, there exists a positive acceleration.  When the graph is concave down, there is a negative acceleration.  What is concavity?  Concavity is the slope of the slope, which we can tell by the direction of the curve.  If the curve makes a bowl shape (or a smiley face), we denote this as \textit{concave up}.  If the curve makes an inverted bowl shape (or a frowny face), we denote this as \textit{concave down}.  Below is a picture of both concavities:
-\begin{figure}[!h]
+\begin{figure}[!ht]
     \centering
     \begin{tikzpicture}
         \draw[domain=-6.28:0,scale=1,blue,variable=\x] plot ({\x},{sin(\x/2 r)}) node[midway,below left=0mm and 20mm] {Concave down};
@@ -299,7 +299,7 @@ To delete a list, you can go to the lists menu, scrolling up to a list, then pre
 Now that we've explained this, we can look at some problems.
 \begin{example}
 Below is a set of data representing the resistance provided a resistor in a circuit depending n the length ($l$) and cross-sectional area ($A$).  Determine the value of the constant $\rho$ using the equation $R=\rho\dfrac{l}{A}$.
-\begin{table}[!h]
+\begin{table}[!ht]
     \centering
     \begin{tabular}{|c||c|c|c|c|}
         \toprule
@@ -315,7 +315,7 @@ Below is a set of data representing the resistance provided a resistor in a circ
 \end{example}
 \begin{solution}
 The equation given doesn't represent a line very well.  There's a fraction!  Well, what we can do is create a new line of data (via a substitution) that will make this linear.  If we set $\dfrac{l}{A}$ to be the independent variable, we can find $\rho$ by finding the slope of the resulting line.  Let's extend the table to find this value.
-\begin{table}[!h]
+\begin{table}[!ht]
     \centering
     \begin{tabular}{|c||c|c|c|c||c|}
         \toprule
@@ -340,7 +340,7 @@ What we can analyze is that the resistivity is about $0.419$. $\Box$
 Let's keep the ball rolling and do another example.
 \begin{example}
 Consider the data below relating the voltage of a battery to the current yielded and the resistance within the circuit.  Using the equation $\Delta V=IR$, determine the value of the resistance.
-\begin{table}[!h]
+\begin{table}[!ht]
     \centering
     \begin{tabular}{|c||c|c|c|c|c|c|}
     \toprule
@@ -359,7 +359,7 @@ One last example; trust me, this one will be much harder.
 \begin{example}
 The table below gives values of $\theta_i$ and $\theta_r$, angles of reflection of light between two mediums.  Using the table and the equation $\sin(\theta_i)=n_r\sin(\theta_r)$, determine the constant $n_r$.
 
-\begin{table}[!h]
+\begin{table}[!ht]
     \centering
     \begin{tabular}{|c||c|c|c|c|c|}
         \toprule
@@ -375,7 +375,7 @@ The table below gives values of $\theta_i$ and $\theta_r$, angles of reflection 
 \begin{solution}
 This equation is almost linear, but we need to make some small adjustments.  We know that we need to find $n_r$, which will be the slope of the graph.  This means that $\sin(\theta_r)$ will be the independent variable and $\sin(\theta_i)$ will be the dependent variable.  So, we need to extend the table to input these values.
 
-\begin{table}[!h]
+\begin{table}[!ht]
     \centering
     \begin{tabular}{|c||c|c|c|c|c|}
         \toprule
@@ -422,7 +422,7 @@ With this, we conclude our discussion of calculator tricks and our study of phys
 \item An engineer is designing the runway for an airport. Of the planes that will use the airport, the lowest acceleration rate is likely to be $3\frac{\text{m}}{\text{s}^2}$. The takeoff speed for this plane will be $65\frac{\text{m}}{\text{s}}$. Assuming this minimum acceleration, what is the minimum allowed length for the runway? 
 \item A bullet leaves a rifle with a muzzle velocity of $521\frac{\text{m}}{\text{s}}$. While accelerating through the barrel of the rifle, the bullet moves a distance of $0.840 m$. Determine the acceleration of the bullet (assume a uniform acceleration).
 \item Below is an experiment to determine the value of a constant $nR$ given Pressure ($P$), Volume ($V$), and Temperature ($T$) of an ideal gas.  Using the table and the equation $PV=nRT$, determine the value of this constant.
-\begin{table}[!h]
+\begin{table}[!ht]
     \centering
     \begin{tabular}{|c||c|c|c|c|c|c|c|}
     \toprule
@@ -440,7 +440,7 @@ With this, we conclude our discussion of calculator tricks and our study of phys
 \item Suppose we have two trains and a bee. One train starts at a distance $d$ away from the other train. Both trains travel at constant speed $v$, but in opposite directions towards each other. Suppose there is a bee that travels at a constant speed $c$ where $c>v$. So this bee starts off at one train and flies to the other train. Upon reaching the other train, the bee switches direction and maintains the same velocity $c$ until it reaches the original train, and switches direction once more. This cycle repeats until the trains crash. What is the total distance the bee travels by the time the trains crash?
 \item Below is a table of data found in an experiment that shoots a ball of mass $m$ to a height $h$ using a spring that compresses $k$ metres.  Using the table below, and the equation $h=\dfrac{kx^2}{mg}$, determine the value of the spring constant $k$. (Note that the ball has a uniform compression distance of $x=0.020$ and gravity is also constant.)
 
-\begin{table}[!h]
+\begin{table}[!ht]
     \centering
     \begin{tabular}{|c||c|c|c|c|c|}
         \toprule

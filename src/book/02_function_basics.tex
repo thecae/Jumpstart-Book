@@ -325,7 +325,7 @@ $4$  & $5$  & $4$  & $7/2$ \\
 If you look closely at the inputs and outputs of the original function and its inverse, you might notice something.  The inputs and outputs are switched!  This means that whenever you take the inverse, you are quite literally flipping the $x$-values and $y$-values in a table.  Graphically, here's what this looks like.
 
 We see that the graphs intersect.  This is okay!  Sometimes they do, other times they don't.  Below we put two more examples of functions and their inverse.
-\begin{figure}[!h]
+\begin{figure}[!ht]
     \centering
     \begin{tikzpicture}[xscale=0.35,yscale=0.35]
       \draw[<->] (-6,0) -- (6,0) node[right] {$x$};
@@ -348,17 +348,17 @@ Remember that we switched the $x$-values and $y$-values when calculating the inv
 
 Now let's address the question of why we do this.  In the formal definition of the inverse, if you plug the inverse into the original function or vice versa, we obtain $x$.  Looking at the equation $f\left(f^{-1}(x)\right)=x$ and take the inverse of both sides, we obtain $f^{-1}(x)=f^{-1}(x)$.  This means that the formal definition of an inverse confirms the fact that these functions are equal.  The function reflects itself if the statement holds true, and as a result, when you reflect about the line $y(x)=x$, you obtain the inverse.
 
-Another reason is the concept of reflection.  Whenever you reflect something about a point or line the overall distance from that point or line remains constant.  Thus, in order to obtain the point that is equidistant to the line $y(x)=x$, or an equation that is equidistant to the line $y(x)=x$, you have found that original equation’s inverse.  
+Another reason is the concept of reflection.  Whenever you reflect something about a point or line the overall distance from that point or line remains constant.  Thus, in order to obtain the point that is equidistant to the line $y(x)=x$, or an equation that is equidistant to the line $y(x)=x$, you have found that original equation's inverse.  
 
-The final reason involves the graphs.  It’s as if you combined the equations or plugged them into one another, their curves and anything deviating from the line would cancel and only leave the line of reflection $y(x)=x$, which is exactly what happens in the formal definition.  Only the inverse function can accomplish this.
+The final reason involves the graphs.  It's as if you combined the equations or plugged them into one another, their curves and anything deviating from the line would cancel and only leave the line of reflection $y(x)=x$, which is exactly what happens in the formal definition.  Only the inverse function can accomplish this.
 
 Why was the horizontal line test important in determining the existence of an inverse?  It seems like we left this out.
 
-Well, if you look at the second example for finding an inverse you’ll see why.  The function $f(x) = x^2$ isn't one-to-one and doesn't pass the horizontal line test.  This means there is more than one input for one output.  Well, when you take the inverse, it switches the inputs and outputs.  So that means there is more than one output for one input in the inverse function.  But wait! We can’t have more than one output for one input, because that means it isn't a function! And this is why the horizontal-line test is important.  It confirms the existence of not only an inverse, but an \textit{inverse function}.
+Well, if you look at the second example for finding an inverse you'll see why.  The function $f(x) = x^2$ isn't one-to-one and doesn't pass the horizontal line test.  This means there is more than one input for one output.  Well, when you take the inverse, it switches the inputs and outputs.  So that means there is more than one output for one input in the inverse function.  But wait! We can't have more than one output for one input, because that means it isn't a function! And this is why the horizontal-line test is important.  It confirms the existence of not only an inverse, but an \textit{inverse function}.
 
 Another way to think about is the concept of reflecting across the line $y(x)=x$.  The horizontal line test for a function is the vertical line test for an inverse function and vice-versa.  
 
-One last question: What about the domain and range of an inverse function?  Well, if the input and outputs switch from original to inverse, that means the domain and range’s switch as well!
+One last question: What about the domain and range of an inverse function?  Well, if the input and outputs switch from original to inverse, that means the domain and range's switch as well!
 \begin{example}
 Find the domain and range of $f(x)=\sqrt{x}$ and its inverse.
 \end{example}
@@ -367,7 +367,7 @@ In the \hyperlink{section.2.2}{previous} section we found the domain and range o
 \end{solution}
 Now this example brings up an interesting point about obtaining inverse functions.  In an earlier example in this section, we said the inverse of $f(x)=x^2$ isn't a function because $x^2$ didn't pass the horizontal line-test.  So why does $f(x) = \sqrt{x}$ have an inverse that is equal to $x^2$ but, $x^2$ doesn't have an inverse? The trick here comes down to the domain.  If we notice, the domain of  $\sqrt{x}$ range only extends from $0$ to infinity.  Thus, the domain of the resulting inverse extends from $0$ to infinity as well.  Thus, in order to make the inverse of $x^2$ a legitimate function, we have to \textit{restrict its domain}.
 \begin{note}
-If you restrict a function’s domain such that it is one-to-one on that domain, it has an inverse function on that domain.  
+If you restrict a function's domain such that it is one-to-one on that domain, it has an inverse function on that domain.  
 \end{note}
 With this, we conclude our introduction to inverse functions.  Throughout the book, we will learn about even more functions, some which may be invertible, and some which have even more going on than what is in this section.  Now, let' talk about function transformations.
 \section{Transformations, End Behavior, and Graphing}
@@ -382,12 +382,12 @@ Find the $x$- and $y$-intercepts of $f(x)=x^2$.
 \begin{solution}
 Letting $x=0$, we get the $y$-intercept as $f(0)=(0)^2=0$.  Letting $y=0$, we get the $x$-intercepts as $0=x^2\implies x=0$.  So our $x$-intercept is $(0,0)$ and the $y$-intercept is $(0,0)$.  $\Box$
 \end{solution}
-We won’t do another example because it’s pretty simple to find these things.  $x$-intercepts can be tricky, but those will be dealt with on a case-by-case basis in the coming chapters.
+We won't do another example because it's pretty simple to find these things.  $x$-intercepts can be tricky, but those will be dealt with on a case-by-case basis in the coming chapters.
 
 Lets take a look at how to transform graphs in the coordinate plane.
 \subsection{Transformations}
 \noindent A \textit{transformation} characterizes a change from a \textit{parent function}.  The parent function is the most basic form of a function.  Here are some examples of parent functions:
-\begin{figure}[!h]
+\begin{figure}[!ht]
     \centering
     \begin{tikzpicture}[xscale=0.35,yscale=0.35]
       \draw[<->] (-6,0) -- (6,0) node[right] {$x$};
@@ -413,7 +413,7 @@ Lets take a look at how to transform graphs in the coordinate plane.
 
 Lets find ways to change the position of the graph within the plane.  There are six ways to do this.
 A \textit{vertical shift} moves the entire graph up or down $k$ units ($k\in\mathbb{R}$).  It is represented as $f(x) \mapsto f(x)\pm k$.  Here are some examples of vertical shift.
-\begin{figure}[!h]
+\begin{figure}[!ht]
     \centering
     \begin{tikzpicture}[xscale=0.35,yscale=0.35]
       \draw[<->] (-6,0) -- (6,0) node[right] {$x$};
@@ -432,7 +432,7 @@ A \textit{vertical shift} moves the entire graph up or down $k$ units ($k\in\mat
 This makes sense because when a number is added or subtracted from $f(x)$, you are quite literally adding or subtracting from every $y$-value present.
 
 A \textit{horizontal shift} moves the entire graph left or right $k$ units ($k\in\mathbb{R}$).  It is represented as $f(x) \mapsto f(x\mp k)$.  Here are a few examples of this:
-\begin{figure}[!h]
+\begin{figure}[!ht]
     \centering
     \begin{tikzpicture}[xscale=0.35,yscale=0.35]
       \draw[<->] (-6,0) -- (6,0) node[right] {$x$};
@@ -447,7 +447,7 @@ A \textit{horizontal shift} moves the entire graph left or right $k$ units ($k\i
       \draw[scale=1,domain=-2.4:2.4,smooth,dashdotted,variable=\x,black] plot ({\x},{\x*\x});
     \end{tikzpicture}
 \end{figure}
-There are two ways to think about this.  The first way is that the shift corresponds to the opposite of what’s inside the function.  So, if there is a minus inside, you shift right.  If there is a plus inside, you shift left.  
+There are two ways to think about this.  The first way is that the shift corresponds to the opposite of what's inside the function.  So, if there is a minus inside, you shift right.  If there is a plus inside, you shift left.  
 
 The other way to think about it is logically.  In the example above, if you plug zero into the parent function, you get zero.  But to get zero in g(x), one must plug in the four, which means the vertex has shifted 4 units.  And to get zero in h(x), one must plug in negative four, which means the vertex has shifted left 4 units.  If you keep track of the \textit{vertex}, you can determine the shifts.
 \begin{note}
@@ -455,7 +455,7 @@ If you know where the vertex is, you can determine how the function shifts.
 \end{note}
 A \textit{vertical stretch/compression} stretches or compresses every $y$-value by a factor of $k$.  This is written as $f(x) \mapsto kf(x)$.  In this case, we are going to assign $k\in\mathbb{R}^+$ and will discuss the meaning of $k<0$ later.
 
-\begin{figure}[!h]
+\begin{figure}[!ht]
     \centering
     \begin{tikzpicture}[xscale=0.27,yscale=0.27]
       \draw[<->] (-6,0) -- (6,0) node[right] {$x$};
@@ -475,7 +475,7 @@ Notice how if $k>1$, the graph becomes narrower because it increases faster.  Al
 
 A \textit{horizontal stretch/compression} stretches or compresses every $x$ value by a factor of $k$.  This is written as $f(x) \mapsto f(kx)$.  Again, we are going to assign $k\in\mathbb{R}^+$ and will discuss $k<0$ later.
 
-\begin{figure}[!h]
+\begin{figure}[!ht]
     \centering
     \begin{tikzpicture}[xscale=0.27,yscale=0.27]
       \draw[<->] (-6,0) -- (6,0) node[right] {$x$};
@@ -497,7 +497,7 @@ For the function $f(x)$, the transformation $f(kx)$ transforms every $x$-value b
 
 A \textit{vertical reflection} follows the same method of vertical compression, but this time we will look at if $k<0$.  If $k<0$, that means that all the $y$-values become negative, meaning that it is reflected over the $x$-axis.
 
-\begin{figure}[!h]
+\begin{figure}[!ht]
     \centering
     \begin{tikzpicture}[xscale=0.27,yscale=0.27]
       \draw[<->] (-6,0) -- (6,0) node[right] {$x$};
@@ -515,7 +515,7 @@ A \textit{vertical reflection} follows the same method of vertical compression, 
 
 A \textit{horizontal reflection} follows the same method of horizontal compression, but this time we will discuss $k<0$.  All the $x$-values become negative, meaning that it reflects over the $y$-axis.
 
-\begin{figure}[!h]
+\begin{figure}[!ht]
     \centering
     \begin{tikzpicture}[xscale=0.27,yscale=0.27]
       \draw[<->] (-6,0) -- (6,0) node[right] {$x$};
@@ -540,7 +540,7 @@ Given a transformation by a factor of $k$, \begin{enumerate}
 \end{note}
 Notice that this is very similar to the vertical compression/stretch.  And that is because, they are quite literally the same thing.  It depends on how one interprets it.
 
-For example, if $y(x)=2x$, one can interpret this as every $y$-value being multiplied by $2$, thus experiencing a vertical stretch.  Or one can interpret this as every $x$-value being divided by $2$, thus experiencing a horizontal compression.  These are both valid interpretations.  The rule of thumb here is to go with one and stick by it.  Now here’s a table to recap all the transformations:
+For example, if $y(x)=2x$, one can interpret this as every $y$-value being multiplied by $2$, thus experiencing a vertical stretch.  Or one can interpret this as every $x$-value being divided by $2$, thus experiencing a horizontal compression.  These are both valid interpretations.  The rule of thumb here is to go with one and stick by it.  Now here's a table to recap all the transformations:
 \begin{center}
     \begin{tabular}{|c|c|}
     \hline

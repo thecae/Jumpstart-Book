@@ -70,7 +70,7 @@ This concludes the section on linear functions.  Let's discuss the inverse of li
 \section{Inverses of Linear Functions}
 Now that we have covered the basics of linear functions, we can now get into what can be done with these functions.  The next three sections will cover various uses, properties, and applications of linear functions with more advanced topics; this section will be covering inverses of linear equations.  
 
-To start off, let’s review the basics of taking an inverse as discussed back in section 2.4.  When solving for an inverse the independent variable (usually $x$) and the dependent variable (usually $y(x)$ or $f(x)$) are switched; the dependent variable is then solved for.  Let’s take a look at an example:
+To start off, let's review the basics of taking an inverse as discussed back in section 2.4.  When solving for an inverse the independent variable (usually $x$) and the dependent variable (usually $y(x)$ or $f(x)$) are switched; the dependent variable is then solved for.  Let's take a look at an example:
 \begin{example}
 Find the inverse, $f^{-1}(x)$, of $f(x)=3x-2$.
 \end{example}
@@ -79,11 +79,11 @@ As previously stated, we first need to switch the independent and dependent vari
 $$f(x)=3x-2 \implies x=3f^{-1}(x)-2.$$
 Rearranging and simplifying leaves us with the inverse function.  We get $x+2=3f^{-1}(x)$, or $f^{-1}(x)=\dfrac{1}{3}x+\dfrac{2}{3}$.  $\Box$
 \end{solution}
-Now that you understand how to solve for an inverse given a linear equation, we’ll move on to a geometric property what can be used to show that two functions are inverses of each other: inverse functions are reflections of each other about the line $y(x)=x$.  This can be seen in the graphs below.
+Now that you understand how to solve for an inverse given a linear equation, we'll move on to a geometric property what can be used to show that two functions are inverses of each other: inverse functions are reflections of each other about the line $y(x)=x$.  This can be seen in the graphs below.
 
 This graphs shows two functions, $f(x)$ and $g(x)$, and their respective inverses as well as the line of reflection (dotted).  In the graphs, $f(x)=2x-3$, $f^{-1}(x)=\dfrac{1}{3}x+\dfrac{2}{3}$, $g(x)=x+2$, and $g^{-1}(x)=x-2$.
 
-\begin{figure}[!h]
+\begin{figure}[!ht]
 \centering
     \begin{tikzpicture}[xscale=0.25,yscale=0.25]
       \draw[<->] (-10,0) -- (10,0) node[right] {$x$};
@@ -106,7 +106,7 @@ One common way of thinking about this reflection property of inverses is that if
 
 Another essential property of inverses $-$ arguably their defining property $-$ is that if you compose a function with its inverse (or vice versa) you end up with simply $x$.  That is to say: $$f^{-1}\left(f(x)\right)=f\left(f^{-1}(x)\right)=x.$$
 
-This fact can act as a way to check to make sure two functions are inverses of each other.  Let’s use this in an example.
+This fact can act as a way to check to make sure two functions are inverses of each other.  Let's use this in an example.
 
 \begin{example}
 Find the inverse, $f^{-1}(x)$, of $f(x)=2x-4$.  Then, on the same graph, sketch both $f(x)$ and $f^{-1}(x)$.  Finally, use the statement above to prove $f(x)$ and $f^{-1}(x)$ are inverse functions.
@@ -122,7 +122,7 @@ Now that we've algebraically and graphically proven that these functions are inv
 \end{solution}
 This is all we need to cover for this section.  Let's discuss the final section of this chapter: piece-wise linear functions.
 
-\begin{figure}[!h]
+\begin{figure}[!ht]
     \centering
     \begin{tikzpicture}[xscale=0.25,yscale=0.25]
       \draw[<->] (-10,0) -- (10,0) node[right] {$x$};
@@ -134,7 +134,7 @@ This is all we need to cover for this section.  Let's discuss the final section 
 \end{figure}
 
 \section{Piece-wise Linear Functions}
-Finishing up the chapter we have understanding and graphing linear piece-wise functions.  While these functions aren't used incredibly often currently, they do have their applications in the real world and in higher-level mathematics.  Piece-wise functions in general can be thought of as a sort of Frankenstein’s monster: pieces of different functions mashed together into a single function.
+Finishing up the chapter we have understanding and graphing linear piece-wise functions.  While these functions aren't used incredibly often currently, they do have their applications in the real world and in higher-level mathematics.  Piece-wise functions in general can be thought of as a sort of Frankenstein's monster: pieces of different functions mashed together into a single function.
 
 In the case of linear piece-wise functions, we take two or more lines, chop them up, and put the pieces we want into a single function.  This idea can be best understood by graphing.
 \begin{wrapfigure}{r}{4cm}
@@ -148,7 +148,7 @@ In the case of linear piece-wise functions, we take two or more lines, chop them
     \end{tikzpicture}
 \end{wrapfigure}
 Here we can see the graph of the linear piece-wise function: $$y(x)=\begin{cases} x-1 & x < 5 \\ 7-x & x \geq 5 \end{cases}.$$
-Something which piece-wise functions can do, something that you probably haven’t seen in any other function up until now, is that the function is not continuous; in layman’s terms, this means the graph has a “break” in it.  We can see that the graph appears to get closer to a $y$-value of $4$ as we move along the first line $f(x)=x-1$; all of a sudden however, once we reach $x=5$ the graph magically moves down to a $y$-value of $2$ onto the second line $g(x)=7-x$.  This idea of “continuity” (or, in this case, discontinuity) is extremely important later on in Calculus.
+Something which piece-wise functions can do, something that you probably haven't seen in any other function up until now, is that the function is not continuous; in layman's terms, this means the graph has a “break” in it.  We can see that the graph appears to get closer to a $y$-value of $4$ as we move along the first line $f(x)=x-1$; all of a sudden however, once we reach $x=5$ the graph magically moves down to a $y$-value of $2$ onto the second line $g(x)=7-x$.  This idea of “continuity” (or, in this case, discontinuity) is extremely important later on in Calculus.
 
 \begin{wrapfigure}{r}{2.5cm}
     \begin{tikzpicture}[xscale=0.5,yscale=0.5]
@@ -161,7 +161,7 @@ Something which piece-wise functions can do, something that you probably haven�
     \end{tikzpicture}
 \end{wrapfigure}
 
-Let’s take a look at another example with just $2$ lines so you can try graphing it.
+Let's take a look at another example with just $2$ lines so you can try graphing it.
 \begin{example}
 Graph the linear piece-wise function $$y(x)=\begin{cases} 2-x & x\in(-\infty,0] \\ \dfrac{1}{2}x+1 & x\in(0,\infty) \end{cases}.$$
 \end{example}
@@ -183,12 +183,12 @@ Based on the interval to the right of the equations, we want to graph $f(x)=2-x$
     \end{tikzpicture}
 \end{wrapfigure}
 
-Let’s do one more example to finish the chapter off, this time with three segments.  Remember that three segments works just the same as two.  This example will also have you use the graph to deduce the function; follow the same process for this as you would any other function.  Simply keep domain restrictions in mind.
+Let's do one more example to finish the chapter off, this time with three segments.  Remember that three segments works just the same as two.  This example will also have you use the graph to deduce the function; follow the same process for this as you would any other function.  Simply keep domain restrictions in mind.
 \begin{example}
 Write down the piece-wise function corresponding to the following graph.
 \end{example}
 \begin{solution}
-Let’s go from left to right, figuring out the different segments we have in the graph.  On the left we have a line with slope $1$ and $y$-intercept of $1$; this segment goes from $-\infty$ to $1$.  This gives $$y_1(x)=mx+b=x+1 \hspace{0.25in} x\in(-\infty,1].$$
+Let's go from left to right, figuring out the different segments we have in the graph.  On the left we have a line with slope $1$ and $y$-intercept of $1$; this segment goes from $-\infty$ to $1$.  This gives $$y_1(x)=mx+b=x+1 \hspace{0.25in} x\in(-\infty,1].$$
 For the middle section, we see the line has a slope $-\dfrac{1}{2}$ but no $y$-intercept is shown; therefore, we must use the point slope formula (we will use the point $(1,3)$ from the segment): $$y_2(x)=y_0+m(x-x_0)=3-\dfrac{1}{2}(x-1)=-\dfrac{1}{2}+\dfrac{7}{2} \hspace{0.25in} x\in(1,3).$$
 For the final right-most segment, we see it has a slope of $2$, however once again no $y$-intercept is shown so we must use the point-slope formula again; this segment stretches from $3$ to $\infty$.  $$y_3(x)=y_0+m(x-x_0)=1+2(x-3)=2x-5 \hspace{0.25in} x\in[3,\infty).$$
 Putting this all together gives us our final function: $$y(x)=\begin{cases} y_1(x) \\ y_2(x) \\ y_3(x) \end{cases} = \begin{cases} x+1 & x \leq 1 \\ -\dfrac{1}{2}x+\dfrac{7}{2} & 1<x<3 \\ 2x-5 & x \geq 3 \end{cases}.$$ $\Box$

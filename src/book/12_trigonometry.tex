@@ -12,8 +12,8 @@
 \end{introduction}
 \noindent Well, here we are, trigonometry $-$ what for many Americans is the summit of their mathematical adventure. To keep things relatively simple, we will only be providing an introduction into the field, as the full extent of it will be covered later on during your time in Pre-calculus. Technically, trigonometry is the study of triangles, coming from the roots "tri" for $3$ (sides/angles) and “metry” meaning to measure. In practice, however, trigonometry more often involves the study of certain \textit{trigonometric functions} which enable greater understanding of both triangles and a wide variety of other applications. As you will soon find out, to understand and intuit in place of memorize, trigonometry will often require of you a certain flexibility $-$ to be able to quickly switch between algebraic and geometric perspectives.  
 \section{The Trigonometric Functions}
-\noindent We’ll start with the very basics. First, since this chapter is about trigonometry, let’s look at some simple cases of triangles. Let’s say we have a right triangle and we know one of the (non-right) angles. For the sake of simplicity, let’s also assume we know the hypotenuse has a length of one. Below are some cases of the above situation:
-\begin{figure}[!h]
+\noindent We'll start with the very basics. First, since this chapter is about trigonometry, let's look at some simple cases of triangles. Let's say we have a right triangle and we know one of the (non-right) angles. For the sake of simplicity, let's also assume we know the hypotenuse has a length of one. Below are some cases of the above situation:
+\begin{figure}[!ht]
     \centering
     \begin{tikzpicture}[xscale=0.5,yscale=0.5]
         \draw (0,0) -- (9,0) -- (0,5) -- cycle;
@@ -30,7 +30,7 @@
         \draw (5,0.6) node {$45^{\circ}$};
     \end{tikzpicture}
 \end{figure}
-In these examples, it would be incredibly difficult (if not near impossible) to calculate the length of the other two sides of the triangle. So, in an attempt to make some progress, let’s create some functions $f(\theta)$ and $g(\theta)$ to help us with these cases. $f(\theta)$ will take the known angle $\theta$ as an input to the function and output the length of the side of the triangle \textit{opposite} the angle $\theta$; likewise, $g(\theta)$ will take the known angle $\theta$ as an input and output the length of the side of the triangle \textit{adjacent} the angle $\theta$.
+In these examples, it would be incredibly difficult (if not near impossible) to calculate the length of the other two sides of the triangle. So, in an attempt to make some progress, let's create some functions $f(\theta)$ and $g(\theta)$ to help us with these cases. $f(\theta)$ will take the known angle $\theta$ as an input to the function and output the length of the side of the triangle \textit{opposite} the angle $\theta$; likewise, $g(\theta)$ will take the known angle $\theta$ as an input and output the length of the side of the triangle \textit{adjacent} the angle $\theta$.
 
 We can observe the general case for this situation below with the known angle $\theta$ and lengths $1$, $f(\theta)$,and $g(\theta)$: \newpage
 \begin{figure}
@@ -51,7 +51,7 @@ Now it just so happens that these functions are useful enough to where mathemati
 \begin{note}
 From here on, $\sin(\theta)$ and $\cos(\theta)$ will be used in place of $f(\theta)$ and $g(\theta)$.  All trigonometric functions will take $\theta$ to be in \textit{radians} instead of \textit{degrees}.
 \end{note}
-Now that we have all the setup in place, let’s try and calculate some simple cases of $\sin(\theta)$ and $\cos(\theta)$. While you may not be expected to derive some of these without having seen the proof beforehand, it is recommended that you understand them regardless.
+Now that we have all the setup in place, let's try and calculate some simple cases of $\sin(\theta)$ and $\cos(\theta)$. While you may not be expected to derive some of these without having seen the proof beforehand, it is recommended that you understand them regardless.
 \begin{example}
 Using principles of geometry, calculate $\sin(0)$ and $\cos(0)$.
 \end{example}
@@ -59,7 +59,7 @@ Using principles of geometry, calculate $\sin(0)$ and $\cos(0)$.
 Consider the left triangle above.  As $\theta$ approaches $0$, we see that $f(0)=\sin(0)$ approaches $0$. Using the Pythagorean Theorem (or similar logic to $\sin(\theta)$ we see that $g(0)=\cos(0)$ approaches $1$. $\Box$
 \end{solution}
 Here are the figures for the next two problems.  Due to spacing limitations, we were forced to put them above.
-\begin{figure}[!h]
+\begin{figure}[!ht]
     \centering
     \hspace{\stretch{1}}
     \begin{tikzpicture}[xscale=0.5,yscale=0.5]
@@ -96,8 +96,8 @@ Based on the diagram to the right, let's set $\phi$ to equal $\frac{\pi}{6}$. Th
 
 Since all angles in the triangle must add to $\pi$, we calculate $\theta$ to be $\theta=\dfrac{\pi}{2}-\dfrac{\pi}{6}=\dfrac{\pi}{3}.$
 
-Here’s where the clever trick gets involved, notice how $2\phi=\theta$. This fact allows us to leverage some symmetry. The “trick” for this problem is to add a second triangle to the diagram as shown below.
-\begin{figure}[!h]
+Here's where the clever trick gets involved, notice how $2\phi=\theta$. This fact allows us to leverage some symmetry. The “trick” for this problem is to add a second triangle to the diagram as shown below.
+\begin{figure}[!ht]
     \centering
     \begin{tikzpicture}[xscale=0.35,yscale=0.35]
         \draw (-9,0) -- (0,0) -- (0,5) -- cycle;
@@ -160,7 +160,7 @@ We can now create our formal definitions for $\sin(\theta)$ and $\cos(\theta)$ u
 
 We have four more functions you need to know. These, however, are much easier to learn about as they all are simple combinations of the sine and cosine functions.
 
-Let’s start with $\tan(\theta)$ (short for "tangent"). By definition, $\tan(\theta)=\dfrac{\sin(\theta)}{\cos(\theta)}$. In addition to this algebraic definition, the tangent function may also be defined geometrically. The tangent of an angle can be found by taking the ratio between the opposite and adjacent legs of the triangle: $\tan(\theta)=\dfrac{\text{\textit{opposite}}}{\text{\textit{adjacent}}}$.
+Let's start with $\tan(\theta)$ (short for "tangent"). By definition, $\tan(\theta)=\dfrac{\sin(\theta)}{\cos(\theta)}$. In addition to this algebraic definition, the tangent function may also be defined geometrically. The tangent of an angle can be found by taking the ratio between the opposite and adjacent legs of the triangle: $\tan(\theta)=\dfrac{\text{\textit{opposite}}}{\text{\textit{adjacent}}}$.
 
 \begin{remark}
 the length of the hypotenuse does not matter when calculating the tangent (it does with Sine and Cosine, which will be covered in section 13.2).
@@ -180,16 +180,16 @@ While these three tend to have less applications, they are certainly useful as a
       \filldraw[red] (7.428,2.971) circle[radius=1.5pt] node[anchor=south west] {$(x,y)$};
     \end{tikzpicture}
 \end{wrapfigure}
-\noindent It is often said that when you start out in trigonometry you think it’s all about triangles, but in actuality, it’s all about circles.
+\noindent It is often said that when you start out in trigonometry you think it's all about triangles, but in actuality, it's all about circles.
 
-In this section we are going to flesh out a more useful definition to the sine and cosine functions to that of the previous one based on the length of a triangle’s side. The first thing we want to improve with our new definition is to be able to \textit{extend the domain} of each function. With the triangle definition we couldn't reasonably define a value to $\sin\left(\dfrac{3\pi}{2}\right)$ or $\cos(10\pi)$, that would imply it is possible to have a right triangle with an angle of $\dfrac{3\pi}{2}$ or $10\pi$ (which is impossible due to the sum to $\pi$ rule). Currently our domain is limited to an angle theta in the interval $\left[0,\dfrac{\pi}{2}\right)$, we want it to range over $\mathbb{R}$.
+In this section we are going to flesh out a more useful definition to the sine and cosine functions to that of the previous one based on the length of a triangle's side. The first thing we want to improve with our new definition is to be able to \textit{extend the domain} of each function. With the triangle definition we couldn't reasonably define a value to $\sin\left(\dfrac{3\pi}{2}\right)$ or $\cos(10\pi)$, that would imply it is possible to have a right triangle with an angle of $\dfrac{3\pi}{2}$ or $10\pi$ (which is impossible due to the sum to $\pi$ rule). Currently our domain is limited to an angle theta in the interval $\left[0,\dfrac{\pi}{2}\right)$, we want it to range over $\mathbb{R}$.
 
 In the diagram at the beginning of the section, we have a general point $(x,y)$ on a unit circle (circle of radius of one and centered at the origin). We can form a right triangle within this unit circle with the points $(x,y)$, $(0,0)$, and some other point found by dropping a vertical from $(x,y)$ onto the $x$-axis.
 
 Let the angle between the hypotenuse and horizontal leg of the triangle be denoted by $\theta$. Since we know the radius is one, we know the opposite leg (with length $y$) equals $\sin(\theta)$, while the adjacent leg (with length $x$) is equal to $\cos(\theta)$.
 
 This diagram will lead us to our new definitions. Let $\sin(\theta)$ be equal to the $y$-coordinate of the point found by walking theta radians around a unit circle (counterclockwise); $\cos(\theta)$ is the same, but the $x$-coordinate. Negative angles will be computed by performing a clockwise rotation.
-\begin{figure}[!h]
+\begin{figure}[!ht]
 \centering
     \begin{tikzpicture}[xscale=0.5,yscale=0.5]
       \draw[<->] (-12,0) -- (12,0) node[right] {$x$};
@@ -281,7 +281,7 @@ This is the first case in which the input angle is over $2\pi$. Since going arou
 \end{solution}
 \noindent Now, let's use this skill to solve trigonometric functions.
 \section{Solving Trigonometric Equations}
-\noindent Now that we have a solid foundation for what trigonometric functions are, we can start solving equations with these functions inside of them. Admittedly, trigonometric equation can get complicated quickly, forcing you to use around a half-dozen properties as you go through a Pre-calculus course. Here, since we only wish to present an introduction, we will only go through the basics $-$ equations which don’t require knowledge of any of these special properties. 
+\noindent Now that we have a solid foundation for what trigonometric functions are, we can start solving equations with these functions inside of them. Admittedly, trigonometric equation can get complicated quickly, forcing you to use around a half-dozen properties as you go through a Pre-calculus course. Here, since we only wish to present an introduction, we will only go through the basics $-$ equations which don't require knowledge of any of these special properties. 
 
 One thing you may quickly notice with these equations is that multiple values, sometimes even infinite values, will solve a given equation. Because of this, questions are usually structured so that you are asked to find not a value which solves the equation, but \textbf{all} values.
 \begin{example}
@@ -298,7 +298,7 @@ Consider the previous example.  Find all values of $x$, where $x$ is defined on 
 \begin{solution}
 Using the previous example, we know that the solutions from $[0,2\pi)$ are $\dfrac{\pi}{6}$ and $\dfrac{5\pi}{6}$. How does this get extended to $\mathbb{R}$?
 
-Recall the Example 12.7 from the last section where we had an angle greater than $2\pi$. This shows that we can have angles greater than $2\pi$; for example, we can add an additional revolution to $\dfrac{\pi}{6}$ to get $\dfrac{\pi}{6}+2\pi=\dfrac{13\pi}{6}$. We could keep adding or subtracting loops around the circle an arbitrary number of times, giving us infinite solutions to the equation. Here’s the way solutions to this type of problem are usually written out: $$x=\dfrac{\pi}{6}+2\pi k,\dfrac{5\pi}{6}+2\pi k; \hspace{3mm} k\in\mathbb{Z}.$$ This in essence is stating to take all the initial angles we know already work, then add any integer $k$ of loops around the circle. $\Box$
+Recall the Example 12.7 from the last section where we had an angle greater than $2\pi$. This shows that we can have angles greater than $2\pi$; for example, we can add an additional revolution to $\dfrac{\pi}{6}$ to get $\dfrac{\pi}{6}+2\pi=\dfrac{13\pi}{6}$. We could keep adding or subtracting loops around the circle an arbitrary number of times, giving us infinite solutions to the equation. Here's the way solutions to this type of problem are usually written out: $$x=\dfrac{\pi}{6}+2\pi k,\dfrac{5\pi}{6}+2\pi k; \hspace{3mm} k\in\mathbb{Z}.$$ This in essence is stating to take all the initial angles we know already work, then add any integer $k$ of loops around the circle. $\Box$
 \end{solution}
 \begin{example}
 Find all values of $x$ such that $\tan(x)=1$.
@@ -320,7 +320,7 @@ Sometimes a system of these simple equations are given, constraining the usual t
 Find all solutions $x$ to the system $\begin{cases} \sin(x)=\dfrac{\sqrt{2}}{2} \\ \cos(x)<0\end{cases}$.
 \end{example}
 \begin{solution}
-Thankfully, since everything is already in the form of cosine or sine, we don’t have to do any initial manipulation. The first equation asks us to find all angles which correspond to points with a $y$-coordinate of $\dfrac{1}{2}$; likewise, the second wants us to find all angles which gives points with negative $x$-coordinates. 
+Thankfully, since everything is already in the form of cosine or sine, we don't have to do any initial manipulation. The first equation asks us to find all angles which correspond to points with a $y$-coordinate of $\dfrac{1}{2}$; likewise, the second wants us to find all angles which gives points with negative $x$-coordinates. 
 
 Solutions to the $1^{\text{st}}$ equation within the standard interval, again using the unit circle as reference, include $\dfrac{\pi}{4}$ and $\dfrac{3\pi}{4}$. Only the second angle gives a point with a negative $x$-coordinate, therefore we can eliminate the first angle. Finally, since both the sine and cosine functions have a period of $2\pi$ we must add a $+2\pi k$ term to extend solutions beyond the standard interval. $$x=\dfrac{3\pi}{4}+2\pi k;\hspace{3mm}k\in\mathbb{Z}.$$ $\Box$
 \end{solution}
@@ -333,8 +333,8 @@ So, when are the $x$ and $y$-coordinates opposites of each other within our stan
 \end{solution}
 Now, let's attempt to graph trigonometric functions, possibly the hardest section in this chapter.
 \section{Graphing Trigonometric Functions}
-\noindent Finally, the last major topic within this introduction to trigonometry will be graphing each of the six trigonometric functions, with special emphasis on the primary three. Let’s start with the parent functions of sine and cosine, then work up through more complex examples and functions. We can take all the “special” points from the unit circle and place them on a graph; connecting these points will give us the parent curves.
-\begin{figure}[!h]
+\noindent Finally, the last major topic within this introduction to trigonometry will be graphing each of the six trigonometric functions, with special emphasis on the primary three. Let's start with the parent functions of sine and cosine, then work up through more complex examples and functions. We can take all the “special” points from the unit circle and place them on a graph; connecting these points will give us the parent curves.
+\begin{figure}[!ht]
     \centering
     \begin{tikzpicture}[xscale=0.5,yscale=0.5]
         \draw[<->] (-1,0) -- (10,0) node[right] {$x$};
@@ -348,13 +348,13 @@ Now, let's attempt to graph trigonometric functions, possibly the hardest sectio
     \end{tikzpicture}
 \end{figure}
 
-Like in the previous section, let’s observe the "standard" interval of $[0,2\pi)$. With the sine function (seen in the graph on the left), we start out at $(0,0)$ moving in the positive $y$-direction; at $\left(\dfrac{\pi}{2},1\right)$ the function reaches a maximum and heads downwards; this continues until the point $\left(\dfrac{3\pi}{2},-1\right)$ when the graph reaches a minimum and begins heading upwards towards the final point $(2\pi,0)$.
+Like in the previous section, let's observe the "standard" interval of $[0,2\pi)$. With the sine function (seen in the graph on the left), we start out at $(0,0)$ moving in the positive $y$-direction; at $\left(\dfrac{\pi}{2},1\right)$ the function reaches a maximum and heads downwards; this continues until the point $\left(\dfrac{3\pi}{2},-1\right)$ when the graph reaches a minimum and begins heading upwards towards the final point $(2\pi,0)$.
 
 For the cosine function (seen in the graph on the right) the function starts at $(0,1)$ stationary, but slowly begins moving in the negative $y$-direction; at the point $(\pi,-1)$ the graph reaches a minimum and heads back upwards towards $(2\pi,1)$.
 
 For each of these functions, the graph repeats itself every $2\pi$ units. This is equivalent to saying, "given any initial point, going around the circle a full time (adding or subtracting $2\pi$) gets you back where you started." Put more formally, we can say the sine and cosine functions have a period of $2\pi$.
 
-It’s important for you to know some other terms relevant to describing trigonometric graphs. We just went over "period," but here are the rest.\begin{itemize}
+It's important for you to know some other terms relevant to describing trigonometric graphs. We just went over "period," but here are the rest.\begin{itemize}
     \item \textit{Frequency}: equivalent to $\dfrac{1}{\text{period}}$. Instead of asking, "in how many units does the function repeat itself?" frequency asks, "how many cycles does the function complete within $1$ unit?" For example, the sine function has a period of $2\pi$, but a frequency of $\dfrac{1}{2\pi}$.
     \item \textit{Equilibrium}: only relevant for the sine and cosine functions. Essentially the "middle" of the graph. For example, both the sine and cosine functions are at equilibrium at $y=0$. $f(x)=\sin⁡(x)+$1 is at equilibrium at $y=1$. This is also known as "vertical shift".
     \item \textit{Amplitude}: how far vertically the graph travels from equilibrium. For example, $\sin⁡(x$) has an amplitude of $1$, whereas $3\sin⁡(x)$ has an amplitude of $3$.
@@ -371,7 +371,7 @@ Sketch the function $f(x)=2\sin(x)+1$ by plotting the necessary extrema and equi
 \end{example}
 \begin{solution}
 We first plot the necessary values, which in this case are $x=0,\dfrac{\pi}{2},\pi,\dfrac{3\pi}{2},2\pi$.
-\begin{table}[!h]
+\begin{table}[!ht]
     \centering
     \begin{tabular}{|c||c|c|c|c|c|}
         \toprule
@@ -383,7 +383,7 @@ We first plot the necessary values, which in this case are $x=0,\dfrac{\pi}{2},\
 \end{table}
 
 We then plot the points and connect them to form the sine curve, as seen below.
-\begin{figure}[!h]
+\begin{figure}[!ht]
     \centering
     \hspace{\stretch{1}}
     \begin{tikzpicture}[xscale=0.5,yscale=0.5]
@@ -415,7 +415,7 @@ Sketch the function $f(x)=1-\cos(2x)$ by plotting the necessary extrema and equi
 \end{example}
 \begin{solution}
 Since the input to the parent function is being scaled by two, the period of the function will be halved. This means we will have to adjust our input values so we get every important point. Remember, we want all the important points within a single period of the function.
-\begin{table}[!h]
+\begin{table}[!ht]
     \centering
     \begin{tabular}{|c||c|c|c|c|c|}
         \toprule
@@ -427,7 +427,7 @@ Since the input to the parent function is being scaled by two, the period of the
 \end{table}
 
 Then, we plot the points and connect the points.
-\begin{figure}[!h]
+\begin{figure}[!ht]
     \centering
     \hspace{\stretch{1}}
     \begin{tikzpicture}[xscale=0.5,yscale=0.5]
@@ -465,7 +465,7 @@ We have three different transformations applied to the cosine function here: \be
     \item $\cos(x)-1$ $\longrightarrow$ vertically shifts the graph downward by $1$ unit (lowers the equilibrium to $y=-1$).
 \end{itemize}
 Below, we show the parent function on the left and the transformation on the right.
-\begin{figure}[!h]
+\begin{figure}[!ht]
     \centering
     \hspace{\stretch{1}}
     \begin{tikzpicture}[xscale=0.4,yscale=0.4]
@@ -500,7 +500,7 @@ Before we can look at the transformations of this function, we need to factor th
     \item $\sin\left(x-\dfrac{\pi}{2}\right) \longrightarrow$ shifts the graph horizontally (in the positive direction) by $\dfrac{\pi}{2}$.
 \end{itemize}
 Since we factored the inside of the function, we need to apply the shift after the scale.  For clarification on why, refer to \hyperlink{section.2.4}{Section 2.4} regarding horizontal shifts on functions.
-\begin{figure}[!h]
+\begin{figure}[!ht]
     \centering
     \hspace{\stretch{1}}
     \begin{tikzpicture}[xscale=0.5,yscale=0.5]
@@ -556,7 +556,7 @@ To the right here is a graph of the tangent function in blue with zeros and vert
 Like the sine and cosine functions, you typically will only be asked to sketch one (maybe two) period(s) of the function. One period here is one of the chunks between any two adjacent asymptotes; for example, the interval $\left(-\dfrac{\pi}{2},\dfrac{\pi}{2}\right)$ represents one possible period of the function.
 \end{note}
 
-Introducing transformations to the tangent function is extremely similar to how it was done with the sine and cosine functions, and is arguably simpler. Again, here’s the general formula for the tangent function with transformations: $$f(x)=A\tan\left(\dfrac{\pi}{T}\left(x-\pi\right)\right)+I; \hspace{10mm} \begin{matrix} A=\text{amplitude} & T=\text{period} \\ \phi=\text{phase shift} & I=\text{vertical shift} \end{matrix}.$$
+Introducing transformations to the tangent function is extremely similar to how it was done with the sine and cosine functions, and is arguably simpler. Again, here's the general formula for the tangent function with transformations: $$f(x)=A\tan\left(\dfrac{\pi}{T}\left(x-\pi\right)\right)+I; \hspace{10mm} \begin{matrix} A=\text{amplitude} & T=\text{period} \\ \phi=\text{phase shift} & I=\text{vertical shift} \end{matrix}.$$
 While amplitude clearly affects how you sketch a sine or cosine wave, most teachers/professors wouldn't care if you drew $f(x)=\tan⁡(x)$ and $g(x)=2\tan⁡(x)$ the same. This stems from the fact that the "special features" of the tangent function (zeros and asymptotes) aren't affected numerically by scale factors. A negative scale factor, however, does change which way the graph curves (seen in Example 12.19).
 
 Note the difference between the scale factor inside of the function for tangent and for sine ($\dfrac{\pi}{T}$ vs $\dfrac{2\pi}{T}$ respectively). This is because the period of the parent tangent function is half that of the parent sine/cosine function.
@@ -612,7 +612,7 @@ Finally, we can finish with the three reciprocal functions $csc⁡(x)$, $sec⁡(
 	\item Whenever you see an extrema in one of the normal functions, you will see an extrema in the reciprocal function of the opposite type (min $\to$ max, max $to$ min).
 	\item Whenever you see a vertical asymptote in one of the normal functions you will see a root (zero) in its corresponding reciprocal function.
 \end{itemize}
-\begin{figure}[!h]
+\begin{figure}[!ht]
     \centering
     \begin{tikzpicture}[xscale=0.4,yscale=0.4]
         \draw[<->] (-5,0) -- (5,0) node[right] {$x$};
@@ -729,13 +729,13 @@ This is the most basic definition for the sine and cosine functions. While it ma
 This is the most commonly “referenced” definition of the two functions (at least in high school) as it provides the ability to fluidly transition between algebraic and geometric perspectives. A major advantage is that the domain is extended to $\mathbb{R}$.
 
 \textbf{Function Analysis Definition}. Sinusoidal curves $-$ a family of curves $-$ can be defined as the only curves which follow the following two rules. $$f^2(x)+f^2(x+\phi)=c \hspace{5mm} (\phi,c\in\mathbb{R}).$$
-Let’s discuss what these two rules actually mean. The first is a generalization to an extremely important equation in trigonometry called The Pythagorean Identity. Using the diagram from the “root definition” and the Pythagorean theorem ($a^2+b^2=c^2$) it is easy to show: $$\sin^2(x)+\cos^2(x)=1.$$
+Let's discuss what these two rules actually mean. The first is a generalization to an extremely important equation in trigonometry called The Pythagorean Identity. Using the diagram from the “root definition” and the Pythagorean theorem ($a^2+b^2=c^2$) it is easy to show: $$\sin^2(x)+\cos^2(x)=1.$$
 Another important feature of the sine and cosine functions to notice is that each is simply a “shifted” version of the other. Put more precisely: $$\sin\left(x-\dfrac{\pi}{2}\right)=\cos(x).$$
 While this idea is much more easily understood with the visual aid of a graph, a quick "proof" of this once again comes from the base definition. Using the fact that the sum of angles in a triangle equals π we can say the following about a right triangle: $\theta+\phi+\dfrac{\pi}{2}=\pi \implies \theta=\dfrac{\pi}{2}-\phi$. Since the opposite side to $\theta$ is the same side as the adjacent side to $\phi$ we can prove the above equation. Allowing for any frequency curve gives us the variable $\phi$ and any amplitude $-$ the variable $c$.
 
-As for the second rule, let’s start with the term continuous. Any function is non-continuous if there is a “break” in the curve, such as in the case of a piece-wise function. Therefore, it could be said that a function is “continuous everywhere” if the graph of the function could be drawn without ever having to pick up your pencil/pen. The term “differentiable” is essentially a jargon term from Calculus which in essence means “smooth.” For example $f(x)=|x|$ is not differentiable at $x=0$ since at that point there is a "sharp turn" where the graph is not smooth.
+As for the second rule, let's start with the term continuous. Any function is non-continuous if there is a “break” in the curve, such as in the case of a piece-wise function. Therefore, it could be said that a function is “continuous everywhere” if the graph of the function could be drawn without ever having to pick up your pencil/pen. The term “differentiable” is essentially a jargon term from Calculus which in essence means “smooth.” For example $f(x)=|x|$ is not differentiable at $x=0$ since at that point there is a "sharp turn" where the graph is not smooth.
 
-So, after boiling down these statements, we could translate everything into layman’s terms: sinusoidal curves are the only curve which (1) could be drawn with a pencil without ever lifting the pencil up, (2) are smooth everywhere, and (3) follow a general form of The Pythagorean Identity.
+So, after boiling down these statements, we could translate everything into layman's terms: sinusoidal curves are the only curve which (1) could be drawn with a pencil without ever lifting the pencil up, (2) are smooth everywhere, and (3) follow a general form of The Pythagorean Identity.
 
 \begin{remark}
 As the authors of this book, we were unable to rigorously prove this definition to be consistent with all other definitions. We all have agreed, however, that this definition appears to be reasonable; we were additionally unable to come up with any counterexamples. We just want to make a disclaimer saying that while we cannot prove it, we conjecture the above to be true.
@@ -754,7 +754,7 @@ As the authors of this book, we were unable to rigorously prove this definition 
     \end{tikzpicture}
 \end{wrapfigure}
 
-Looking at the diagram to the right, if we pull the ball downward (left image) we know the ball will be pulled by the spring back to up; likewise, if the spring is pushed up (right image), the ball will want to be pushed back down. The more the spring is compressed or compressed, the more the spring will pull or push back $-$ equal and opposite in nature. In a single statement, we can say that the force the spring applies to the ball is always equal, but in opposite direction, to the ball’s position: $a(t)=-x(t)$.
+Looking at the diagram to the right, if we pull the ball downward (left image) we know the ball will be pulled by the spring back to up; likewise, if the spring is pushed up (right image), the ball will want to be pushed back down. The more the spring is compressed or compressed, the more the spring will pull or push back $-$ equal and opposite in nature. In a single statement, we can say that the force the spring applies to the ball is always equal, but in opposite direction, to the ball's position: $a(t)=-x(t)$.
 
 The standard sine curve is the solution to this equation which starts at $x=0$ and with an initial speed of $1$ unit per second in the positive $x$-direction; the cosine curve is the solution which starts at $x=1$ and with an initial speed of zero.
 
@@ -762,8 +762,8 @@ The standard sine curve is the solution to this equation which starts at $x=0$ a
 Here the independent variable here is $t$ for time, with the dependent variable being the position of the object.
 \end{remark}
 
-\textbf{Taylor Series Definition}.  This is arguably the most mathematically complex definition for the sine and cosine functions, they have to do with infinite sums. If you haven’t been introduced to the concept yet, we’ll start with something simple here. It’s an understandably strange idea in math that you could add up infinitely many things but end up with a finite result. Let’s take a look at a simple case. $$\sum_{n=0}^{\infty}{\left(\dfrac{1}{2}\right)^n}=1+\dfrac{1}{2}+\dfrac{1}{4}+\dfrac{1}{8}+\dfrac{1}{16}+\cdots=2.$$
-At each step in the sum you half your current distance from $2$. While at any finite step you’re always just short of $2$, mathematicians consider that at after summing these terms "infinitely" the total “equals” $2$. The idea behind a "Taylor Series" is to create a very specific infinite sum which equals a function. The derivation of these sums is a major topic within Calculus 2—something far beyond the goals of this book. The series for sine and cosine will be left here for those interested.
+\textbf{Taylor Series Definition}.  This is arguably the most mathematically complex definition for the sine and cosine functions, they have to do with infinite sums. If you haven't been introduced to the concept yet, we'll start with something simple here. It's an understandably strange idea in math that you could add up infinitely many things but end up with a finite result. Let's take a look at a simple case. $$\sum_{n=0}^{\infty}{\left(\dfrac{1}{2}\right)^n}=1+\dfrac{1}{2}+\dfrac{1}{4}+\dfrac{1}{8}+\dfrac{1}{16}+\cdots=2.$$
+At each step in the sum you half your current distance from $2$. While at any finite step you're always just short of $2$, mathematicians consider that at after summing these terms "infinitely" the total “equals” $2$. The idea behind a "Taylor Series" is to create a very specific infinite sum which equals a function. The derivation of these sums is a major topic within Calculus 2—something far beyond the goals of this book. The series for sine and cosine will be left here for those interested.
 \begin{align*}
     \sum_{n=0}^{\infty}{\dfrac{(-1)^n}{(2n+1)!}x^{2n+1}}&=x-\dfrac{x^3}{3!}+\dfrac{x^5}{5!}-\dfrac{x^7}{7!}+\dfrac{x^9}{9!}-\cdots=\sin(x) \\
     \sum_{n=0}^{\infty}{\dfrac{(-1)^n}{(2n)!}x^{2n}}&=1-\dfrac{x^2}{2!}+\dfrac{x^4}{4!}-\dfrac{x^6}{6!}+\dfrac{x^8}{8!}-\cdots=\cos(x)    
@@ -792,7 +792,7 @@ Give the problems a try! The challenge problems get somewhat difficult, but we b
 \item If $8\tan(\theta)=3\cos(\theta)$, where $0<\theta<\pi$, determine the value of $\sin(\theta)$. \vspace{3mm}
 \item The graph of some function $h(x)=\sin(px+q)$ is shown below for some values of $p$ and $q$. The resulting graph is shown below.
 
-\begin{figure}[!h]
+\begin{figure}[!ht]
     \centering
     \begin{tikzpicture}[xscale=0.7,yscale=0.7]
         \draw[<->] (-10,0) -- (10,0) node[right] {$x$};

@@ -124,7 +124,7 @@ $f(x)$ had a domain restriction at $x=2$.  $f^{-1}(x)$ has a domain restriction 
 \noindent \textbf{Problem . 7}
 
 (a) We know that the parent function of $f(x)$ is a parabola ("U") centered at $(0,0)$.  This is shifted one to the right.  When we graph $f(x)$ and the inverse, we also mark $y(x)=x$ to denote the line of reflection.
-\begin{figure}[!h]
+\begin{figure}[!ht]
     \centering
     \begin{tikzpicture}[xscale=0.25,yscale=0.25]
       \draw[<->] (-10,0) -- (10,0) node[right] {$x$};
@@ -137,7 +137,7 @@ $f(x)$ had a domain restriction at $x=2$.  $f^{-1}(x)$ has a domain restriction 
 
 (b) The parent function of this is $f_0(x)=\sqrt{x}$, which is the upper-half of a sideways parabola centered at $(0,0)$.  The factor of $\sqrt{2}$ creates a vertical stretch.  Factoring the two, we get $f(x)=\sqrt{2\left(x-\dfrac{1}{2}\right)}$.  This means that $f_0(x)$ is shifted $\dfrac{1}{2}$ unit to the right.  Below is the graph of $f(x)$ and its inverse.
 
-\begin{figure}[!h]
+\begin{figure}[!ht]
     \centering
     \begin{tikzpicture}[xscale=0.25,yscale=0.25]
       \draw[<->] (-10,0) -- (10,0) node[right] {$x$};
@@ -150,7 +150,7 @@ $f(x)$ had a domain restriction at $x=2$.  $f^{-1}(x)$ has a domain restriction 
 
 (c) The parent function is $f_0(x)=\dfrac{1}{x}$.  Factoring the $2$ from the denominator gives $f(x)=\dfrac{3}{2}\cdot \dfrac{1}{x+2}+1$. We see that the graph is shifted from the original center at $(0,0)$ to $(-2,1)$ and is scaled vertically by a factor of $\dfrac{3}{2}$.  Below is the graph of $f(x)$ and its inverse.
 
-\begin{figure}[!h]
+\begin{figure}[!ht]
     \centering
     \begin{tikzpicture}[xscale=0.25,yscale=0.25]
       \draw[<->] (-10,0) -- (10,0) node[right] {$x$};
@@ -174,7 +174,7 @@ Our goal is to find $g(2)$.  In terms of $a$, $b$, and $c$, this is $4a+2b-c$.  
 \noindent \textbf{Review . 10}
 
 There isn't much new explanation to solving this one.  We graph $f(x)$ as the dotted graph and then each of the transformations.
-\begin{figure}[!h]
+\begin{figure}[!ht]
     \centering
     \begin{tikzpicture}[xscale=0.8,yscale=0.8]
       \draw[<->] (-5,0) -- (5,0) node[right] {$x$};
@@ -211,7 +211,7 @@ Using the property that the domain and range switch when we take the inverse, we
 \noindent \textbf{Review . 14}
 
 To graph each section, consider the parent functions and the corresponding transformations.  The first two bounds don't have any transformations, but the third is shifted one unit upward.  Below is the graph.
-\begin{figure}[!h]
+\begin{figure}[!ht]
     \centering
     \begin{tikzpicture}[xscale=0.25,yscale=0.25]
       \draw[<->] (-10,0) -- (10,0) node[right] {$x$};
@@ -429,7 +429,7 @@ Prepare for a tough geometry solution.  Here are the definitions of the points: 
 
 On the top of the next page is a plot of the graphs shown in the question.  Note that the axes lines were omitted as we thought they would make the picture more confusing.
 
-\begin{figure}[!h]
+\begin{figure}[!ht]
     \centering
     \begin{tikzpicture}[xscale=0.5,yscale=0.5]
     \filldraw[fill=black!5] (-4,0) circle (5);
@@ -503,7 +503,7 @@ We know that a number is imaginary if $z=-\overline{z}$.  Using the same conditi
 
 All of these problems intend to demonstrate mastery of the definition of an inverse.  Remember that the inverse is a reflection of the graph over the line $y(x)=x$.  There's not much explanation to be given here; we just need to know how to determine the shape of the reflection.
 
-(a) \begin{figure}[!h]
+(a) \begin{figure}[!ht]
     \centering
     \begin{tikzpicture}[xscale=0.20,yscale=0.20]
       \draw[<->] (-10,0) -- (10,0) node[right] {$x$};
@@ -514,7 +514,7 @@ All of these problems intend to demonstrate mastery of the definition of an inve
     \end{tikzpicture}   
 \end{figure} $\Box$\vspace{3mm}
 
-(b) \begin{figure}[!h]
+(b) \begin{figure}[!ht]
     \centering
     \begin{tikzpicture}[xscale=0.20,yscale=0.20]
       \draw[<->] (-10,0) -- (10,0) node[right] {$x$};
@@ -525,7 +525,7 @@ All of these problems intend to demonstrate mastery of the definition of an inve
     \end{tikzpicture}   
 \end{figure} $\Box$\vspace{3mm}
 
-(c) \begin{figure}[!h]
+(c) \begin{figure}[!ht]
     \centering
     \begin{tikzpicture}[xscale=0.20,yscale=0.20]
       \draw[<->] (-10,0) -- (10,0) node[right] {$x$};
@@ -536,7 +536,7 @@ All of these problems intend to demonstrate mastery of the definition of an inve
     \end{tikzpicture}   
 \end{figure} $\Box$\vspace{3mm}
 \newpage
-(d) \begin{figure}[!h]
+(d) \begin{figure}[!ht]
     \centering
     \begin{tikzpicture}[xscale=0.20,yscale=0.20]
       \draw[<->] (-10,0) -- (10,0) node[right] {$x$};
@@ -559,7 +559,7 @@ Again, for this question, we just need to ensure that we graph each part in thei
     y_3(x) &: y_3(3)=4 \hspace{0.62in} y_3(\infty)=4
 \end{align*}
 Be sure to recognize whether the endpoints are inclusive or exclusive for each section.
-\begin{figure}[!h]
+\begin{figure}[!ht]
     \centering
     \begin{tikzpicture}[xscale=0.25,yscale=0.25]
       \draw[<->] (-10,0) -- (10,0) node[right] {$x$};
@@ -634,7 +634,7 @@ We can see that the first equation given almost represents slope; it's simply mi
 
 Graphing gives us the best idea to what this is.  
 
-\begin{figure}[!h]
+\begin{figure}[!ht]
     \centering
     \begin{tikzpicture}[xscale=0.50,yscale=0.50]
       \draw[<->] (-3,0) -- (3,0) node[right] {$x$};

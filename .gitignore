@@ -8,5 +8,9 @@
 *.synctex(busy)
 *.synctex
 
+# Output Files
+*.pdf
+!/pdf
+
 # Misc Files
 .DS_Store

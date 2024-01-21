@@ -102,13 +102,13 @@ We may attempt to use the "multiply by the conjugate" strategy in hopes that it 
 \section{Graphing Radical Functions}
 \noindent We touched on graphing radical functions in \hyperlink{chapter.2}{Chapter 2} when we discussed function transformations.  Radical functions were primarily used to demonstrate domain restrictions; now, we need to discuss how to graph any type.  Refer to the transformations chapter for an help on transformations.
 
-As you have gotten familiar with radical functions/expressions, and how to manipulate them, we can now move on to graphing them. In terms of what you’ll usually find for one of these graphing problems, most expressions will come in the following form: $$f(x)=A\sqrt[n]{B(x-k)}+h.$$
+As you have gotten familiar with radical functions/expressions, and how to manipulate them, we can now move on to graphing them. In terms of what you'll usually find for one of these graphing problems, most expressions will come in the following form: $$f(x)=A\sqrt[n]{B(x-k)}+h.$$
 
 Again, this formula comes down to the four most basic transformations you can make on a function: shifting the input ($x-k$), scaling the input ($Bx$), shifting the output ($+h$), and scaling the output ($A$).
 
 Before we get too carried away with transformations, we need to look at the parent radical functions.  These can be split into two groups: $\sqrt[n]{x}$ where $n$ is even, and where $n$ is odd.
 
-\begin{figure}[!h]
+\begin{figure}[!ht]
     \centering
     \hspace{\stretch{1}}
     \begin{tikzpicture}[xscale=0.25,yscale=0.25]
@@ -126,11 +126,11 @@ Before we get too carried away with transformations, we need to look at the pare
     \hspace{\stretch{1}}
 \end{figure}
 
-Notice how the domain of all even cases are restricted to $\mathbb{R}^+$, this is because finding even roots of negative numbers requires the use of complex numbers. Given this information, let’s try some examples with the basic transformations.
+Notice how the domain of all even cases are restricted to $\mathbb{R}^+$, this is because finding even roots of negative numbers requires the use of complex numbers. Given this information, let's try some examples with the basic transformations.
 
-When trying to find points with integer coordinates, there’s a useful trick we can use. Regardless of what’s actually inside the radical, imagine trying to find points for the parent function. As an example, what $x$-coordinates produce integer $y$-coordinates for the function $f(x)=\sqrt{x}$? Well, the perfect squares: $0$,$1$,$4$,$9$,$\ldots$. We can utilize this knowledge to determine when say $f(x)=\sqrt{2x-1}$ gives nice results. Simply set the inside ($2x-1$) equal to each of the perfect squares:
+When trying to find points with integer coordinates, there's a useful trick we can use. Regardless of what's actually inside the radical, imagine trying to find points for the parent function. As an example, what $x$-coordinates produce integer $y$-coordinates for the function $f(x)=\sqrt{x}$? Well, the perfect squares: $0$,$1$,$4$,$9$,$\ldots$. We can utilize this knowledge to determine when say $f(x)=\sqrt{2x-1}$ gives nice results. Simply set the inside ($2x-1$) equal to each of the perfect squares:
 
-\begin{table}[!h]
+\begin{table}[!ht]
     \centering
     \begin{tabular}{|c|c|c|}
        \toprule
@@ -157,7 +157,7 @@ This process works the same for cube roots $-$ set the inside equal to the perfe
 Sketch the function $f(x)=2\sqrt{x-1}$.
 \end{example}
 \begin{solution}
-The first thing to take into account is that we are working with an even root ($n=2$) meaning the domain will be restricted. Since we are shifting the input, the domain will shift as well to become $\mathbb{R}\geq 1$ (when in the parent function’s case it was $\mathbb{R}\geq 0$). 
+The first thing to take into account is that we are working with an even root ($n=2$) meaning the domain will be restricted. Since we are shifting the input, the domain will shift as well to become $\mathbb{R}\geq 1$ (when in the parent function's case it was $\mathbb{R}\geq 0$). 
 
 Finding the $x$-values which produce perfect squares, then calculating their $y$-coordinates gives the points $(5,4)$ and $(10,9)$. $\Box$
 \end{solution}

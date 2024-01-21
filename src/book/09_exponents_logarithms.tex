@@ -10,7 +10,7 @@
 \item Exponential and Logarithmic Expressions and Equations
 \item Graphing Exponential and Logarithmic Functions
 \end{introduction}
-\noindent We now move on to something that's almost completely new in this chapter: exponential functions.  As you may know, exponential functions are functions that have a constant base raised to a power of a function exponent.  Since we have a fairly good grasp of how to graph normal functions with all of their transformations, we won’t be looking too much into that.  We’ll just focus on key aspects of exponential functions that you need to know.  
+\noindent We now move on to something that's almost completely new in this chapter: exponential functions.  As you may know, exponential functions are functions that have a constant base raised to a power of a function exponent.  Since we have a fairly good grasp of how to graph normal functions with all of their transformations, we won't be looking too much into that.  We'll just focus on key aspects of exponential functions that you need to know.  
 
 What is the general form of an exponential function?  Exponential functions follow the form $$f(x)=a\cdot b^x; \hspace{0.10in} b>0, b\neq 1, \text{ and } a\neq 0.$$
 At first, the restrictions seem rather odd, so let's take a look at why these must hold true.
@@ -128,7 +128,7 @@ Initially, I have $P$ dollars.  After $1$ year, we have $P+Pr=P(1+r)$ dollars in
 
 This gives us our interest function.  The amount of money, $A$, that we have a certain time is defined as $A(t)=P(1+r)^t$.  However, this assumes that interest is compounded annually, but this isn't always the case.  What if interest is compounded monthly? Quarterly? Daily?  We need to account for this by introducing a new variable.  This variable, $n$, is the number of compilations per year.  This alters the formula to $$A(t)=P(1+r)^t \implies A(t)=P\left(1+\dfrac{r}{n}\right)^{nt}.$$  The derivation for this transition is complicated, so we won't include it here.  We'll just provide some justification for it.
 
-Let’s explain the $\dfrac{r}{n}$.  If an interest rate compounds monthly, that will mean that we have to divide the rate by $12$.  This would make logical sense.  If the rate applies yearly, and you divide it by $12$, you would get the monthly interest rate.  
+Let's explain the $\dfrac{r}{n}$.  If an interest rate compounds monthly, that will mean that we have to divide the rate by $12$.  This would make logical sense.  If the rate applies yearly, and you divide it by $12$, you would get the monthly interest rate.  
 
 Now to explain the $nt$ part, if a rate compounds monthly, that would mean every month it compounds.  That would mean that it should compound $12$ times within a year.  Compounding is just a fancy term for multiplying.  And this would make sense.  Within one year, a monthly interest rate should compound $12$ times, because there are $12$ months within a year.  Hence why if you were to plug it in, the base would be raised to the $12^{\text{th}}$ power.  
 
@@ -175,7 +175,7 @@ This is not how most American books denote the natural logarithm.  Most American
 
 This constant appears almost everywhere (it's almost scary).  Bacteria populations abide by it, electric circuits abide by it, glowing rocks abide by it, and more.
 
-So what happens to our equation now?  We can’t plug in infinity into the places because, that makes no sense. Well for reasons I’m going to spare (for now, just accept algebra and calculus), the new equation becomes: $$A(t)=Pe^{rt}.$$
+So what happens to our equation now?  We can't plug in infinity into the places because, that makes no sense. Well for reasons I'm going to spare (for now, just accept algebra and calculus), the new equation becomes: $$A(t)=Pe^{rt}.$$
 
 Let's look at some examples to understand how we use these equations.
 \begin{example}
@@ -210,19 +210,19 @@ Again, they're the same.  Does that mean that they'll always be the same? Not ne
 Now there's a difference!  It's not a large difference, but it's still worth something.  That means that, in the long run, we should always shoot for a continuously-compounding investment.$\Box$
 \end{solution}
 
-This also brings a point about exponential functions.  They take a while to get large.  But when they do, they will increase in value very quickly. This is also why people get into trouble with credit card debt and other debts where interest is involved. Obviously with higher interest rates, this increase happens more quickly, and as a result, when people don’t notice it, the power of mathematics makes them declare bankruptcy. 
+This also brings a point about exponential functions.  They take a while to get large.  But when they do, they will increase in value very quickly. This is also why people get into trouble with credit card debt and other debts where interest is involved. Obviously with higher interest rates, this increase happens more quickly, and as a result, when people don't notice it, the power of mathematics makes them declare bankruptcy. 
 
 Now, let's consider the opposite scenario.  What happens when something loses money?  For example, cars depreciate over time.  How does that work? Let's look at an example.
 \begin{example}
-A Honda Civic depreciates at a rate of $20$\% every year. Suppose Joel bought it at a price of $18m000$ dollars. How long until the Honda Civic loses half of its worth? Also, how much will the car be worth in $5$ years’ time (assuming a stable economy)?
+A Honda Civic depreciates at a rate of $20$\% every year. Suppose Joel bought it at a price of $18m000$ dollars. How long until the Honda Civic loses half of its worth? Also, how much will the car be worth in $5$ years' time (assuming a stable economy)?
 \end{example}
 \begin{solution}
-In this case, we are going to slightly alter the equation.  Since we are losing money, we change the value of $r$ to be negative.  This makes the equation $$A(t)=P(1-r)^t.$$ Car’s don’t compound on their depreciation. So everything here is annual, so $n=1$. Otherwise it would be really sad when you see how little your car is worth at the end of two years.
+In this case, we are going to slightly alter the equation.  Since we are losing money, we change the value of $r$ to be negative.  This makes the equation $$A(t)=P(1-r)^t.$$ Car's don't compound on their depreciation. So everything here is annual, so $n=1$. Otherwise it would be really sad when you see how little your car is worth at the end of two years.
 
 Let's answer the second part first, since it's easier.  $$A(5)=18000(1-0.2)^5=5898.24.$$  Now, let's answer the first part. $$90000=18000(1-0.2)^t \implies \dfrac{1}{2}=0.8^t \implies t=\log_{0.5}(0.8) \approx 3.11.$$ $\Box$
 \end{solution}
 
-Now notice how sad that is. In less than 5 years, your car will already have lost half of its value. Moral of the story: Don’t buy a car and intend on selling it. It’s not worth it. 
+Now notice how sad that is. In less than 5 years, your car will already have lost half of its value. Moral of the story: Don't buy a car and intend on selling it. It's not worth it. 
 
 We now move on to radioactive decay.  This follows the exact same process and even uses the same formula.  Thus, we won't do any explaining here; we'll just move on to the examples.
 \begin{example}
@@ -239,19 +239,19 @@ Since this is a naturally-occurring event, we use the natural base of $e$.  That
 $$6=23e^{-0.049t} \implies -\dfrac{1}{0.049}\log\left(\dfrac{6}{23}\right)=t\approx 27.42.$$ $\Box$
 \end{solution}
 
-And with that we conclude our discussion of radioactivity. Why? Because there’s not much to it. 
+And with that we conclude our discussion of radioactivity. Why? Because there's not much to it. 
 
-Now for the final topic of importance: Population growth. Now guess what. Because we’re dealing with living organisms, they also compound continuously. Let’s do an example:
+Now for the final topic of importance: Population growth. Now guess what. Because we're dealing with living organisms, they also compound continuously. Let's do an example:
 \begin{example}
-I have a population that doubles every 6 days. I initially start off with 1,000 people. How many people will there be in 12 years? Also, how long until the population triples? (If you can’t tell, this looks very similar to the radioactive decay problem, just growth.)
+I have a population that doubles every 6 days. I initially start off with 1,000 people. How many people will there be in 12 years? Also, how long until the population triples? (If you can't tell, this looks very similar to the radioactive decay problem, just growth.)
 \end{example}
 \begin{solution}
-As always, we begin the problem with the equation $A(t)=Pe^{rt}$.  First, we need to solve for the actual rate. $$2=1e^{6r} \implies r=\dfrac{1}{6}\log(2)\approx 0.116.$$  Now that we have the rate, let’s find how many people there will be in $12$ years. In order to do this, we must convert the years into days. $$A(10)=1000e^{0.116 \cdot 12 \cdot 365}=4.533 \times 10^{23}.$$ $\Box$
+As always, we begin the problem with the equation $A(t)=Pe^{rt}$.  First, we need to solve for the actual rate. $$2=1e^{6r} \implies r=\dfrac{1}{6}\log(2)\approx 0.116.$$  Now that we have the rate, let's find how many people there will be in $12$ years. In order to do this, we must convert the years into days. $$A(10)=1000e^{0.116 \cdot 12 \cdot 365}=4.533 \times 10^{23}.$$ $\Box$
 \end{solution}
 
-Now, this doesn't make complete sense.  While we don't have any errors in our math, we know that we could never fit that many people on the Earth.  Earth has a designated "carrying capacity", where we couldn't fit more people (nor would have enough resources).  We define a new equation, the \textit{logistic equation}, that helps to adjust for this carrying capacity. $$A(t)=\dfrac{K}{1+\alpha e^{-rt}}.$$  In this case, $K$ is the carrying capacity and $\alpha$ is an arbitrary constant.  I’m not going to delve into the technicalities of how this formula works or why (because you don’t know calculus).
+Now, this doesn't make complete sense.  While we don't have any errors in our math, we know that we could never fit that many people on the Earth.  Earth has a designated "carrying capacity", where we couldn't fit more people (nor would have enough resources).  We define a new equation, the \textit{logistic equation}, that helps to adjust for this carrying capacity. $$A(t)=\dfrac{K}{1+\alpha e^{-rt}}.$$  In this case, $K$ is the carrying capacity and $\alpha$ is an arbitrary constant.  I'm not going to delve into the technicalities of how this formula works or why (because you don't know calculus).
 
-And with that we conclude our discussion of exponential applications. You may be wondering why there isn't a logistic growth question here. Well that’s because these problems essentially utilize the same method of solving. So, there’s no purpose if we’re kicking a dead horse. Now for the next session we’re going to solve some simple logarithmic/exponential equations. 
+And with that we conclude our discussion of exponential applications. You may be wondering why there isn't a logistic growth question here. Well that's because these problems essentially utilize the same method of solving. So, there's no purpose if we're kicking a dead horse. Now for the next session we're going to solve some simple logarithmic/exponential equations. 
 \section{Exponential and Logarithmic Expressions and Equations}
 \noindent This section is going to be very example-heavy, not many words, and a lot of math.  Let's begin.
 \begin{example}
@@ -370,7 +370,7 @@ Alright, we have two noticeable changes here. First of all, we note that there i
 
 This means that the domain is $x>2$ or $(2,\infty)$ and the range is still $\mathbb{R}$. $\Box$
 \end{solution}
-\begin{figure}[!h]
+\begin{figure}[!ht]
     \centering
     \begin{tikzpicture}[xscale=0.20,yscale=0.20]
       \draw[<->] (-10,0) -- (10,0) node[right] {$x$};
@@ -401,7 +401,7 @@ We notice that there is a flip about the $y$-axis, a vertical shift by $7$ units
 
 The domain is now $(-\infty,4)$ and the range is still $\mathbb{R}$. $\Box$
 \end{solution}
-\begin{figure}[!h]
+\begin{figure}[!ht]
     \centering
     \begin{tikzpicture}[xscale=0.20,yscale=0.20]
       \draw[<->] (-10,0) -- (10,0) node[right] {$x$};
@@ -420,8 +420,8 @@ The domain is now $(-\infty,4)$ and the range is still $\mathbb{R}$. $\Box$
 Graph $f(x)=2-3\log(-x+4)$.
 \end{example}
 \begin{solution}
-Before we do this, we are going to rewrite this because it’s somewhat weird the way it is now. $$f(x)=-3\log(-x+4)+2.$$
-Alright now let’s note the shifts. We have a reflection about the $y$-axis, a reflection about the $x$-axis, a vertical shift up by $2$ units, a horizontal shift to the right by $4$ units, and a vertical stretch by $3$ units. 
+Before we do this, we are going to rewrite this because it's somewhat weird the way it is now. $$f(x)=-3\log(-x+4)+2.$$
+Alright now let's note the shifts. We have a reflection about the $y$-axis, a reflection about the $x$-axis, a vertical shift up by $2$ units, a horizontal shift to the right by $4$ units, and a vertical stretch by $3$ units. 
 
 The domain is $(-\infty,4)$ and the range is $\mathbb{R}$. $\Box$
 \end{solution}
@@ -429,12 +429,12 @@ The domain is $(-\infty,4)$ and the range is $\mathbb{R}$. $\Box$
 Graph $g(x)=4-3\log(-2x-6)$.
 \end{example}
 \begin{solution}
-Let’s rewrite this once again so we can keep track of the shifts. $$g(x)=-3\log(-2x-6)+4.$$
+Let's rewrite this once again so we can keep track of the shifts. $$g(x)=-3\log(-2x-6)+4.$$
 There is a reflection about the x-axis, a reflection about the $y$-axis, a vertical shift up by $4$ units, a horizontal shift left by $3$ units, a vertical stretch by a factor of $3$, and a horizontal compression by a factor of $\dfrac{1}{2}$. 
 
 The domain is $(-\infty,-3)$ and the range is $\mathbb{R}$. $\Box$
 \end{solution}
-\begin{figure}[!h]
+\begin{figure}[!ht]
     \centering
     \begin{tikzpicture}[xscale=0.20,yscale=0.20]
       \draw[<->] (-10,0) -- (10,0) node[right] {$x$};
@@ -466,7 +466,7 @@ We have a horizontal shift to the right $6$ units, a vertical shift up $3$ units
 
 The domain is $\mathbb{R}$ and the range is $(-\infty,3)$. $\Box$
 \end{solution}
-\begin{figure}[!h]
+\begin{figure}[!ht]
     \centering
     \begin{tikzpicture}[xscale=0.20,yscale=0.20]
       \draw[<->] (-10,0) -- (10,0) node[right] {$x$};
@@ -498,7 +498,7 @@ We have vertical shift up by $12$ units, a horizontal shift right by $1$ unit, a
 
 The domain is $\mathbb{R}$ and the range is $(-\infty,12)$. $\Box$
 \end{solution}
-\begin{figure}[!h]
+\begin{figure}[!ht]
     \centering
     \begin{tikzpicture}[xscale=0.15,yscale=0.15]
       \draw[<->] (-15,0) -- (15,0) node[right] {$x$};
@@ -515,7 +515,7 @@ The domain is $\mathbb{R}$ and the range is $(-\infty,12)$. $\Box$
 \end{figure}
 On the idea of domain and range, noting how the shifts affected the domain and range of logarithmic and exponential functions brings out an idea regarding infinity.  Note that, no matter how much we shift the function horizontally for an exponential function, or vertically for a logarithmic function, the domain of the exponential function, nor the range of the logarithmic function, never changes.  This is because adding a constant to infinity doesn't change the value of infinity.  This is an idea that's pretty important in Calculus.
 
-We’re done with graphing exponential and logarithmic functions, which finishes the chapter. Here are some take-away points: \begin{itemize}
+We're done with graphing exponential and logarithmic functions, which finishes the chapter. Here are some take-away points: \begin{itemize}
     \item The domains of exponential functions never change unless there is a restriction within the exponent (i.e. $\dfrac{1}{x}$).
     \item The ranges of exponential functions are only affected by reflection about the $y$-axis.
     \item The ranges of logarithmic functions never change unless there is a restriction within the logarithm (i.e. $\dfrac{1}{x}$).
@@ -524,7 +524,7 @@ We’re done with graphing exponential and logarithmic functions, which finishes
 These problems are going to be difficult.  Exponents and Logarithms bring about some of the harder problems in Algebra.  Don't fret; give them a try!
 \begin{reviewset}
 \item Solve $256^x+8^x=3$ for $x$.\vspace{2mm}
-\item Suppose the population of Wellington is $3$ million at the moment. Every $10$ years, the population of the city doubles. Suppose Jupiter has $1.5$ million people at the moment. Every $5$ years it doubles. Which population will be greater in $112$ years’ time? By how much? \vspace{2mm}
+\item Suppose the population of Wellington is $3$ million at the moment. Every $10$ years, the population of the city doubles. Suppose Jupiter has $1.5$ million people at the moment. Every $5$ years it doubles. Which population will be greater in $112$ years' time? By how much? \vspace{2mm}
 \item Solve $\log(x^2-3)=12\log_{e^2}(x-5)$ for $x$.\vspace{2mm}
 \item Find all such $x$ that satisfy $2^{(x-2)^2(x-4)}=1024^x$.\vspace{2mm}
 \item Graph the following functions: \newline 

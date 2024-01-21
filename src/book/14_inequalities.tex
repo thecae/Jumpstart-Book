@@ -82,7 +82,7 @@ Find all $x$ such that $x^3-7x+6>0$.
 Similar to the quadratic problems discusses previously, we need to find the roots of the polynomial.  We've done this before in \hyperlink{chapter.6}{Chapter 6} when we discussed higher-order polynomials.  Using synthetic division, we find the roots.
 
 Testing $x=1$ provides us a quick root.  Using synthetic division, we find that $$x^3-7x+6=(x-1)(x^2+x-6).$$  Factoring the quadratic, we get that $$x^3-7x+6=(x-1)(x+3)(x-2).$$  Plotting this on a number line, we get
-\begin{figure}[!h]
+\begin{figure}[!ht]
     \centering
     \begin{tikzpicture}
 \draw[latex-latex] (-3.5,0) -- (3.5,0) ;
@@ -100,7 +100,7 @@ Testing $x=1$ provides us a quick root.  Using synthetic division, we find that 
 We now need to check the areas around these points.  Checking $x=3$ (or an equivalent large number), all the factors are positive, so this region is valid.  Checking $x=1.5$, we get that the $(x-2)$ factor is negative, so the region is not valid.  Checking $x=0$, we get a positive number (it's easiest to check the un-factored form).  Checking $x=-4$ (or an equivalent small number), all factors are negative, so this region is not valid.
 
 The filled-in number line is shown below.
-\begin{figure}[!h]
+\begin{figure}[!ht]
     \centering
     \begin{tikzpicture}
 \draw[latex-latex] (-3.5,0) -- (3.5,0) ;
@@ -125,7 +125,7 @@ Find all $x$ such that $x^3+2x^2-4x-8\leq 0$.
 \end{example}
 \begin{solution}
 Hopefully you noticed to factor by grouping in this case.  Factoring this gets $$x^2(x+2)-4(x+2)=(x+2)(x^2-4)=(x+2)^2(x-2).$$  Drawing the number line, we get
-\begin{figure}[!h]
+\begin{figure}[!ht]
     \centering
     \begin{tikzpicture}
 \draw[latex-latex] (-3.5,0) -- (3.5,0) ;
@@ -142,7 +142,7 @@ Hopefully you noticed to factor by grouping in this case.  Factoring this gets $
 When we check values of $x$, note that $(x+2)^2$ is always positive.  This means we only have to check the $(x-2)$ factor.  If we check the rightmost interval ($x=3$ works), we get a positive value, which is invalid.  Checking $x=0$ (the middle interval), this is a negative value, which is valid.  Checking $x=-3$ (the leftmost interval), we get a negative value.
 
 The filled in number line is shown below.
-\begin{figure}[!h]
+\begin{figure}[!ht]
     \centering
     \begin{tikzpicture}
 \draw[latex-latex] (-3.5,0) -- (3.5,0) ;
@@ -173,7 +173,7 @@ Find all $x$ such that $x^4-4x^3-3x^2+14x-8>0$.
 \end{example}
 \begin{solution}
 We need to factor this, and it might take a few tries to do.  Quickly checking $x=1$, we realize that it works.  This gives us $$x^4-4x^3-3x^2+14x-8=(x-1)(x^3-3x^2-6x+8).$$ We check $x=1$ again and it works again!  This gives us $$x^4-4x^3-3x^2+14x-8=(x-1)^2(x^2-2x-8).$$ Factoring this, we get $$x^4-4x^3-3x^2+14x-8=(x-1)^2(x+2)(x-4).$$  Now, we can use Theorem 15.1 to our advantage.  The number line shows us 
-\begin{figure}[!h]
+\begin{figure}[!ht]
     \centering
     \begin{tikzpicture}
 \draw[latex-latex] (-5.5,0) -- (5.5,0) ;
@@ -193,7 +193,7 @@ We only need to check one value, and in this case it's easy to check a very high
 $x=4$ has an odd multiplicity, so the sign changes to negative.  Then, the sign doesn't change around $x=1$.  Finally, it changes around $x=-2$.  
 
 The filled-in number line looks like this:
-\begin{figure}[!h]
+\begin{figure}[!ht]
     \centering
     \begin{tikzpicture}
 \draw[latex-latex] (-5.5,0) -- (5.5,0) ;
@@ -228,7 +228,7 @@ First, we need to factor the fraction to find the roots of both polynomials. The
 This leaves us with $x^3-15x^2+74x-120=(x-5)(x^2-10x+24)$.  Factoring the quadratic gives us $x^3-15x^2+74x-120=(x-5)(x-4)(x-6)$.  Let's rewrite the original problem in factored form.  $$\dfrac{x^3-15x^2+74x-120}{x^2-8x+12}\leq 0 \implies \dfrac{(x-4)(x-5)(x-6)}{(x-2)(x-6)}\leq 0.$$ We notice that there's a removable discontinuity at $x=6$ and a non-removable discontinuity at $x=2$.  Although they are different, we need to account for both of them. We make this different since it will help with an advanced trick demonstrated at the end of the section. 
 
 Let's make a number line with the roots and the discontinuities.
-\begin{figure}[!h]
+\begin{figure}[!ht]
     \centering
     \begin{tikzpicture}
 \draw[latex-latex] (-6.5,0) -- (6.5,0) ;
@@ -249,7 +249,7 @@ Now, we can check the intervals. For these, it is easiest to look at the signs f
 At a large $x$, all terms are positive.  This leads to a positive value, which is not less than zero.  At $x=5.5$, the two negative terms are both $(x-6)$ terms, which cancel each other.  This still leads to a positive value, which is not less than zero.  At $x=4.5$, $(x-5)$ is also negative.  This leads to a negative value, which is less than zero.  At $x=3$, $(x-4)$ is now negative, cancelling the $(x-5)$ term.  The value is now positive, which is not less than zero.  At $x=0$, all terms are negative, leading to a negative product.  This is less than zero.
 
 Plotting the filled-in number line, we get 
-\begin{figure}[!h]
+\begin{figure}[!ht]
     \centering
     \begin{tikzpicture}
 \draw[latex-latex] (-6.5,0) -- (6.5,0) ;
@@ -292,7 +292,7 @@ Now, when is $x$ valid? It's when the numerator of the first fraction equals zer
 
 Let's check to see if any are removable.  We flip the second fraction and multiply to get $$\dfrac{(x-1)(x-4)(x-5)}{(x-3)^2}\cdot\dfrac{(x-1)(x-5)(x-6)}{x(x-6)}\geq 0.$$ The only term that cancels is $x=6$, meaning it's the only removable discontinuity. Let's get to plotting.
 
-\begin{figure}[!h]
+\begin{figure}[!ht]
     \centering
     \begin{tikzpicture}
 \draw[latex-latex] (-6.5,0) -- (6.5,0) ;
@@ -316,7 +316,7 @@ At large $x$, all factors are positive, which leads to a positive product.  At $
 
 Below is the filled-in number line containing this data.
 
-\begin{figure}[!h]
+\begin{figure}[!ht]
     \centering
     \begin{tikzpicture}
 \draw[latex-latex] (-6.5,0) -- (6.5,0) ;
@@ -383,7 +383,7 @@ Finding the roots, we get $x=-4,4$.  These both conflict with the discontinuitie
 
 Let's plot the number line.
 
-\begin{figure}[!h]
+\begin{figure}[!ht]
     \centering
     \begin{tikzpicture}
 \draw[latex-latex] (-6.5,0) -- (6.5,0) ;
@@ -406,7 +406,7 @@ $x=4$ is a squared term, meaning that we don't change sign, meaning it's still p
 
 Let's take a look at the filled-in number line.
 
-\begin{figure}[!h]
+\begin{figure}[!ht]
     \centering
     \begin{tikzpicture}
 \draw[latex-latex] (-6.5,0) -- (6.5,0) ;
@@ -463,7 +463,7 @@ Cubing both sides gives us $2x^2+3x-26=(x-2)^3$.  Expand $(x-2)^3$ using a metho
 
 Drawing the number line gives us:
 
-\begin{figure}[!h]
+\begin{figure}[!ht]
     \centering
     \begin{tikzpicture}
 \draw[latex-latex] (-6.5,0) -- (6.5,0) ;
@@ -482,7 +482,7 @@ We can check the chunks using the polynomial rather than the radical since they 
 
 Applying this method fills in the number line as follows:
 
-\begin{figure}[!h]
+\begin{figure}[!ht]
     \centering
     \begin{tikzpicture}
 \draw[latex-latex] (-6.5,0) -- (6.5,0) ;
@@ -532,7 +532,7 @@ Find the regions of all values of $x$ that satisfy $\log_2\left(\dfrac{(x-2)(x-4
 \begin{solution}
 We again need to note domain restrictions here.  We see that $\dfrac{(x-2)(x-4)}{(x-3)(x-5)^2}> 0$, which is solvable using methods in the rational functions section.  We see the roots for the function are $x=2,4$ and the discontinuities are $x=3,5$.  Plotting the number line, we get 
 
-\begin{figure}[!h]
+\begin{figure}[!ht]
     \centering
     \begin{tikzpicture}
 \draw[latex-latex] (-6.5,0) -- (6.5,0) ;
@@ -549,7 +549,7 @@ We again need to note domain restrictions here.  We see that $\dfrac{(x-2)(x-4)}
 \end{figure}
 \noindent Using the multiplicity rule, we can fill in the number line as follows:
 
-\begin{figure}[!h]
+\begin{figure}[!ht]
     \centering
     \begin{tikzpicture}
 \draw[latex-latex] (-6.5,0) -- (6.5,0) ;
@@ -571,7 +571,7 @@ This shows us that the interval of validity here is $(2,3)\cup(4,5)\cup(5,\infty
 
 Raising both sides to the power of $2$, we get $$\dfrac{(x-2)(x-4)}{(x-3)(x-5)^2}\geq 1 \implies (x-2)(x-4)>(x-3)(x-5)^2.$$ Expanding the polynomials and rearranging gives us $$x^2-6x+8\geq x^3-13x^2+55x-75 \implies x^3-14x^2+61x-83=0.$$ Here, we use the root-finder to find the roots as approximately $x=2.801, 4.287, 6.912$. We draw a number line for this data and get
 
-\begin{figure}[!h]
+\begin{figure}[!ht]
     \centering
     \begin{tikzpicture}
 \draw[latex-latex] (-0.5,0) -- (10.5,0) ;
@@ -588,7 +588,7 @@ Raising both sides to the power of $2$, we get $$\dfrac{(x-2)(x-4)}{(x-3)(x-5)^2
 
 \noindent Using the multiplicity rule again, we can fill in the intervals as follows:
 
-\begin{figure}[!h]
+\begin{figure}[!ht]
     \centering
     \begin{tikzpicture}
 \draw[latex-latex] (-0.5,0) -- (10.5,0) ;
@@ -624,7 +624,7 @@ These are about as hard as these problems are going to get.  All the practice pr
 $$\dfrac{8}{7},\hspace{8mm}\dfrac{9}{7},\hspace{8mm}\dfrac{10}{7},\hspace{8mm}\dfrac{11}{7},\hspace{8mm}\dfrac{12}{7}.$$ \vspace{3mm}
 \item Let $x>0$ and $y\leq c$ where $c$ is a constant.  Prove that $\dfrac{x+y}{1+\dfrac{xy}{c^2}}\leq c$. \vspace{3mm}
 \item Below is the number line indicating a solution for some polynomial function $f(x)$.  Using this, determine the original function.
-\begin{figure}[!h]
+\begin{figure}[!ht]
     \centering
     \begin{tikzpicture}
 \draw[latex-latex] (-6.5,0) -- (6.5,0) ;
@@ -651,7 +651,7 @@ $$\dfrac{8}{7},\hspace{8mm}\dfrac{9}{7},\hspace{8mm}\dfrac{10}{7},\hspace{8mm}\d
 \item If $x,y>0$, $\log_y(x)+\log_x(y)=\dfrac{10}{3}$, and $xy=144$, find the value of $\dfrac{x+y}{2}$. \vspace{2mm}
 \item Prove that $\dfrac{x^2+2}{\sqrt{x^2+1}}\geq 2$. \vspace{3mm}
 \item Below is the number line indicating a solution for some rational function $f(x)$.  Given that no discontinuities are removable, determine the original function.
-\begin{figure}[!h]
+\begin{figure}[!ht]
     \centering
     \begin{tikzpicture}
 \draw[latex-latex] (-6.5,0) -- (6.5,0) ;
