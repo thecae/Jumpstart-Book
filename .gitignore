@@ -1,0 +1,11 @@
+# LaTeX Build Files
+*.aux
+*.out
+*.pre
+*.log
+*.toc
+*.synctex.gz
+
+# Misc Files
+.DS_Store
+.vscode
