@@ -1,0 +1,555 @@
+\documentclass[../book.tex]{subfiles}
+\graphicspath{{\subfix{../images/}}}
+
+\begin{document}
+\chapter{Exponential and Logarithmic Functions}
+\begin{introduction}[Contents]
+\item Exponential Functions
+\item Logarithms and Logarithmic Functions
+\item Applications of Exponential and Logarithmic Functions
+\item Exponential and Logarithmic Expressions and Equations
+\item Graphing Exponential and Logarithmic Functions
+\end{introduction}
+\noindent We now move on to something that's almost completely new in this chapter: exponential functions.  As you may know, exponential functions are functions that have a constant base raised to a power of a function exponent.  Since we have a fairly good grasp of how to graph normal functions with all of their transformations, we won’t be looking too much into that.  We’ll just focus on key aspects of exponential functions that you need to know.  
+
+What is the general form of an exponential function?  Exponential functions follow the form $$f(x)=a\cdot b^x; \hspace{0.10in} b>0, b\neq 1, \text{ and } a\neq 0.$$
+At first, the restrictions seem rather odd, so let's take a look at why these must hold true.
+
+The restriction on $a$ is pretty simple; if $a=0$, then $f(x)=0$.  This defeats the purpose of an exponential function, so we make this restriction to allow for the graph to be exponential.
+
+The restriction that $b\neq 0$ follows the same logic as $a\neq 0$.  It defeats the purpose.  But why can't $b<0$?  This would affect the domain of the function.  For any negative value of $b$, $x$ can no longer be an even integer.  Since we can't take the second, fourth, sixth, etc.  roots of a negative number, that cuts the domain.  To keep the domain at $x\in\mathbb{R}$, we add this restriction.  Finally, if $b=1$, then the function becomes a constant function of $f(x)=a$, again defeating the purpose of an exponential function.
+
+\section{Exponential Functions}
+\begin{wrapfigure}{r}{4cm}
+    \begin{tikzpicture}[xscale=0.20,yscale=0.20]
+      \draw[<->] (-10,0) -- (10,0) node[right] {$x$};
+      \draw[<->] (0,-10) -- (0,10) node[above] {$y(x)$};
+      \draw[scale=1,domain=-10:3.3,smooth,variable=\x,blue] plot ({\x},{2^\x}) node[above right] {$f(x)=2^x$};
+    \end{tikzpicture}
+\end{wrapfigure}
+
+\noindent As we've done with all previous chapters, we want to know what one looks like.  This shape is somewhat similar to ones we already know, but it looks different.  It looks most similar to the square root function after being rotated $180^{\circ}$.  
+
+Rather than simply giving the graph this time, let's attempt to derive the graph via plotting points and the conceptual idea of an exponential function.  We know that, for an increasing value of $x$, $f(x)$ is going to get $b$ times bigger.  This means that it is going to increase at an increasing rate over time (make sure you understand what this means).
+
+When $x=0$, we know that $f(0)=a$.  This means that we can remember that $a$ is the $y$-intercept.  When $x<0$, $f(x)$ is simply a fraction with the base getting exponentially bigger.  The graph is shown above on the previous page.
+
+Note that the shape of this graph approximates a $J$-shape.  In other fields, such as Biology, Environmental Science, and Economics, the curve is called a $J$-Curve.
+
+Let's note the important aspects of the function.  \begin{itemize}
+    \item It has a horizontal asymptote: $y = 0$.  This will apply to every exponential function unless you shift it vertically.
+    \item It has a $y$-intercept of $(0,a)$.
+\end{itemize}
+
+\noindent Up to this point, what we've discussed only applies to $b>1$.  What happens if $0<b<1$?  That means that we have some fraction raised to a power, meaning that as $x$ gets larger, $f(x)$ gets closer and closer to $y=0$.  This is a phenomenon we call \textit{exponential decay}.  To the right, we have a graph that demonstrates exponential decay.  
+
+You may be wondering why the graph flips.  The graph to the right, $g(x)=\left(\dfrac{1}{2}\right)^x$, is a perfect reflection of $f(x)=2^x$ over the $x$-axis.  Why is that?  We didn't change the value of $x$ at all!  This idea has to do with the definition of a \textit{negative exponent}.  Let's look at the following theorem.
+\begin{definition}{The Negative Exponent}{negex}
+Given some real base $b$ such that $b>0$ and $b\neq 1$, we define the negative exponent as $$b^{-x}=\left(\dfrac{1}{b}\right)^x=\dfrac{1}{b^x}.$$
+\end{definition}
+Re-writing $g(x)$ in this fashion, we get that $g(x)=2^{-x}$.  By definition, this is a reflection over the $y$-axis.
+
+So what else is there to this?  There seemingly isn't that much to cover in this chapter, but we have a lot to discuss.  There are a lot of applications.  There's nothing else to do in this section, but to introduce the next topic briefly, let's ask the following question: does the exponential function have an inverse?
+
+The next section will show that it indeed does; it's called the \textit{logarithmic} function.  Consider the equation $2^x=55$.  Without guessing, we have no way to solve it at the moment.  These are where logarithms come to help us.
+\section{Logarithms and Logarithmic Functions}
+\noindent Before we introduce the concept of a logarithm, we have to review some of the properties of exponents.  We will have properties of logarithms that will be very similar to the properties of exponents; we will explain why soon.
+
+Here are the properties of exponents that we need to know.
+\begin{theorem}{Properties of Exponents}{propex}
+Given a real base $b$ such that $b>0$ and $b>1$, define $x$ and $y$ to be real exponents on $\mathbb{R}$.  The following properties occur: \begin{enumerate}
+    \item When we multiply exponents with the same base, they add: $b^x \cdot b^y=b^{x+y}$.
+    \item When we divide exponents with the same base, they subtract: $\dfrac{b^x}{b^y}=b^{x-y}$.
+    \item When we raise an exponent to a power, they multiply: $\left(b^x\right)^y=b^{xy}$.
+\end{enumerate}
+\end{theorem}
+\begin{note}
+There is a distinction that needs to be made on the last property.  We will make a strict distinction between $b^{\left(x^y\right)}$ and $\left(b^x\right)^y$.  Although they are equal if $b$, $x$, and $y$ are all constants, we will not write the first as $b^{xy}$.
+\end{note}
+
+Whenever we want to solve an equation, we have to take the inverse.  For example, to solve $x^2=4$, we take the square root.  To solve $x+4=-2$, we subtract.  So what's the inverse of the exponential function? It's the logarithm.
+
+A logarithm is used to answer the question: \textit{what number do I raise the base to obtain a value}?  An exponent is used to answer the question: \textit{What number do I obtain when I raise the base to a certain value}? A radical is used to answer the question: \textit{What base raised to a given power gives the value}?  These three functions form a type of triangle that connects the equation $b^x=y$.
+
+Let's take a look at the general form of a logarithm.  It looks like $$\log_b(y)=x.$$  The value of $b$ is the base, $y$ is the argument, and $x$ is the value produced.  This function literally means: to what value do I raise $b$ to get $x$?
+
+Let's go back to the question posed at the end of last section.  Our goal is to solve $$2^x=55.$$  To solve this function, we need to take the inverse (the logarithm) of both sides.  How do we do that?  What does that even mean?  Why are there so many unanswered questions?
+
+Let's consider this one step at a time.  The process isn't hard.
+
+In the general form of the logarithm, we used the same value of $b$ for the base.  That's not a coincidence.  The base of the logarithm \textbf{must} match the base of the exponent.  In this case, $b=2$.  We want to solve for $x$, so that must go on the outside.  That leaves $55$ for the argument.  This means that we've converted the equation to $$2^x=55 \implies \log_2(55)=x.$$ But what does that do for us?  We still don't know how to solve that!  We'll discuss how to solve it very soon (it's just using a Calculator).
+
+\begin{remark}
+Note how we converted from exponential to logarithmic.  Converting back is super easy; just perform the opposite maneuver.  All we did is switch the exponent and argument and keep the base.  Be sure you can do this with ease before we move on, as it only gets harder from here!
+\end{remark}
+
+As usual, let's take a look at at a graph of a logarithm.  This is super easy to figure out, since it's simply the inverse of an exponential graph (we learned how to do this in \hyperlink{chapter.2}{Chapter 2}.
+
+\begin{wrapfigure}{r}{4cm}
+    \begin{tikzpicture}[xscale=0.20,yscale=0.20]
+      \draw[<->] (-10,0) -- (10,0) node[right] {$x$};
+      \draw[<->] (0,-10) -- (0,10) node[above] {$y(x)$};
+      \draw[scale=1,domain=-10:3.32,smooth,variable=\y,blue] plot ({2^\y},{\y}) node[above] {$f(x)=\log_{2}(x)$};
+    \end{tikzpicture}
+\end{wrapfigure}
+
+Let's take a look at some of the important features of the graph.  Although it's difficult to tell, there is an asymptote at $x=0$.  This could move based on horizontal translations.  There is an $x$-intercept at $x=1$.  This is true for any base $b$, but it could change based on vertical and horizontal translations.
+
+Look how this graph looks in comparison to the inverse function, $y(x)=2^x$.  This graph was shown in the previous section.  Try to put them together on the same plot along with the reflection line.  This proves that the functions are indeed inverses.
+
+Something else that you might've noticed is that we never write the logarithm as $\log_x(a)=y$.  Why is this?  Why can't there be a variable base?  The short answer is that it can, but it's not helpful.  Some problems will ask you to solve for that variable base.  Remember the definitions that we covered at the beginning of the section.  The final definition, the definition of a radical, had the base as the variable of interest.  That means that we can solve for the base using quadratics, cubics, etc.  $$\log_x(a)=y \implies x^y=a.$$  As we can see, we can solve for $x$ using polynomial methods.
+
+Now, we can take a look at the properties of logarithms.  
+\begin{theorem}{Properties of Logarithms}{proplog}
+Given a real bases $a$ and $b$ such that $0<b<1$ and $b>1$, and $0<a<1$ and $b<1$, we define $x$ and $y$ as real numbers or functions.  The following properties must be true: \begin{itemize}
+    \item When we add logarithms with the same base, we multiply the arguments: $\log_b(x)+\log_b(y)=\log_b(xy)$.
+    \item When we subtract logarithms with the same base, we subtract the arguments: $\log_b(x)-\log_b(y)=\log_b\left(\dfrac{x}{y}\right)$.
+    \item When there is an exponent inside a logarithm, we can bring it to the front: $\log_b(x^y)=y\cdot \log_b(x)$.
+    \item To change the base of a logarithm: $\log_b(x)=\dfrac{\log_a(x)}{\log_a(b)}$.
+\end{itemize}
+\end{theorem}
+\begin{remark}
+We can expand on the third property to allow $y$ to be it's own logarithmic function of a different base.  This means that $\log_a(y)\cdot \log_b(x)=\log_b\left(x^{\log_a(y)}\right)$.
+\end{remark}
+
+Getting back to evaluating $\log_2(55)$, we need to figure out a way to evaluate this.  Most calculators only have a $\log_{10}()$ function and the natural $\log()$ function.  We'll speak of the $\log()$ function in the next section.  If we change the base to something the calculator understands, we can plug it in.  $$\log_2(55)=\dfrac{\log_{10}(55)}{\log_{10}(2)}\approx 5.78.$$
+
+With this, we conclude our discussion of logarithms.  Note that we didn't cover transformations in this section; we want you to figure out the transformations for this function and how they work.  In the next sections, we'll take a look at the natural logarithm, $\log(x)$, and the applications of logarithms.  
+\section{Applications of Exponential and Logarithmic Functions}
+\noindent In this section, we will deal with the three common applications of exponents and logarithms.  We will discuss interest in finance, population growth and decay, and radioactive decay.  We begin with interest first.
+
+What does it mean for a company to charge interest?  When you take a loan from a company, the company takes a percentage of your monthly payment.  The less money you've borrowed, the less money that they charge.  In another scenario, if you invest money into a hedge fund, this money also accrues interest.  Money, given by the banking company as a percentage of the balance, adds to your account in certain intervals.
+
+Let's put this into math terms to better understand what's going on here.
+
+You begin with a \textit{Principal} amount, denoted as $P$.  This is the initial investment.  Then, there is an annual interest rate, denoted as $r$.  
+
+Initially, I have $P$ dollars.  After $1$ year, we have $P+Pr=P(1+r)$ dollars in the bank.  After 2 years, we have $P+Pr+(P+Pr)r=P^2+2Pr+Pr^2=P(1+r)^2.$  You see where this is going; after $t$ years, we have $P(1+r)^t$ dollars.
+
+This gives us our interest function.  The amount of money, $A$, that we have a certain time is defined as $A(t)=P(1+r)^t$.  However, this assumes that interest is compounded annually, but this isn't always the case.  What if interest is compounded monthly? Quarterly? Daily?  We need to account for this by introducing a new variable.  This variable, $n$, is the number of compilations per year.  This alters the formula to $$A(t)=P(1+r)^t \implies A(t)=P\left(1+\dfrac{r}{n}\right)^{nt}.$$  The derivation for this transition is complicated, so we won't include it here.  We'll just provide some justification for it.
+
+Let’s explain the $\dfrac{r}{n}$.  If an interest rate compounds monthly, that will mean that we have to divide the rate by $12$.  This would make logical sense.  If the rate applies yearly, and you divide it by $12$, you would get the monthly interest rate.  
+
+Now to explain the $nt$ part, if a rate compounds monthly, that would mean every month it compounds.  That would mean that it should compound $12$ times within a year.  Compounding is just a fancy term for multiplying.  And this would make sense.  Within one year, a monthly interest rate should compound $12$ times, because there are $12$ months within a year.  Hence why if you were to plug it in, the base would be raised to the $12^{\text{th}}$ power.  
+
+Let's go over some of the correspondences between $n$ and the vocabulary term used.  \begin{itemize}
+    \item Semiannually $\implies n=2$.
+    \item Quarterly $\implies n=4$.
+    \item Monthly $\implies n=12$.
+    \item Daily $\implies n=365$.
+\end{itemize}
+
+There is one final type of compounded interest that we need to cover.  It is denoted as \textit{continuously}-compounded interest.  Now continuously means every living moment, every second, millisecond, basically any moment of existence, the interest compounds.  What happens if we infinitely compound something?  What happens to this equation then?
+
+We need to derive a new formula for this.  To do this, we will see what happens as $n\to\infty$.  Assuming the Principal amount is $\$1$, with an interest rate of $100\%$, and the time is $1$ year, let's determine the money we'll have at the end of the year.
+
+\begin{tabular}{||c|c||}
+    \hline
+    Compilations per Year & Money Accrued \\
+    \hline
+    Annually ($n=1$) & $(1+1)^1=2$ \\
+    \hline
+    Semi-Annually ($n=2$) & $\left(1+\dfrac{1}{2}\right)^{2}=2.25$ \\
+    \hline
+    Quarterly ($n=4$) & $\left(1+\dfrac{1}{4}\right)^{4}=2.4414$ \\
+    \hline
+    Monthly ($n=12$) & $\left(1+\dfrac{1}{12}\right)^{12}=2.6130$ \\
+    \hline
+    Weekly ($n=48$) & $\left(1+\dfrac{1}{48}\right)^{48}=2.6905$ \\
+    \hline
+    Daily ($n=365$) & $\left(1+\dfrac{1}{365}\right)^{365}=2.7146$ \\
+    \hline
+    Every Hour ($n=8760$) & $\left(1+\dfrac{1}{8760}\right)^{8760}=2.7181$ \\
+    \hline
+    Every Minute ($n=525600$) & $\left(1+\dfrac{1}{525600}\right)^{525600}=2.718328$ \\
+    \hline
+    Every Second ($n=31536000$) & $\left(1+\dfrac{1}{31536000}\right)^{31536000}=2.71828$ \\
+    \hline
+\end{tabular}
+
+We see that this approaches a limiting value of around $2.718281828\ldots$, which we will now denote as a fundamental constant.  Euler, who discovered this limiting value, denoted the constant $e$.  A logarithm that uses $e$ as it's base is denoted as the natural logarithm (as it appears in nature).  In this book, the natural logarithm will be denoted as $\log()$.
+
+\begin{remark}
+This is not how most American books denote the natural logarithm.  Most American books use $\ln()$.  However, considering that the \textbf{entire rest of the world} uses it, we will stick with the $\log()$ notation.
+\end{remark}
+
+This constant appears almost everywhere (it's almost scary).  Bacteria populations abide by it, electric circuits abide by it, glowing rocks abide by it, and more.
+
+So what happens to our equation now?  We can’t plug in infinity into the places because, that makes no sense. Well for reasons I’m going to spare (for now, just accept algebra and calculus), the new equation becomes: $$A(t)=Pe^{rt}.$$
+
+Let's look at some examples to understand how we use these equations.
+\begin{example}
+Quinn invests $350,000$ dollars into a bank account. Interest is compounded monthly with an annual interest rate of $10$\%. How much will the house be worth in $10$ years (assuming there are no outside influential factors)?  How much time will it take for the value of the account to double?
+\end{example}
+\begin{solution}
+Let's mark down what we know for the first question.  We know that $P=350,000$, $r=0.10$, $n=12$, and $t=10$.  Our goal is to find $A(t)$; to do this, we simply plug into the formula.
+$$A(t)=350000\left(1+\dfrac{0.10}{12}\right)^{12\cdot 10}=350000\left(\dfrac{121}{120}\right)^{120}\approx \$947,464.52.$$  Now, for the second question.  If the house doubles in value, we now know that $A(t)=700,000$ and we need to solve for $t$.  $$700000=350000\left(\dfrac{121}{120}\right)^{12t} \implies 2=\left(\dfrac{121}{120}\right)^{12t}\implies t=\dfrac{1}{12}\log_{\left(\frac{121}{120}\right)}(2) \approx 6.960.$$ $\Box$
+\end{solution}
+\begin{remark}
+Two things to discuss here.  First, make sure you understand how to plug the messy value of $t$ into the calculator to get the right answer.  Watch to make sure that your parentheses are in the right locations so that you don't mess up the answer.  Also, be sure you understand how I solved for $t$.  Take the logarithm of both sides, then divide by $12$ to achieve the final answer.  Be sure that you are extremely comfortable with this process, almost to the point where you can mentally rearrange it with no error.
+\end{remark}
+
+\begin{example}
+Cole is deciding whether they should invest $100$ dollars into a company that compounds daily or a company that compounds continuously. Both companies have interest rates of $5$\%. Which should Cole invest in? 
+\end{example}
+\begin{solution}
+The short answer is: the second option.  Mathematically, the more times that we compile something, the more money you will acquire.  Let's see this in action.
+
+In each calculation, we will show the daily compilation first, then the continuous compilation.  Let's see the amount of money made after one year.  \begin{align*}
+    A(1)&=100\left(1+\dfrac{0.05}{365}\right)^{365\cdot 1}=105.13 \\
+    A(1)&=100e^{0.05\cdot 1}=105.13
+\end{align*}
+They're the same!  Let's keep increasing the years.  Let's try $10$ years to see if they're the same. \begin{align*}
+    A(10)&=100\left(1+\dfrac{0.05}{365}\right)^{365\cdot 10}=164.87 \\
+    A(10)&=100e^{0.05\cdot 10}=164.87
+\end{align*}
+Again, they're the same.  Does that mean that they'll always be the same? Not necessarily!  Let's go up to 100 years. \begin{align*}
+    A(100)&=100\left(1+\dfrac{0.05}{365}\right)^{365\cdot 100}=14841.32 \\
+    A(100)&=100e^{0.05\cdot 100}=14836.23
+\end{align*}
+Now there's a difference!  It's not a large difference, but it's still worth something.  That means that, in the long run, we should always shoot for a continuously-compounding investment.$\Box$
+\end{solution}
+
+This also brings a point about exponential functions.  They take a while to get large.  But when they do, they will increase in value very quickly. This is also why people get into trouble with credit card debt and other debts where interest is involved. Obviously with higher interest rates, this increase happens more quickly, and as a result, when people don’t notice it, the power of mathematics makes them declare bankruptcy. 
+
+Now, let's consider the opposite scenario.  What happens when something loses money?  For example, cars depreciate over time.  How does that work? Let's look at an example.
+\begin{example}
+A Honda Civic depreciates at a rate of $20$\% every year. Suppose Joel bought it at a price of $18m000$ dollars. How long until the Honda Civic loses half of its worth? Also, how much will the car be worth in $5$ years’ time (assuming a stable economy)?
+\end{example}
+\begin{solution}
+In this case, we are going to slightly alter the equation.  Since we are losing money, we change the value of $r$ to be negative.  This makes the equation $$A(t)=P(1-r)^t.$$ Car’s don’t compound on their depreciation. So everything here is annual, so $n=1$. Otherwise it would be really sad when you see how little your car is worth at the end of two years.
+
+Let's answer the second part first, since it's easier.  $$A(5)=18000(1-0.2)^5=5898.24.$$  Now, let's answer the first part. $$90000=18000(1-0.2)^t \implies \dfrac{1}{2}=0.8^t \implies t=\log_{0.5}(0.8) \approx 3.11.$$ $\Box$
+\end{solution}
+
+Now notice how sad that is. In less than 5 years, your car will already have lost half of its value. Moral of the story: Don’t buy a car and intend on selling it. It’s not worth it. 
+
+We now move on to radioactive decay.  This follows the exact same process and even uses the same formula.  Thus, we won't do any explaining here; we'll just move on to the examples.
+\begin{example}
+Suppose I have $18$ grams of Uranium-$234$ and it has a half-life of $9$ million years. How long will it take for me to have $9$ grams? 
+\end{example}
+\begin{solution}
+This is a trick question.  Since we're asked for the time to find half the given amount, the answer is simply the half-life.  It's $9$ million years. $\Box$
+\end{solution}
+\begin{example}
+Suppose I have $18$ grams of Uranium-$233$ with an unknown half-life. I know that $5$ years ago I had $23$ grams. What is the half-life of the Uranium? And given that, how long will it take for me to have $6$ grams of Uranium $233$?
+\end{example}
+\begin{solution}
+Since this is a naturally-occurring event, we use the natural base of $e$.  That means we can use the equation $A(t)=Pe^{rt}$.  We use the first part of the information to deduce the rate of decay. $$18=23e^{5r} \implies r=\dfrac{1}{5}\log\left(\dfrac{18}{23}\right) \approx -0.049.$$  Now, we find the half-life. $$\dfrac{1}{2}=e^{-0.049t} \implies =-\dfrac{1}{0.049}\log\left(\dfrac{1}{2}\right)\approx 14.15.$$  Therefore, the half-life of Uranium is $14.15$ years.  (No, this is not normal.)  Now that we've figured out the rate and the half-life, we can move on to the second question. 
+$$6=23e^{-0.049t} \implies -\dfrac{1}{0.049}\log\left(\dfrac{6}{23}\right)=t\approx 27.42.$$ $\Box$
+\end{solution}
+
+And with that we conclude our discussion of radioactivity. Why? Because there’s not much to it. 
+
+Now for the final topic of importance: Population growth. Now guess what. Because we’re dealing with living organisms, they also compound continuously. Let’s do an example:
+\begin{example}
+I have a population that doubles every 6 days. I initially start off with 1,000 people. How many people will there be in 12 years? Also, how long until the population triples? (If you can’t tell, this looks very similar to the radioactive decay problem, just growth.)
+\end{example}
+\begin{solution}
+As always, we begin the problem with the equation $A(t)=Pe^{rt}$.  First, we need to solve for the actual rate. $$2=1e^{6r} \implies r=\dfrac{1}{6}\log(2)\approx 0.116.$$  Now that we have the rate, let’s find how many people there will be in $12$ years. In order to do this, we must convert the years into days. $$A(10)=1000e^{0.116 \cdot 12 \cdot 365}=4.533 \times 10^{23}.$$ $\Box$
+\end{solution}
+
+Now, this doesn't make complete sense.  While we don't have any errors in our math, we know that we could never fit that many people on the Earth.  Earth has a designated "carrying capacity", where we couldn't fit more people (nor would have enough resources).  We define a new equation, the \textit{logistic equation}, that helps to adjust for this carrying capacity. $$A(t)=\dfrac{K}{1+\alpha e^{-rt}}.$$  In this case, $K$ is the carrying capacity and $\alpha$ is an arbitrary constant.  I’m not going to delve into the technicalities of how this formula works or why (because you don’t know calculus).
+
+And with that we conclude our discussion of exponential applications. You may be wondering why there isn't a logistic growth question here. Well that’s because these problems essentially utilize the same method of solving. So, there’s no purpose if we’re kicking a dead horse. Now for the next session we’re going to solve some simple logarithmic/exponential equations. 
+\section{Exponential and Logarithmic Expressions and Equations}
+\noindent This section is going to be very example-heavy, not many words, and a lot of math.  Let's begin.
+\begin{example}
+Simplify $\log(a^2)$.
+\end{example}
+\begin{solution}
+Using the logarithmic property of power reduction, we can move the exponent to the front.  This gives $2\log(a)$, and we're done. $\Box$
+\end{solution}
+\begin{example}
+Completely expand $\log(a^2b^3c^2)$.
+\end{example}
+\begin{solution}
+First, we can separate the arguments using the multiplication to addition property.  This gives $\log(a^2)+\log(b^3)+\log(c^2)$.  Then, using power reduction, we get the final answer to be $$2\log(a)+3\log(b)+2\log(c).$$ $\Box$
+\end{solution}
+\begin{example}
+Completely simplify $\log\left(\dfrac{5a^2b^3c^2}{d^4e^5}\right)$.  Note that $e$ is used as the fundamental constant rather than a variable.
+\end{example}
+\begin{solution}
+First, using the division to subtraction property, we get $\log(5a^2b^3c^2)-\log(d^4e^5)$.  Then, using the multiplication to addition property, we get $$\log(5)+\log(a^2)+\log(b^3)+\log(c^2)-\log(d^4)-\log(e^5).$$  Then, using the power properties, we have $$\log(5)+2\log(a)+3\log(b)+2\log(c)-4\log(d)-5\log(e).$$  Finally, remembering that $\log(e)=1$ (if you don't understand this, try evaluating it), we get the answer as $$\log(5)+2\log(a)+3\log(b)+2\log(c)-4\log(d)-5.$$ $\Box$
+\end{solution}
+\begin{example}
+Combine the logarithms $5\log(a)+\dfrac{1}{2}\log(b)-\dfrac{1}{3}\log(c)+2e.$
+\end{example}
+\begin{solution}
+All we need to do is follow the same process in reverse.  First, we need to ensure that the final term has a $\log$ term.  To do this, multiply $\log(e)=1$ to it (make sure you understand why this is legal.) Moving the coefficients to the exponent gives $$\log(a^5)+\log(\sqrt{b})-\log(\sqrt[3]{c})+\log(e^{2e}).$$ Then, we combine the logarithms.  Anything with a $+$ sign gets multiplied, the term with the $-$ sign divides.  This gives $$\log\left(\dfrac{a^5\sqrt{b}e^{2e}}{\sqrt[3]{c}}\right).$$ $\Box$
+\end{solution}
+The next thing that we need to cover is solving logarithmic equations.  The most important part here is checking the solutions.  Solving the equations won't be that hard; we just need to make sure that the found value(s) of $x$ are within the domain and range of the logarithmic function.
+\begin{example}
+Find all values of $x$ that satisfy $\log(x-2)=2$.
+\end{example}
+\begin{solution}
+For problems like this, we need to isolate the logarithm.  This is already done.  Once we get here, we convert this to an exponential function.  This gives us $$e^2=x-2 \implies x=e^2+2.$$ 
+Now, to check if this answer is extraneous.  Plugging this back in, we get $$\log(e^2+2-2)=\log(e^2)=2,$$ meaning this answer is valid.$\Box$
+\end{solution}
+\begin{example}
+Find all values of $x$ such that $\log(x-2)+\log(x+2)=5$.
+\end{example}
+\begin{solution}
+First, we need to combine the logarithms.  This is $$\log\left((x-2)(x+2)\right)=5 \implies \log(x^2-4)=5.$$  Then, we convert to exponential.  $$e^5=x^2-4 \implies e^5+4=x^2 \implies x=\pm\sqrt{e^5-4}.$$
+Then, check to make sure both answers apply.  Checking the negative root, we get $$\log(-\sqrt{e^5-4}-2)+\log(2-\sqrt{e^5-4})=\text{DNE}.$$  Since the first logarithm is negative (and logarithms can't take a negative argument), this root doesn't apply.  For the second root, $$\log(\sqrt{e^5-4}-2)+\log(\sqrt{e^5-4}+2)=5.$$  This works, so the only valid root is $x=\sqrt{e^5-4}.$ $\Box$
+\end{solution}
+Now that we've been over some of the easy problems, we reach the harder problems.  For problems like these, most professors will ask for the exact answer and then a calculator's approximate answer.  
+\begin{example}
+Find the values of $x$ that satisfy $\log(x-1)-\log(x+1)=12$.
+\end{example}
+\begin{solution}
+Combining the logarithms, we get $\log\left(\dfrac{x-1}{x+1}\right)=12.$  Converting to exponential, we get $$e^{12}=\dfrac{x-1}{x+1}.$$  Then, we solve for $x$.  This process is similar to taking the inverse of a rational function; multiply by the denominator and factor via grouping.
+$$e^{12}x+e^{12}=x-1 \implies (e^{12}-1)x=-1-e^{12} \implies (1-e^{12})x=1+e^{12} \implies x=\dfrac{1+e^{12}}{1-e^{12}}.$$
+Now to check the answer.  This answer is obviously negative, meaning that it won't satisfy the first logarithm.  That means that there's no solution, and all that work was for nothing. $\Box$
+\end{solution}
+Now, let's change the problem a bit here.  What happens when they don't have the same base?  We need to use Change of Base!  We don't want to pick an arbitrary base; we want to pick a base that's some common factor or multiple of the given bases.  If there's a common factor, choose that.  If not, choose the least common multiple.
+\begin{example}
+Find all values of $x$ that satisfy $\log_2(x-2)+\log_4(x+2)=4.$ You may use a root-finder to solve this problem.
+\end{example}
+\begin{solution}
+Since the least common factor between the two bases is $2$, we will change the base to $2$.  $$\log_4(x+2)=\dfrac{\log_2(x+2)}{\log_2(4)}=\dfrac{1}{2}\log_2(x+2)=\log_2(\sqrt{x+2}).$$ Substituting this into the logarithm gives $$\log_2(x-2)+\log_2(\sqrt{x+2})=4 \implies \log_2\left((x-2)\sqrt{x+2}\right)=4.$$ Re-writing this as an exponent, we get $$2^4=(x-2)\sqrt{x-2} \implies (x-2)\sqrt{x-2}=16.$$  Now, we just need to create a polynomial by getting rid of the square root. $$\dfrac{16}{x-2}=\sqrt{x+2} \implies \dfrac{256}{x^2-4x+4}=x+2 \implies 256=x^3-2x^2-4x+8$$ $$\implies x^3-2x^2-4x-248=0.$$  Solving this using a root-finder gives $x=7.258$. This is within the domain of both logarithms, to this is the only answer. $\Box$
+\end{solution}
+This next problem is going to revert to an idea discussed in \hyperlink{section.5.6}{Section 5.6}.  The idea of Hidden Quadratics is something that we could only briefly cover because we didn't know how to solve various functions that were used for the substitution.  Now, we can solve the logarithmic types.  Let's see an example.
+\begin{example}
+Find all values of $x$ that satisfy $\log_2^2(x-2)-2\log_2(x-2)=4$.
+\end{example}
+\begin{solution}
+Well, seeing that there's two $\log_2(x-2)$'s, we think that substitution might be the way to go.  Let $u=\log_2(x-2)$.  This changes the equation to something easily solvable: $$u^2+3u-4=0 \implies (u+4)(u-1)=0 \implies\begin{matrix} u_1=-1 \\ u_2=4 \end{matrix}.$$  Remember, we must solve for $x$ and not $u$.  Re-substituting, we have the two equations $$\log_2(x-2)=-1 \text{ and } \log_2(x-2)=4.$$  We now solve both for $x$. \begin{align*}
+    \log_2(x-2)=-1 &\implies 2^{-1}=x-2 \implies \dfrac{1}{2}=x-2 \implies x=\dfrac{5}{2} \\ \log_2(x-2)=2 &\implies 2^{4}=x-2 \implies x=18.
+\end{align*}
+Since both solutions do check, our two answers are $x_1=\dfrac{5}{2}$ and $x_2=18$. $\Box$
+\end{solution}
+For the next few problems, we will now move back to exponential equations and functions.  There are some tricky problems we can solve here; depending on the problem, we have to either use radicals or use logarithms.
+\begin{example}
+Find all $x$ such that $2^{x^2-4}=256$.
+\end{example}
+\begin{solution}
+For these problems, our goal is to have both sides have the same base.  Luckily, $256=2^8$, so we can make that substitution right away.  This gives $$2^{x^2-4}=2^8 \implies x^2-4=8.$$  Then, all we need to do is solve for $x$, which gives us $$x^2=12 \implies \begin{matrix} x_1=-2\sqrt{3} \\ x_2=2\sqrt{3} \end{matrix}.$$ $\Box$
+\end{solution}
+\begin{remark}
+Make sure that you understand how we removed the bases and left the exponents.  One way to prove this is to take the logarithm base $2$ of both sides.  The other way is to simply recognize that if the bases are the same and the two functions are equal, then so must the exponents.
+\end{remark}
+\begin{example}
+Find all $x$ such that $2^{x^2+4}=16^{-x}$.
+\end{example}
+\begin{solution}
+Again, for this problem, we simplify the bases on the right side to match the left.  This gives us $$2^{x^2+4}=\left(2^4\right)^{-x} \implies 2^{x^2+4}=2^{-4x} \implies x^2+4x+4=0.$$  Now, solve for $x$.  $$(x+2)^2=0 \implies x_{1,2}=-2.$$ $\Box$
+\end{solution}
+\begin{example}
+Find all $x$ such that $2^{x^3-3x^2+3x-1}=\dfrac{16^x}{16}$.
+\end{example}
+\begin{solution}
+Again, what we see is that the common base is $2$.  First, we combine the right side into a singular exponent and then we change the base.  $$2^{x^3-3x^2+3x-1}=16^{x-1} \implies 2^{x^3-3x^2+3x-1}=2^{4x-4} \implies x^3-3x^2+3x-1=4x-4.$$ Combining and solving for $x$ (via Factor by Grouping), we get $$x^3-3x^2-x+3=0 \implies (x-3)(x^2-1)=0 \implies \begin{matrix} x_1=-1 \\ x_2=1 \\ x_3=3 \end{matrix}.$$ $\Box$
+\end{solution}
+\begin{example}
+Solve $3(8^x)-6(4^x)+2^x=0$.
+\end{example}
+\begin{solution}
+We will rewrite the equation in terms of $2^x$ and make a substitution.  $$3(2^x)^3-6(2^x)^2+2^x=0 \implies 3u^3-6u^2+u=0.$$  Then, we solve for $u$ as normal.  We get $$u(3u^2-6u+1)=0 \implies \begin{matrix} u_1=\dfrac{2}{3}-\dfrac{\sqrt{6}}{3} \\ u_2=0 \\ u_3=\dfrac{2}{3}+\dfrac{\sqrt{6}}{3} \end{matrix}.$$
+Now, we re-substitute in hopes of solving for $x$. We get the three equations $$2^x=\dfrac{2}{3}-\dfrac{\sqrt{6}}{3} \hspace{0.25in} 2^x=0 \hspace{0.25in} 2^x=\dfrac{2}{3}+\dfrac{\sqrt{6}}{3}.$$
+First, we know that there's a horizontal asymptote at $y=0$, meaning that $x$ must be positive.  This eliminates the first and second equations, as they cannot happen.  To solve the third equation, we convert it to logarithmic.  $$2^x=\dfrac{2}{3}+\dfrac{\sqrt{6}}{3} \implies x=\log_2\left(\dfrac{2}{3}+\dfrac{\sqrt{6}}{3}\right).$$ $\Box$
+\end{solution}
+With this, we continue this section on the types of exponential and logarithmic equations that you'll need to know how to solve.  For anything that seems overly different, just follow the same process and you'll be sure to reach the right answer.
+\section{Graphing Exponential and Logarithmic Functions}
+\noindent As graphing has been a fundamental part of every chapter, we have put it for the new function.  We don't want to completely bore you with seemingly the same material with a different function, so we aren't going to cover the rules again.  For every problem, just graph it and note the domain and range.
+
+Because of formatting, we are going to graph these functions two at a time.  This means that we will cover two examples and then graph them.  The first example will always be denoted as $f(x)$ and the second example will be $g(x)$.  
+\begin{example}
+Graph $f(x)=\log(x-5)$.
+\end{example}
+\begin{solution}
+This is a shift five units to the right of the parent function of $\log(x)$.  
+
+This means that the domain is $x>5$ or $(5,\infty)$ and the range is $\mathbb{R}$. $\Box$
+\end{solution}
+\begin{example}
+Graph $g(x)=\log(x-2)+5$.
+\end{example}
+\begin{solution}
+Alright, we have two noticeable changes here. First of all, we note that there is a shift to the right by $2$ units. Second, we note that there is a shift up by $5$ units.  
+
+This means that the domain is $x>2$ or $(2,\infty)$ and the range is still $\mathbb{R}$. $\Box$
+\end{solution}
+\begin{figure}[!h]
+    \centering
+    \begin{tikzpicture}[xscale=0.20,yscale=0.20]
+      \draw[<->] (-10,0) -- (10,0) node[right] {$x$};
+      \draw[<->] (0,-10) -- (0,10) node[above] {$y(x)$};
+      \draw[scale=1,domain=-10:1.609,smooth,variable=\y,blue] plot ({2.7^\y+5},{\y}) node[above] {$f(x)=\log(x-5)$};
+      \draw[scale=1,domain=-10:2.3,smooth,variable=\y,black,dashdotted] plot ({2.7^\y},{\y});
+    \end{tikzpicture}
+    \begin{tikzpicture}[xscale=0.20,yscale=0.20]
+      \draw[<->] (-10,0) -- (10,0) node[right] {$x$};
+      \draw[<->] (0,-10) -- (0,10) node[above] {$y(x)$};
+      \draw[scale=1,domain=-10.1:2.079,smooth,variable=\y,blue] plot ({2.7^\y+2},{\y+5}) node[above] {$g(x)=\log(x-2)+5$};
+      \draw[scale=1,domain=-10:2.3,smooth,variable=\y,black,dashdotted] plot ({2.7^\y},{\y});
+    \end{tikzpicture}
+\end{figure}
+\begin{example}
+Graph $f(x)=2\log(x-3)+5.$
+\end{example}
+\begin{solution}
+We have a vertical stretch by a factor of $2$, a horizontal shift to the right $3$ units, and a vertical shift up by $5$ units. 
+
+The domain is $(3,\infty)$ and the range is $\mathbb{R}$. $\Box$
+\end{solution}
+\begin{example}
+Graph $g(x)=3\log(-x+4)+7$.
+\end{example}
+\begin{solution}
+We notice that there is a flip about the $y$-axis, a vertical shift by $7$ units up, a vertical stretch by a factor of $3$, and a horizontal shift by $4$ units to the right (If this doesn't make sense, try factoring out a negative in the parentheses and see what happens). 
+
+The domain is now $(-\infty,4)$ and the range is still $\mathbb{R}$. $\Box$
+\end{solution}
+\begin{figure}[!h]
+    \centering
+    \begin{tikzpicture}[xscale=0.20,yscale=0.20]
+      \draw[<->] (-10,0) -- (10,0) node[right] {$x$};
+      \draw[<->] (0,-10) -- (0,10) node[above] {$y(x)$};
+      \draw[scale=1,domain=-10:1.9,smooth,variable=\y,blue] plot ({2*2.7^\y+3},{\y+5}) node[above left] {$f(x)=2\log(x-3)+5$};
+      \draw[scale=1,domain=-10:2.3,smooth,variable=\y,black,dashdotted] plot ({2.7^\y},{\y});
+    \end{tikzpicture}
+    \begin{tikzpicture}[xscale=0.20,yscale=0.20]
+      \draw[<->] (-10,0) -- (10,0) node[right] {$x$};
+      \draw[<->] (0,-10) -- (0,10) node[above] {$y(x)$};
+      \draw[scale=1,domain=-10.1:1.5,smooth,variable=\y,blue] plot ({4-3*2.7^\y},{\y+7}) node[right=20mm] {$g(x)=3\log(-x+4)+7$};
+      \draw[scale=1,domain=-10:2.3,smooth,variable=\y,black,dashdotted] plot ({2.7^\y},{\y});
+    \end{tikzpicture}
+\end{figure}
+\begin{example}
+Graph $f(x)=2-3\log(-x+4)$.
+\end{example}
+\begin{solution}
+Before we do this, we are going to rewrite this because it’s somewhat weird the way it is now. $$f(x)=-3\log(-x+4)+2.$$
+Alright now let’s note the shifts. We have a reflection about the $y$-axis, a reflection about the $x$-axis, a vertical shift up by $2$ units, a horizontal shift to the right by $4$ units, and a vertical stretch by $3$ units. 
+
+The domain is $(-\infty,4)$ and the range is $\mathbb{R}$. $\Box$
+\end{solution}
+\begin{example}
+Graph $g(x)=4-3\log(-2x-6)$.
+\end{example}
+\begin{solution}
+Let’s rewrite this once again so we can keep track of the shifts. $$g(x)=-3\log(-2x-6)+4.$$
+There is a reflection about the x-axis, a reflection about the $y$-axis, a vertical shift up by $4$ units, a horizontal shift left by $3$ units, a vertical stretch by a factor of $3$, and a horizontal compression by a factor of $\dfrac{1}{2}$. 
+
+The domain is $(-\infty,-3)$ and the range is $\mathbb{R}$. $\Box$
+\end{solution}
+\begin{figure}[!h]
+    \centering
+    \begin{tikzpicture}[xscale=0.20,yscale=0.20]
+      \draw[<->] (-10,0) -- (10,0) node[right] {$x$};
+      \draw[<->] (0,-10) -- (0,10) node[above] {$y(x)$};
+      \draw[scale=1,domain=-10:3.9,smooth,variable=\x,blue] plot ({\x},{2-3*ln(4-\x)}) node[left=7mm] {$f(x)=2-3\log(-x+4)$};
+      \draw[scale=1,domain=0.1:10,smooth,variable=\x,black,dashdotted] plot ({\x},{ln(\x)});
+    \end{tikzpicture}
+    \begin{tikzpicture}[xscale=0.20,yscale=0.20]
+      \draw[<->] (-10,0) -- (10,0) node[right] {$x$};
+      \draw[<->] (0,-10) -- (0,10) node[above] {$y(x)$};
+      \draw[scale=1,domain=-10:-3.1,smooth,variable=\x,blue] plot ({\x},{4-3*ln(-2*\x-6)}) node[right=6mm] {$g(x)=4-3\log(-2x-6)$};
+      \draw[scale=1,domain=-10:2.3,smooth,variable=\y,black,dashdotted] plot ({2.7^\y},{\y});
+    \end{tikzpicture}
+\end{figure}
+That's as hard as logarithmic graphs will get.  Let's follow the same progression with exponential functions.
+\begin{example}
+Graph $f(x)=6^{x+2}-2$.
+\end{example}
+\begin{solution}
+This time, there's a horizontal shift to the left $2$ units and a vertical shift down $2$ units.
+
+The domain is $\mathbb{R}$ and the range moves to $(-2,\infty)$. $\Box$
+\end{solution}
+\begin{example}
+Graph $g(x)=3-3^{x-6}$.
+\end{example}
+\begin{solution}
+We have a horizontal shift to the right $6$ units, a vertical shift up $3$ units, and a reflection about the $x$-axis.
+
+The domain is $\mathbb{R}$ and the range is $(-\infty,3)$. $\Box$
+\end{solution}
+\begin{figure}[!h]
+    \centering
+    \begin{tikzpicture}[xscale=0.20,yscale=0.20]
+      \draw[<->] (-10,0) -- (10,0) node[right] {$x$};
+      \draw[<->] (0,-10) -- (0,10) node[above] {$y(x)$};
+      \draw[scale=1,domain=-10:-0.62,smooth,variable=\x,blue] plot ({\x},{6^(\x+2)-2}) node[right=3mm] {$f(x)=6^{x+2}-2$};
+      \draw[scale=1,domain=-10:1.28,smooth,variable=\x,black,dashdotted] plot ({\x},{6^\x});
+    \end{tikzpicture}
+    \begin{tikzpicture}[xscale=0.20,yscale=0.20]
+      \draw[<->] (-10,0) -- (10,0) node[right] {$x$};
+      \draw[<->] (0,-10) -- (0,10) node[above] {$y(x)$};
+      \draw[scale=1,domain=-10:8.3,smooth,variable=\x,blue] plot ({\x},{3-3^(\x-6)}) node[right] {$g(x)=3-3^{x-6}$};
+      \draw[scale=1,domain=-10:2.09,smooth,variable=\x,black,dashdotted] plot ({\x},{3^\x});
+    \end{tikzpicture}
+\end{figure}
+\begin{example}
+Graph $f(x)=-4-2e^{-x+4}$.
+\end{example}
+\begin{solution}
+We have a vertical shift down by $4$ units, a horizontal shift right by $4$ units, a reflection about the $y$-axis, a reflection about the $x$-axis, and a vertical stretch by a factor of $2$. 
+
+The domain is $\mathbb{R}$ and the range is $(-\infty,-4)$. $\Box$
+\end{solution}
+\begin{example}
+Graph $g(x)=12-\dfrac{1}{3}e^{\left(\frac{1}{5}-\frac{1}{5}x\right)}$.
+\end{example}
+\begin{solution}
+As usual, we re-write these problems so it's easier to understand.  $$g(x)=-\dfrac{1}{3}e^{-\frac{1}{5}(x-1)}+12.$$
+We have vertical shift up by $12$ units, a horizontal shift right by $1$ unit, a reflection about the $y$-axis, a reflection about the $x$-axis, a vertical stretch by a factor of $\dfrac{1}{3}$, and a horizontal stretch by a factor of $5$.
+
+The domain is $\mathbb{R}$ and the range is $(-\infty,12)$. $\Box$
+\end{solution}
+\begin{figure}[!h]
+    \centering
+    \begin{tikzpicture}[xscale=0.15,yscale=0.15]
+      \draw[<->] (-15,0) -- (15,0) node[right] {$x$};
+      \draw[<->] (0,-15) -- (0,15) node[above] {$y(x)$};
+      \draw[scale=1,domain=2.3:15,smooth,variable=\x,blue] plot ({\x},{-4-2*2.7^(-\x+4)}) node[below right=0mm and -15mm] {$f(x)=-4-2e^{-x+4}$};
+      \draw[scale=1,domain=-15:2.7,smooth,variable=\x,black,dashdotted] plot ({\x},{2.7^\x});
+    \end{tikzpicture}
+    \begin{tikzpicture}[xscale=0.15,yscale=0.15]
+      \draw[<->] (-15,0) -- (15,0) node[right] {$x$};
+      \draw[<->] (0,-15) -- (0,15) node[above] {$y(x)$};
+      \draw[scale=1,domain=-15:15,smooth,variable=\x,blue] plot ({\x},{12-(1/3)*2.7^(1/5-\x/5)}) node[below right=0mm and -15mm] {$g(x)=12-\dfrac{1}{3}e^{\left(\frac{1}{5}-\frac{1}{5}x\right)}$};
+      \draw[scale=1,domain=-15:2.7,smooth,variable=\x,black,dashdotted] plot ({\x},{2.7^\x});
+    \end{tikzpicture}
+\end{figure}
+On the idea of domain and range, noting how the shifts affected the domain and range of logarithmic and exponential functions brings out an idea regarding infinity.  Note that, no matter how much we shift the function horizontally for an exponential function, or vertically for a logarithmic function, the domain of the exponential function, nor the range of the logarithmic function, never changes.  This is because adding a constant to infinity doesn't change the value of infinity.  This is an idea that's pretty important in Calculus.
+
+We’re done with graphing exponential and logarithmic functions, which finishes the chapter. Here are some take-away points: \begin{itemize}
+    \item The domains of exponential functions never change unless there is a restriction within the exponent (i.e. $\dfrac{1}{x}$).
+    \item The ranges of exponential functions are only affected by reflection about the $y$-axis.
+    \item The ranges of logarithmic functions never change unless there is a restriction within the logarithm (i.e. $\dfrac{1}{x}$).
+    \item The domain of logarithmic functions is only affected by reflections about the $x$-axis.
+\end{itemize}
+These problems are going to be difficult.  Exponents and Logarithms bring about some of the harder problems in Algebra.  Don't fret; give them a try!
+\begin{reviewset}
+\item Solve $256^x+8^x=3$ for $x$.\vspace{2mm}
+\item Suppose the population of Wellington is $3$ million at the moment. Every $10$ years, the population of the city doubles. Suppose Jupiter has $1.5$ million people at the moment. Every $5$ years it doubles. Which population will be greater in $112$ years’ time? By how much? \vspace{2mm}
+\item Solve $\log(x^2-3)=12\log_{e^2}(x-5)$ for $x$.\vspace{2mm}
+\item Find all such $x$ that satisfy $2^{(x-2)^2(x-4)}=1024^x$.\vspace{2mm}
+\item Graph the following functions: \newline 
+(a) $f(x)=e^{\frac{1}{x^2}}$ \hspace{50mm} (b) $g(x)=\log\left(\dfrac{x-2}{x+2}\right)$. \newline 
+(c) $h(x)=-4(2^{2x-3})+4$ \hspace{32mm} (d) $j(x)=\dfrac{1}{6}\log_2\left((3x-2)^2\right)-3$ \vspace{2mm}
+\item This question is about an investment fund. \newline 
+(a) I invest \$$100$ into a retirement fund that has an annual interest rate of 5\% and compounds annually. How much money will I have in $5$ years? \newline 
+(b) Suppose I invest another $100$ dollars into a stock that compounds continuously at an annual interest rate of $2$\%. How much money will I have in $3$ months? \newline 
+(c) Suppose I invest $P$ dollars into a stock that compounds bi-weekly at an annual interest rate of 7\%. In $3$ years, I have $1200$ dollars. How much did I invest initially? \vspace{2mm}
+\item This question is about the depreciation of the legendary Nissan Altima. \newline
+(a) Suppose I have a Nissan Altima that costs \$$21000$ that depreciates at a rate of $30$\%. How much will the car be worth in $5$ years? \newline 
+(b) How long until the car is worth half it is now? \vspace{3mm}
+\item Solve $a+b\log(c)=d$ for $c$ in terms of $a$, $b$, and $c$. \vspace{2mm}
+\item Compute $3^x$, where $x=\dfrac{\left(\log_3(1)-\log_3(4)\right)\left(\log_3(9)-\log_3(2)\right)}{\left(\log_3(1)-\log_3(9)\right)\left(\log_3(8)-\log_3(4)\right)}$.
+\item Find $x$ such that $\log_2(\log_2(\log_2(x)))=2$. \vspace{2mm}
+\end{reviewset}
+\begin{challengeset}
+\item Simplify the following expression: $\dfrac{\log_{e^2}(16)}{\log(4)}\cdot \dfrac{\log_{25}(x-2)^2}{\log_{125}(x^2-4)}\cdot 5e$.\vspace{2mm}
+\item Suppose I have a population that exists in an environment with a carrying capacity of $500$. After $1$ day, the population is at $100$. After $3$ days, the population is at $150$. Solve for the corresponding logistic equation. 
+\item Solve $2+\log_2(\sqrt{1+x})+3\log_4(\sqrt{x-1})=\log_8(\sqrt{1-x^2})$.\vspace{2mm}
+\item Graph $f(x)=-2\log_x\left(3^{\frac{x-2}{x-3}}\right)+5$.  Also, find its inverse and graph it.\vspace{2mm}
+\item Simplify: $\log_2\left(\dfrac{1}{x}\times \dfrac{1}{x^2}\times\cdots\times \dfrac{1}{x^n}\right)-\log_4\left(\dfrac{1}{x^2}\times \dfrac{1}{x^4}\times\cdots\times \dfrac{1}{x^{2n}}\right)$ \newline $-\log_8\left(\dfrac{1}{x^3}\times \dfrac{1}{x^6}\times\cdots\times \dfrac{1}{x^{3n}}\right).$ \vspace{2mm}
+\item The graph, $G$, of $y(x)=\log_{10}(x)$ is rotated $90^{\circ}$ counter-clockwise about the origin to obtain a new graph, $G'$.  Find an equation whose graph is $G'$.
+\item Simplify $$\dfrac{1}{\log_2(100!)}+\dfrac{1}{\log_3(100!)}+\dfrac{1}{\log_4(100!)}+\cdots+\dfrac{1}{\log_{100}(100!)},$$ where $100!=100\cdot 99\cdot 98\cdot 97\cdot \ldots \cdot 2\cdot 1.$ \vspace{2mm}
+\item Let $a\geq b>1$. What is the largest possible value of $\log_a\left(\dfrac{a}{b}\right)+\log_b\left(\dfrac{b}{a}\right)$. \vspace{2mm}
+\item We know that logarithms can't take in a negative argument and yield a real number.  Your goal is to find a way to input a negative logarithm argument and yield a complex answer.  In terms of $n$ and fundamental constants, find the value of $\log(-n)$, where $n\in\mathbb{R}^+$.
+\end{challengeset}
+\end{document}

@@ -1,0 +1,298 @@
+\documentclass[../book.tex]{subfiles}
+\graphicspath{{\subfix{../images/}}}
+
+\begin{document}
+\chapter{Radicals and Rational Exponents}
+\begin{introduction}[Contents]
+\item Radical Expressions and Rational Exponents
+\item Solving Radical Equations
+\item Radical Conjugates
+\item Graphing Radical Functions
+\item Evaluating Expressions with Radicals
+\end{introduction}
+\noindent You might be surprised that we dedicated an entire chapter to radical functions.  They're not all that common, and the only thing that most people do with them is solve quadratic functions.  So what's the purpose of needing an entire chapter just for them?
+
+Radical functions happen to be much more than their polynomial counterpart.  There are lots of unique equations to solve, tricks to explore, and functions to approximate.  Not only this, these functions give insight on methods of graphing inverse functions, and show us that inverse functions aren't daunting at all.
+\section{Radical Expressions and Rational Exponents}
+\noindent This section is going to be nearly all definitions and won't have much math in it.  You may already know the content in this section, but it's still worth reading. You may find something you didn't know!
+
+We know that radical functions are the inverse of a polynomial function, such as $\sqrt{x}$ is the inverse of $x^2$... almost.  Remember that $\sqrt{x}$ has a domain restriction of $x\geq 0$, meaning that we only can take the positive portion of $x^2$.  This means that $\sqrt{x}$ is the inverse of $x^2$ if $x\geq 0$.  The actual inverse of $x^2$ is $\pm\sqrt{x}$, which is the red graph shown below.  It's more commonly seen and written as $x=y^2$, a function demonstrated in \hyperlink{section.14.1}{Section 14.1} when parabolas as conic sections are discussed.
+
+So what is a radical function?  How is it defined? The definition is shown below, and you might notice it's not the type of definition we're used to.
+\begin{definition}{Definition of a Radical Function}{radfunc}
+Given some positive constant $n$ such that $n\in\mathbb{Z}$, we define the radical function as $$f(x)=\sqrt[n]{f_0(x)}.$$ $f_0(x)$ is defined as the function inside the radical. The simplest of these functions is $f(x)=\sqrt[n]{x}$.
+\end{definition}
+This time, rather than defining the function independently, it is dependent of another function $f_0(x)$.  Why is that? The radical function is useless without an argument, so we define a functional argument to do inside the radical.
+
+So what's a rational exponent?  This means that there's a rational number inside the exponent, which indicates a radical.  Take a look at the definition below.
+
+\begin{definition}{Definition of a Rational Exponent}{ratexp}
+Given positive constants $a$ and $b$ such that $a,b\in\mathbb{Z}$, and real function $f_0(x)$, we define the rational exponent as $$f(x)=f_0(x)^{\frac{a}{b}} \implies f(x)=\sqrt[b]{f_0(x)^a}.$$ The conversion between radical function and rational exponent is very important throughout your career in mathematics.
+\end{definition}
+Most of the time, rational exponents are easier to work with since it's most similar to polynomial expressions. Most of the examples in the next sections will involve radicals rather than rational exponents; however, knowing how to use both will make your experience much easier.
+
+There's not much else to cover in this section.  Be sure to know how to convert between rational exponents and radical functions.  Now, let's discuss rational equations.
+\section{Solving Radical Equations}
+\noindent The goal of this section is to convert radical equations into something that we are better with working with: polynomials.  Like the idea seen in \hyperlink{chapter.9}{Chapter 9}, when we didn't know how to solve logarithmic functions, we converted them to exponential functions and solved them this way.
+
+This chapter will explore common methods for solving radical equations.  The goal is to always remove all instances of the radical to be left with a polynomial equation that we know how to solve.
+
+We'll learn by example for most of this chapter, so let's begin.
+\begin{example}
+Solve the equation $x=\sqrt{2x+24}$.
+\end{example}
+\begin{solution}
+The first step of solving this is removing the radical by squaring both sides of the equation.  This gives us $$x^2=2x+24 \implies x^2-2x-24=0.$$ We know how to solve this with factoring! This gives us $$(x-6)(x+4)=0 \implies \begin{matrix} x_1=-4 \\ x_2=6\end{matrix}.$$ Unfortunately, we aren't done this time! We need to check if both solutions are valid.  When we dealt with polynomials, we never had domain restrictions; however, by squaring both sides, we might have created an extraneous solution.  Let's check them. 
+\begin{align*}
+    x_1&: -4=\sqrt{2(-4)+24} \implies -4=\sqrt{16} \\
+    x_2&: 6=\sqrt{2(6)+24} \implies 6=\sqrt{36}
+\end{align*}
+We see that $x_1$ is not valid since the square root of a number must be positive!  This means that $x=6$ is the only solution to this equation. $\Box$
+\end{solution}
+\begin{example}
+Find all $x$ such that $\sqrt{6-x}-\sqrt{10+3x}=2.$
+\end{example}
+\begin{solution}
+For this problem, before we square both sides, we are going to move the $\sqrt{10+3x}$ term to the other side.  To understand why, attempt this problem without making this maneuver and notice that it requires more work.  Now, we have $\sqrt{6-x}=2+\sqrt{10+3x}.$ We square both sides to get $$6-x=4+(10+3x)+4\sqrt{10+3x} \implies -8-4x=4\sqrt{10+3x} \implies -2-x=\sqrt{10+3x}.$$ We need to square again to remove the last square root, which gives us $$4+4x+x^2=10+3x \implies x^2+x-6=0 \implies \begin{matrix} x_1=-3 \\ x_2=2 \end{matrix}.$$
+We have to check if either solution is extraneous.  We see that $x_2$ is extraneous while $x_1$ isn't, so the only solution is $x=-3$. $\Box$
+\end{solution}
+Let's take this a step further and add quadratics.
+\begin{example}
+Solve the equation $\sqrt{x^2-5x+4}-\sqrt{x^2-10x+9}=x-1$.
+\end{example}
+\begin{solution}
+First, we will factor the quadratics inside to get $\sqrt{(x-1)(x-4)}-\sqrt{(x-1)(x-9)}=x-1.$ We can quickly tell that $x=1$ is a solution since all terms become zero.  However, there may be more solutions.
+
+We need to square both sides to eliminate one of the radicals.  Here we get $$(x-1)(x-4)+(x-1)(x-9)-2\sqrt{(x-1)^2(x-4)(x-9)}=(x-1)^2.$$ You may be tempted to pull out the $(x-1)$ term and divide by it, however, we cannot do this. If we check values of $x$ such that $x>1$, $x=1$, and $x<1$, we get that not all are true. This may indicate that it's a solution, so we leave it in there. We isolate the radical again and simplify: $$2\sqrt{(x-1)^2(x-4)(x-9)}=(x-1)\big((x-4)+(x-9)-(x-1)\big)$$ $$\implies 2\sqrt{(x-1)^2(x-4)(x-9)}=(x-1)(x-12).$$
+We can now square both sides to remove the radical. $$4(x-1)^2(x-4)(x-9)=(x-1)^2(x-12)^2.$$ We need to rearrange to solve for $x$; $$(x-1)^2\big(4(x-4)(x-9)-(x-12)^2\big)=(x-1)^2(3x^2-28x)=x(x-1)^2(3x-28).$$
+We see here that the roots here are $x=0,1,\frac{28}{3}.$ We see that $x=\frac{28}{3}$ is extraneous, leaving the only answers to be $x=0$ and $x=1$. $\Box$
+\end{solution}
+Radical equations don't get much harder than these, unless you plan to compete in competitive mathematics.  If you can solve these, you can solve any similar problem that a teacher throws at you.  Radical inequalities will be discussed in \hyperlink{section.14.4}{Section 14.4}; those can get relatively difficult.
+\section{Radical Conjugates}
+\noindent In \hyperlink{chapter.3}{Chapter 3} we discussed finding the conjugate of a complex number to rationalize the denominator.  We will use the section here to inspire the rationalization of radical functions and to solve more problems with it.
+
+Given some rational function $f(x)=\dfrac{1}{\sqrt{a}+\sqrt{b}}$, we can rationalize by multiplying the top and bottom by $\sqrt{a}-\sqrt{b}$.  This gives us $$f(x)=\dfrac{1}{\sqrt{a}+\sqrt{b}}\cdot\dfrac{\sqrt{a}-\sqrt{b}}{\sqrt{a}-\sqrt{b}}=\dfrac{\sqrt{a}-\sqrt{b}}{a-b}.$$
+\begin{remark}
+The expressions $\sqrt{a}+\sqrt{b}$ and $\sqrt{a}-\sqrt{b}$ are sometimes referred to as \textit{radical conjugates}.
+\end{remark}
+
+Let's attempt a few examples.
+\begin{example}
+Rationalize the denominator of $\dfrac{1}{\sqrt{7}+\sqrt{2}}$.
+\end{example}
+\begin{solution}
+We need to remove the denominator by multiplying by the conjugate, which is $\sqrt{7}-\sqrt{2}$. This gives us $$\dfrac{1}{\sqrt{7}+\sqrt{2}}=\dfrac{1}{\sqrt{7}+\sqrt{2}}\cdot\dfrac{\sqrt{7}-\sqrt{2}}{\sqrt{7}-\sqrt{2}}=\dfrac{\sqrt{7}-\sqrt{2}}{5}.$$ $\Box$
+\end{solution}
+Now, let's attempt to solve an equation by using the conjugates.
+\begin{example}
+Find all real values of $x$ such that $\dfrac{x+\sqrt{x^2-1}}{x-\sqrt{x^2-1}}+\dfrac{x-\sqrt{x^2-1}}{x+\sqrt{x^2-1}}=98.$
+\end{example}
+\begin{solution}
+We meed to multiply by the conjugate of both fractions to remove the denominators. $$\dfrac{x+\sqrt{x^2-1}}{x-\sqrt{x^2-1}}\left(\dfrac{x+\sqrt{x^2-1}}{x+\sqrt{x^2-1}}\right)+\dfrac{x-\sqrt{x^2-1}}{x+\sqrt{x^2-1}}\left(\dfrac{x-\sqrt{x^2-1}}{x-\sqrt{x^2-1}}\right)$$$$=(x+\sqrt{x^2-1})^2+(x-\sqrt{x^2-1})^2=98.$$
+Expanding the squares gives us $(x^2+2x\sqrt{x^2+1}+x^2-1)+(x^2-2x\sqrt{x^2-1}+x^2-1)=98$, so $4x^2=100$. This gives us $x=-5,5$. $\Box$
+\end{solution}
+Let's solve one more example using a cubic function.
+\begin{example}
+Rationalize the denominator of $\dfrac{1}{\sqrt[3]{3}-1}$.
+\end{example}
+\begin{solution}
+We may attempt to use the "multiply by the conjugate" strategy in hopes that it will work, but we find that it don't work.  Multiplying by the conjugate doesn't remove any of the radicals.  So, rather than using the difference of squares, let's use the difference of cubes.  The difference of cubes says that $x^3-y^3=(x-y)(x^2+xy+y^2)$.  So, we need to let $x=\sqrt[3]{3}$ and $y=1$, and we will get $$3-1=(\sqrt[3]{3}-1)(\sqrt[3]{9}+\sqrt[3]{3}+1).$$ We can use this to rationalize the denominator of our fraction: $$\dfrac{1}{\sqrt[3]{3}-1}=\dfrac{1}{\sqrt[3]{3}-1}\cdot\dfrac{\sqrt[3]{9}+\sqrt[3]{3}+1}{\sqrt[3]{9}+\sqrt[3]{3}+1}=\dfrac{\sqrt[3]{9}+\sqrt[3]{3}+1}{2}.$$ $\Box$
+\end{solution}
+\noindent Now, let's take a look at graphing radical functions.
+\section{Graphing Radical Functions}
+\noindent We touched on graphing radical functions in \hyperlink{chapter.2}{Chapter 2} when we discussed function transformations.  Radical functions were primarily used to demonstrate domain restrictions; now, we need to discuss how to graph any type.  Refer to the transformations chapter for an help on transformations.
+
+As you have gotten familiar with radical functions/expressions, and how to manipulate them, we can now move on to graphing them. In terms of what you’ll usually find for one of these graphing problems, most expressions will come in the following form: $$f(x)=A\sqrt[n]{B(x-k)}+h.$$
+
+Again, this formula comes down to the four most basic transformations you can make on a function: shifting the input ($x-k$), scaling the input ($Bx$), shifting the output ($+h$), and scaling the output ($A$).
+
+Before we get too carried away with transformations, we need to look at the parent radical functions.  These can be split into two groups: $\sqrt[n]{x}$ where $n$ is even, and where $n$ is odd.
+
+\begin{figure}[!h]
+    \centering
+    \hspace{\stretch{1}}
+    \begin{tikzpicture}[xscale=0.25,yscale=0.25]
+        \draw[<->] (-10,0) -- (10,0) node[right] {$x$};
+        \draw[<->] (0,-10) -- (0,10) node[right] {$f(x)$};
+        \draw[scale=1,domain=0:10,variable=\x,smooth,blue] plot({\x},{sqrt(\x)});
+        \draw (0,12) node {Even ($n=2$ shown)};
+    \end{tikzpicture} \hspace{\stretch{1}}
+    \begin{tikzpicture}[xscale=0.25,yscale=0.25]
+        \draw[<->] (-10,0) -- (10,0) node[right] {$x$};
+        \draw[<->] (0,-10) -- (0,10) node[right] {$f(x)$};
+        \draw (0,12) node {Odd ($n=3$ shown)};
+        \draw[scale=1,domain=-2.15:2.15,variable=\y,smooth,blue] plot({\y*\y*\y},{\y});
+    \end{tikzpicture}
+    \hspace{\stretch{1}}
+\end{figure}
+
+Notice how the domain of all even cases are restricted to $\mathbb{R}^+$, this is because finding even roots of negative numbers requires the use of complex numbers. Given this information, let’s try some examples with the basic transformations.
+
+When trying to find points with integer coordinates, there’s a useful trick we can use. Regardless of what’s actually inside the radical, imagine trying to find points for the parent function. As an example, what $x$-coordinates produce integer $y$-coordinates for the function $f(x)=\sqrt{x}$? Well, the perfect squares: $0$,$1$,$4$,$9$,$\ldots$. We can utilize this knowledge to determine when say $f(x)=\sqrt{2x-1}$ gives nice results. Simply set the inside ($2x-1$) equal to each of the perfect squares:
+
+\begin{table}[!h]
+    \centering
+    \begin{tabular}{|c|c|c|}
+       \toprule
+        $2x-1$ & $x$ & $\sqrt{2x-1}$ \\
+        \midrule
+        $0$ & $\frac{1}{2}$ & $0$ \\
+        $1$ & $1$ & $1$ \\
+        $4$ & $\frac{5}{2}$ & $2$ \\
+        $9$ & $5$ & $3$ \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\begin{wrapfigure}{r}{5cm}
+    \begin{tikzpicture}[xscale=0.4,yscale=0.4]
+        \draw[<->] (-1,0) -- (10,0) node[right] {$x$};
+        \draw[<->] (0,-1) -- (0,10) node[right] {$f(x)$};
+        \draw[scale=1,domain=1:10,variable=\x,smooth,blue] plot({\x},{2*sqrt(\x-1)});
+    \end{tikzpicture}
+\end{wrapfigure}
+This process works the same for cube roots $-$ set the inside equal to the perfect cubes ($1$,$8$,$27$,$\ldots$).
+
+\begin{example}
+Sketch the function $f(x)=2\sqrt{x-1}$.
+\end{example}
+\begin{solution}
+The first thing to take into account is that we are working with an even root ($n=2$) meaning the domain will be restricted. Since we are shifting the input, the domain will shift as well to become $\mathbb{R}\geq 1$ (when in the parent function’s case it was $\mathbb{R}\geq 0$). 
+
+Finding the $x$-values which produce perfect squares, then calculating their $y$-coordinates gives the points $(5,4)$ and $(10,9)$. $\Box$
+\end{solution}
+
+\begin{wrapfigure}{r}{5cm}
+    \begin{tikzpicture}[xscale=0.2,yscale=0.2]
+            \draw[<->] (-10,0) -- (10,0) node[right] {$x$};
+            \draw[<->] (0,-10) -- (0,10) node[right] {$f(x)$};
+            \draw[scale=1,domain=0:10,variable=\x,blue] plot({\x},{1-sqrt(\x/2)});
+    \end{tikzpicture} 
+\end{wrapfigure}
+
+\begin{example}
+Sketch the function $f(x)=1-\sqrt{\dfrac{x}{2}}$.
+\end{example}
+\begin{solution}
+One again, since we are dealing with another even root case (n=2) the domain will be restricted. Since the input is not being shifted, unlike the previous example, the domain will remain the same as the parent function ($\mathbb{R}\geq 0$).
+
+At the “vertex” $x=0$, we have the point $(0,1)$. Finding other small cases which produce perfect squares gives the points $(2,0)$ and $(8,-1)$.
+
+Note that the graph curves downwards due to the negative sign in front of the radical. $\Box$
+\end{solution}
+
+\begin{wrapfigure}{r}{5cm}
+    \begin{tikzpicture}[xscale=0.2,yscale=0.2]
+            \draw[<->] (-10,0) -- (10,0) node[right] {$x$};
+            \draw[<->] (0,-10) -- (0,10) node[right] {$f(x)$};
+            \draw[scale=1,domain=-3.714:1.714,variable=\y,blue] plot({0.5*(\y+1)*(\y+1)*(\y+1)},{\y});
+    \end{tikzpicture} 
+\end{wrapfigure}
+
+Let's try an example using the cube root function and see how its different.
+\begin{example}
+Sketch the function $f(x)=\sqrt[3]{2x}-1$.
+\end{example}
+\begin{solution}
+Now, we have a case in which we are finding odd roots ($n=3$), meaning our domain is not restricted and spans all of $\mathbb{R}$. 
+\end{solution}
+Finding relatively small inputs which produce perfect cubes gives us the points $(0,-1)$, $(-4,-3)$, and $(4,1)$. $\Box$
+
+What if we have radicals where $n>3$? Can we use the same rules? Do they look the same? Let's find out.
+
+\begin{example}
+Sketch the function $f(x)=\sqrt[4]{4x-4}$.
+\end{example}
+\begin{solution}
+With $n=4$ being even, we know the domain will be restricted. Since we are both 
+\end{solution}
+
+\begin{wrapfigure}{r}{5cm}
+    \begin{tikzpicture}[xscale=0.2,yscale=0.2]
+            \draw[<->] (-10,0) -- (10,0) node[right] {$x$};
+            \draw[<->] (0,-10) -- (0,10) node[right] {$f(x)$};
+            \draw[scale=1,domain=0:2.449,variable=\y,blue] plot({1+(\y*\y*\y*\y)/4},{\y});
+    \end{tikzpicture} 
+\end{wrapfigure}
+
+\noindent scaling and shifting the input, we need to factor: $\sqrt[4]{4x-4}=\sqrt[4]{4(x-1)}$. This tells us the parent function $\sqrt[4]{x}$ is being horizontally shifted to the right $1$ unit. Therefore, the domain is given by $\mathbb{R}\geq 1$. Points with integer coordinates include $(1,0)$ and $(4,1)$. $\Box$
+
+\begin{example}
+Sketch the function $f(x)=\sqrt[6]{128-64x}$.
+\end{example}
+\begin{solution}
+This problem highlights the usefulness of knowing the powers of $2$.
+
+Since $n=6$ is even the domain is restricted. We also need to factor the inside of the radical since we are scaling and shifting the input: $\sqrt[6]{128-64x}=\sqrt[6]{-64(x-2)}$.
+\end{solution}
+
+\begin{wrapfigure}{r}{5cm}
+    \begin{tikzpicture}[xscale=0.2,yscale=0.2]
+            \draw[<->] (-10,0) -- (10,0) node[right] {$x$};
+            \draw[<->] (0,-10) -- (0,10) node[right] {$f(x)$};
+            \draw[scale=1,domain=0:3.026,variable=\y,blue] plot({2-(\y*\y*\y*\y*\y*\y)/64},{\y});
+    \end{tikzpicture}
+\end{wrapfigure}
+
+Points with integer coefficients include $(2,0)$, $(\frac{127}{64},1)$, and $(1,2)$. $\Box$
+
+\begin{remark}
+The graph for this one is the second graph on this page; spacing issues came up again, which caused us to put it lower than desired.
+\end{remark}
+
+With this, we will conclude our discussion on evaluating expressions with radical functions.  These should be quite doable using your knowledge of function transformations; the only new concept should be the parity of $n$ and its consequential domain restrictions.  We will finish the chapter with a final section on evaluating (numeric) expressions with radicals.
+
+\section{Evaluating Expressions with Radicals}
+\noindent We've seen that both raising radical equations to powers and conjugates are effective ways to simplify radicals, so let's use this to evaluate expressions with radicals.
+\begin{example}
+Simplify $\sqrt{3+2\sqrt{2}}$.
+\end{example}
+\begin{solution}
+Our goal in doing this is to remove the radical from inside the radical.  To do this, we assign variable $x$ to equal the expression we want to simplify, and then square both sides.  $$x=\sqrt{3+2\sqrt{2}} \implies x^2=3+2\sqrt{2}.$$  We see that $x$ must be in the form $a+b\sqrt{2}$ ($a,b\in\mathbb{R},b\neq 0$).  This means that $x^2=a^2+2b^2+2ab\sqrt{2}$, which tells us that $$a^2+2b^2+2ab\sqrt{2}=3+2\sqrt{2} \implies\begin{cases} a^2+2b^2=3 \\ ab=1\end{cases}.$$  We notice that $a=b=1$ is a valid solution, thus $\sqrt{3+2\sqrt{2}}=1+\sqrt{2}$. $\Box$
+\end{solution}
+\begin{example}
+Find $a$ and $b$, where $a,b\in\mathbb{Z}$, such that $\sqrt{74-12\sqrt{30}}=\sqrt{a}-\sqrt{b}$. Then simplify.
+\end{example}
+\begin{solution}
+The first thing we want to do is square both sides (since they give us the form).  This means that $$74-12\sqrt{30}=a+b-2\sqrt{ab} \implies \begin{cases} 74=a+b \\ \sqrt{ab}=\sqrt{1080}\end{cases}.$$ Substituting $a=74-b$ and rearranging, we get $b^2-74b+1080=0$.  Solving, we get $b=20,54$ (thus, $a=54,20$ respectively).  Since the final solution must be positive, we choose $a=54$ and $b=20$.  This means that $$\sqrt{74-12\sqrt{30}}=\sqrt{54}-\sqrt{20}=3\sqrt{6}-2\sqrt{5}.$$ $\Box$
+\end{solution}
+Let's try this same process using cubic functions instead.
+\begin{example}
+Simplify $\sqrt[3]{45-29\sqrt{2}}$.
+\end{example}
+\begin{solution}
+We can take another guess at the form of the solution and say that it will be $a-b\sqrt{2}$, where $a,b\in\mathbb{Z}$.  We cube both sides to find $$45-29\sqrt{2}=a^3-3a^2b\sqrt{2}+6ab^2-2b^3\sqrt{2}.$$ You can use a method of your choice for this; we will use \textbf{binomial theorem} discussed in \hyperlink{section.6.4.3}{Section 6.4.3}. We split this into a system to get $$\begin{cases} a^3+6ab^2=45 \\ 3a^2b+2b^3=29 \end{cases} \implies \begin{cases} a(a^2+6b^2)=45 \\ b(3a^2+2b^2)=29\end{cases}.$$  This seems daunting to solve at first, but we note that $29$ is prime, meaning that $b=1$ or $b=29$.  $b=29$ is impossible (make sure you see why!), so must find when $3a^2+2=29$.  This is when $a=-3,3$.  Only $a=3$ works in the first equation, so we have $\sqrt[3]{45-29\sqrt{2}}=3-\sqrt{2}.$ $\Box$
+\end{solution}
+This concludes our study of radical functions.  The problems are somewhat different than what we are used to; however, they are all solvable using techniques we've already studied.
+
+Attempt the review and challenge problems.  The challenge problems are a tad on the harder side since they lean toward competition mathematics; however, don't be discouraged!
+\begin{reviewset}
+\item Simplify $\sqrt{6+\sqrt{11}}+\sqrt{6-\sqrt{11}}$. \vspace{3mm}
+\item Rationalize the denominator of each of the following: \newline 
+(a) $\dfrac{1}{\sqrt{3}-\sqrt{2}}$ \hspace{40mm} (c) $\dfrac{1}{\sqrt[3]{7}-1}$ \newline
+(b) $\dfrac{4}{3+\sqrt{7}}$ \hspace{43mm} (d) $\dfrac{2}{\sqrt[3]{25}+\sqrt[3]{5}+1}$ [$\star$]  \vspace{3mm}
+\item Find all real solutions to the equation $\sqrt{x+8}-\dfrac{6}{\sqrt{x+8}}=5.$ \vspace{3mm}
+\item Solve the equation $\sqrt{5x-1}+\sqrt{x-1}=2$. \vspace{3mm}
+\item Without using a calculator, determine whether $\sqrt{2}+\sqrt{3}$ or $\sqrt{10}$ is greater. \vspace{3mm}
+\item Find all $x$ such that $\sqrt{x^2+7x+10}>x+2+\sqrt{x+2}$. \vspace{3mm}
+\item Answer the following questions. \newline 
+(a) Is it true that $\sqrt{(x-1)^2}=x-1$ for all real values of $x$? Why or why not? \newline 
+(b) Is it true that $\sqrt[3]{(x-1)^3}=x-1$ for all real values of $x$? Why or why not? \newline 
+(c) Is it true that $\sqrt[4]{(x-1)^4}=(x-1)^2$ for all real values of $x$? Why or why not? \vspace{3mm}
+\item Find all positive solutions $x$ that satisfy $\sqrt{x}<2x$. \vspace{3mm}
+\item Simplify: $\sqrt[4]{49+20\sqrt{6}}$. \vspace{3mm}
+\item Evaluate the product $\left(\sqrt{5}+\sqrt{6}+\sqrt{7}\right)\left(\sqrt{5}+\sqrt{6}-\sqrt{7}\right)\left(\sqrt{5}-\sqrt{6}+\sqrt{7}\right)\left(-\sqrt{5}+\sqrt{6}+\sqrt{7}\right)$. \vspace{3mm}
+\item Find all solutions to the equation $\sqrt{x-1}-\sqrt{x+1}+1=0$ \vspace{3mm}
+\item Write the number $\dfrac{1}{\sqrt{2}-\sqrt[3]{2}}$ as the sum of terms of the form $2^r$, where $r\in\mathbb{Q}$. (For example, $2^1+2^{-1/3}+2^{8/5}$ is a sum of this form.) \vspace{3mm}
+\item Find all solutions to the equation $4\sqrt{x^3-2x^2+x}=\sqrt{x^3-x^2}$. \vspace{3mm}
+\end{reviewset}
+\begin{challengeset}
+\item If $\sqrt[3]{n+\sqrt{n^2+8}}+\sqrt[n]{n-\sqrt{n^2+8}}=8$, where $n\in\mathbb{Z}$, find $n$. \vspace{3mm}
+\item Solve the equation $\sqrt[3]{60-x}+\sqrt[3]{x-11}=\sqrt[3]{4}$. \vspace{3mm}
+\item Find the ordered triple of positive integers $(a,b,c)$ for which $\left(\sqrt{5}+\sqrt{2}-\sqrt{3}\right)\left(3\sqrt{a}+\sqrt{b}-2\sqrt{c}\right)=12.$ \vspace{3mm}
+\item Find the ordered pair of positive integers $(a,b)$, where $a<b$, such that $\sqrt{1+\sqrt{21+12\sqrt{3}}}=\sqrt{a}+\sqrt{b}$. \vspace{3mm}
+\item Rationalize the denominator and remove nested roots from $\dfrac{\sqrt{4+2\sqrt{3}}+\sqrt{4-2\sqrt{3}}}{\sqrt{4+2\sqrt{3}}-\sqrt{4-2\sqrt{3}}}$. \vspace{3mm}
+\item Find all $x$ such that $\sqrt[3]{5x^2+24x+8}-2=x$. \vspace{3mm}
+\item Simplify $\sqrt[3]{\sqrt{\dfrac{980}{27}}+6}-\sqrt[3]{\sqrt{\dfrac{980}{27}}-6}$. (HINT: make the problem less ugly by introducing some variables.) \vspace{3mm}
+\end{challengeset}
+\end{document}

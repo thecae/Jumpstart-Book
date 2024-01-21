@@ -1,0 +1,287 @@
+\documentclass[../book.tex]{subfiles}
+\graphicspath{{\subfix{../images/}}}
+
+\begin{document}
+\chapter{Systems of Equations}
+\begin{introduction}[Contents]
+\item Solutions to Systems via Graphing
+\item Solutions to Linear Systems via Substitution
+\item Solutions to Linear Systems via Elimination
+\item Larger Systems of Linear Equations
+\item Solutions to Non-Linear Systems
+\item Solutions to Non-Linear Systems via Substitution
+\end{introduction}
+\noindent This chapter is going to discuss systems of equations.  We are going to cover what linear system are and how to solve them.  A natural extension from covering the math of a given linear relationship is to ask what it would mean to have more than one.  This idea is extremely applicable to the real world $-$ many problems needed to be solved have more than one relationship which needs to hold; these “requirements” lend themselves naturally to multiple equations, of which are often linear.  
+
+\begin{remark}
+  A linear system of equations is a set of multiple linear equations.  The “solution” can be thought of as asking “for what values do all of these equations in the system hold?”
+\end{remark}
+\section{Solutions to Systems via Graphing}
+Three different methods will be taught to find the solution to a given system.  We’ll start with arguably the easiest to understand: graphing.  Looking for the solution to a system $-$ when all of the (linear) equations hold $-$ is the same as searching for a set of values which lie on the graphs of each equation.
+
+\begin{wrapfigure}{r}{5cm}
+    \begin{tikzpicture}[xscale=0.25,yscale=0.25]
+         \draw[<->] (-10,0) -- (10,0) node[right] {$x$};
+      \draw[<->] (0,-10) -- (0,10) node[above] {$y(x)$};
+      \draw[scale=1,domain=-10:10,smooth,variable=\x,blue] plot ({\x},{-\x});
+      \draw[scale=1,domain=-6.5:3.5,smooth,variable=\x,red] plot ({\x},{2*\x+3});
+      \filldraw (-1,1) circle[radius=7pt] node[left=1mm] {$(-1,1)$};
+     \end{tikzpicture} 
+\end{wrapfigure}
+
+Let’s look at an example where we have two variables (so we can graph in the Cartesian plane) and two equation:
+
+\begin{example}
+Find the solution to $\begin{cases} 2x-y=-3 \\ x+y=0 \end{cases}$ via graphing.
+\end{example}
+\begin{solution}
+Remember, we want to find a value or set of values which lie on both lines; this is essentially asking to find the intersection point of the two lines.
+
+Based on the graph to the right, we can see that $(-1,1)$ is our solution to the system.  Let’s check our answer by plugging these coordinates back into the original equations.  \begin{align*}
+    \text{EQN 1:}& \hspace{0.25in} 2(-1)-(1)=-3 \\ \text{EQN 2:}& \hspace{0.25in}  (-1)+(1)=0
+\end{align*}$\Box$
+\end{solution}
+\begin{remark}
+  Graphing to solve systems is rarely used as it can be inaccurate if it is done by hand.
+\end{remark}
+\begin{wrapfigure}{r}{5cm}
+    \begin{tikzpicture}[xscale=0.25,yscale=0.25]
+         \draw[<->] (-10,0) -- (10,0) node[right] {$x$};
+      \draw[<->] (0,-10) -- (0,10) node[above] {$y(x)$};
+      \draw[scale=1,domain=-3:1.5,smooth,variable=\x,blue] plot ({\x},{2*\x*\x+3*\x+1});
+      \draw[scale=1,domain=-10:-0.1,variable=\y,red] plot({1-1/\y},{\y});
+      \draw[scale=1,domain=0.1:10,variable=\y,red] plot({1-1/\y},{\y});
+     \end{tikzpicture} 
+\end{wrapfigure}
+
+We won't spend too much longer on this topic, but we considered it important to cover the solution to a non-linear system.  Take a look at the example below.
+
+\begin{example}
+Solve the system $\begin{cases} 2x^2+3x+1=y \\ 1-\dfrac{1}{y}=x \end{cases}$ via graphing.  You may use a graphing calculator for this problem.
+\end{example}
+\begin{solution}
+Our goal is to find the intersection point(s) between the two graphs shown.  Looking at the graph to the right, we see that there are three intersection points between these plots.  We can find these using a graphing calculator or via algebra.  
+
+To solve this algebraically, use substitution to have an equation in terms of $y$ and solve.  We encourage you to try this on your own, but we will not show this method.  
+
+Most students will be solving with a TI-84 Calculator.  Using the graphing menu, we plot both functions (solve the bottom function for $y$ first).  Then, using the intersect feature, we find the three intersection points to be $$(-1.281,0.438) \hspace{0.15in} (0,1) \hspace{0.15in} (0.781, 4.562).$$ $\Box$
+\end{solution}
+With that done, let's move on to a more accurate solution: substitution.
+\section{Solutions to Linear Systems via Substitution}
+Substitution, a more algebraic method that works very well in linear equations, involves taking on of the equations and isolating a variable; this isolated variable can then be substituted into the other equation(s) where standard algebra can then solve the rest.  
+
+Let's run through the different cases of this so you're prepared for everything.
+\begin{example}
+Solve the system of equations $\begin{cases} x+y=4 \\ 3x-2y=2 \end{cases}$ via substitution.
+\end{example}
+\begin{solution}
+\noindent The first thing we need to do is isolate a variable from one of the equations.  In this case, the first equation is easier to do this.  We choose to isolate $y$; however, this is your choice.  We get that $y=4-x$.
+
+Now, we plug this into the second equation.  This gives $$3x-2(4-x)=2 \implies 3x-8+2x=2 \implies 5x=10 \implies x=2.$$  Then, plug this back into one of the equations to solve for $y$.  
+$$(2)+y=4 \implies y=2.$$  This means that the solution, written as an ordered pair, is $(2,2)$.  This can be verified via graphing if you choose; we won't show it.  $\Box$
+\end{solution}
+In this case, the solution was an ordered pair.  But we obviously know that there are cases where this may not be true.  Let's look at another case.
+\begin{example}
+Solve the system of equations $\begin{cases} 2x-y=4 \\ 4x-2y=3 \end{cases}$ via substitution.
+\end{example}
+\begin{solution}
+It seems easiest in this case to solve the first equation for $y$.  Doing this makes $$2x-y=4 \implies 2x=y+4 \implies 2x-4=y.$$  Then, plug this into the second equation.  $$4x-2(2x-4)=3 \implies 4x-4x+8=3 \implies 8=3.$$  We know this not to be true.  This must mean that there is no solution.  $\Box$
+\end{solution}
+
+\begin{remark}
+  In upper-level math courses, it is most common to label problems with no solutions as DNE, which stands for (the solution) Does Not Exist.
+\end{remark}
+
+One way we could have quickly verified this solution is simplifying the second equation.  Dividing by $2$, we would've gotten $2x-y=\dfrac{3}{2}$.  We know this can't be equal to the first equation; thus, it has no solutions.
+
+Let's look at one final case that's not so obvious.
+\begin{example}
+Solve the system of equations $\begin{cases} -x-y=2 \\ 2x+2y=4 \end{cases}$ via substitution.
+\end{example}
+\begin{solution}
+It might be easier in this case to use the second equation to avoid the use of negative signs.  Solving for $x$ in this case, we get $$2x=-4-2y \implies x=-2-y.$$  Plugging this into the first equation gives $$-(-2-y)-y=2 \implies 2+y-y=2 \implies 2=2.$$  This is true no matter what, which means that the system has infinite solutions.  $\Box$
+\end{solution}
+We also might note that in this case, both equations were technically the same.  Multiplying the top equation by $-1$ and the bottom by $\dfrac{1}{2}$ yields $x+y=-2$ for both.  This means that they represent the same line; thus, there are infinite solutions.
+
+Every point on this line will produce a solution to the system, for this reason there are infinite solutions to this specific system.  Therefore, the solution to the system can be written as follows: $$y=-x-2, \hspace{0.25in} x\in\mathbb{R}.$$  Writing it like this allows us to classify the types of solutions, since obviously not all pairs work.
+
+\begin{remark}
+This is how all infinite solutions should be written.  It lets the grader know that there is a classification of solution.  Write it in terms of a dependent variable and define the domain of the independent variable.
+\end{remark}
+
+These are the necessary sections that we need to cover.  Now let's discuss a better method for solving linear systems if it's not easy to isolate a variable: elimination.
+\section{Solutions to Linear Systems via Elimination}
+\noindent The goal of this section is to provide a method in which you don't need an isolated variable.  When coefficients start growing, you'll be left with messy fractions when you use substitution; however, using elimination will help to fix this.
+
+\textit{Elimination} is the process of finding the least common multiple between the same variable in both equations and transforming them such that they then have the same coefficient.  Then, using basic inspection, we solve for the other variable.
+
+This is a little tough to explain without looking at some examples.  Let's try a few.
+\begin{example}
+Solve the system $\begin{cases} 6x-3y=3 \\ 2x+y=-5 \end{cases}$ using elimination.
+\end{example}
+\begin{solution}
+Let's consider each example using some intuition.  The first equation has a common factor of $3$, so let's remove it.  This gives $2x-y=1$ for the new first equation.  We see that both $x$ and $y$ have the same magnitude in these equations, yet $y$ has an opposite sign.  In this case, we will add both equations together to eliminate $y$.  This leaves $4x=-4$, meaning $x=-1$.
+
+To solve for the other variable, plug it into one of the equations.  We'll use the second.  This means that $$2(-1)+y=-5 \implies -2+y=-5 \implies y=-3.$$ $\Box$
+\end{solution}
+
+\begin{remark}
+We could've eliminated $x$ instead of $y$ and we would've received the same answer.  Instead of adding both equations to eliminate $y$, we would've subtracted the equations to eliminate $x$.  Note that this is not always true; this happened out of coincidence.  
+\end{remark}
+
+Let's look at a similar example that requires one extra step.
+\begin{example}
+Solve the system $\begin{cases} -2x+3y=5 \\ 5x+4y=8\end{cases}$ using elimination.
+\end{example}
+\begin{solution}
+We see that in this case, there is no obvious first step.  We know that we must eliminate one of the variables by determining the least common multiple; however, there isn't an easy choice.  In this case, and in all other cases, we will choose the variable with opposite signs for coefficients.  Thus, we choose $x$ as the variable to eliminate.  
+
+The least common multiple between $2$ and $5$ is $2\cdot 5=10$.  To get there, we multiply the top equation by $5$ and the bottom equation by $2$.  This makes the new system $$\begin{cases} -2x+3y=5 \\ 5x+4y=8\end{cases}\implies \begin{cases} -10x+15y=25 \\ 10x+8y=16 \end{cases}.$$  Since the $x$-coefficients are the same, we add the equations.  This yields the resultant equation $23y=41$, meaning $y=\dfrac{41}{23}.$  Plugging this back into one of the equations to solve for $x$ (we will use the second equation), we get $$5x+4\left(\dfrac{41}{23}\right)=8 \implies 5x+\dfrac{164}{23}=\dfrac{184}{23} \implies 5x=\dfrac{20}{23}\implies x=\dfrac{4}{23}.$$  This makes the solution of the system $\left(\dfrac{4}{23},\dfrac{41}{23}\right)$.  $\Box$
+\end{solution}
+
+\begin{remark}
+If both variables have coefficients of the same sign, then choose the one with the smaller least common multiple.  If this isn't terribly obvious, choose the ones with the smaller coefficients.
+\end{remark}
+
+Now, let's discuss the process of solving larger systems.
+\section{Larger Systems of Linear Equations}
+\noindent This section is going to look at systems with more equations and more coefficients.  In this section, most problems will have a variable with a subscript (ex: $x_1$ and $x_2$) to represent the independent variables.  It often becomes confusing to introduce too many letters of the alphabet, so we use this system instead.
+
+Often, problems like this can be tedious to solve for every variable and can be sometimes annoying to write down all the solutions.  To avoid this, some problem writers will choose to ask you to give your answer as an expression in terms of these variables.  However, there are times when we can find this value without ever solving for one or more of the variables.  We will discuss how this happens later in this section.
+
+Now, we will try to solve a $3\times 3$ system of equations (this means there are $3$ variables and $3$ equations).
+\begin{example}
+Solve the system of equations $\begin{cases} -2x+y+z=4 \\ -x+y-z=3 \\ x-y=-1 \end{cases}$ using a method of your choice.
+\end{example}
+\begin{solution}
+We quickly note that graphing seems like a bad idea, as we would have to graph in three-dimensional space.  Since we don't know how to do that yet, and you won't learn until Calculus 3, we aren't going to worry about it.
+
+Substitution doesn't seem like a bad idea in this case, especially with the third equation.  If we solve for $x$ in terms of $y$ (or vice versa), we can plug this into the other equations and reduce it down to a $2\times 2$ system.  From the third equation, we have $x=y-1$.  Plugging this into the other equations we have $$\begin{cases} -2(y-1)+y+z=4 \\ -(y-1)+y-z=3 \end{cases} \implies \begin{cases} -2y+2+y+z=4 \\ -y+1+y-z=3 \end{cases} \implies \begin{cases} -y+z=2 \\ -z=2 \end{cases}.$$  We quickly find that $z=-2$ and start plugging this back into the other equations.  Plugging this into $-y+z=2$, we get $y=-4$.  Plugging $y$ into the original substitution, we get $x=-4-1=-5$.
+
+We write the solution as an ordered triple, so the solution is $(-5,-4,-2)$.  $\Box$
+\end{solution}
+Let's try another example with a $3\times 3$ system.
+\begin{example}
+Find the solutions $x_1$, $x_2$, and $x_3$ that satisfy $\begin{cases} x_1+x_2+x_3=6 \\ x_1+2x_2+3x_3=14 \\ 2x_1+5x_2+8x_3=36 \end{cases}$.
+\end{example}
+\begin{solution}
+Again, graphing isn't a plausible solution.  Substitution could be done but elimination is a better option.  In problems like this, we want to eliminate one variable (the same variable) from two of the three equations.  In this case, we will eliminate $x_1$.  To do this, we subtract equation $1$ from equation $2$, and then subtract twice equation $1$ from equation $3$.  Mathematically, this looks like \begin{align*}
+    \text{EQN } 1 - \text{EQN } 2&: (x_1+x_2+x_3)-(x_1+2x_2+3x_3)=(6)-(14) \implies -x_2-2x_3=-8\\
+    2\text{EQN } 1 - \text{EQN } 3&: 2(x_1+x_2+x_3)-(2x_1+5x_2+8x_3)=2(6)-36 \\
+    &\implies -3x_2-6x_3=-24 \implies -x_2-2x_3=-8.
+\end{align*}
+We see that we got the same equation twice!  That means that we have a dependent system where there are infinite solutions.  Like the example in \hyperlink{section.11.2}{Section 11.2}, we must find a solution in terms of other variables.
+
+We can quickly see that $x_2=8-2x_3$.  Let's solve for $x_1$ in terms of $x_3$ using the first equation.  This gives $$x_1+(8-2x_3)+x_3=6 \implies x_1-x_3=-2 \implies x_1=x_3-2.$$  So, in this case, we write the solution as $(x_3-2,8-2x_3,x_3), \hspace{0.10in} x_3\in\mathbb{R}$.  $\Box$
+\end{solution}
+This doesn't always happen.  There is a case, however, where it is obvious that there will be a parameter.  This is when there are less equations than the number of variables.  There is no way to solve for more variables than there are equations, meaning we must write the answers in terms of other variables.  This will be showcased in the review problems.
+
+\begin{remark}
+You may be wondering: what happens if there are more equations than variables?  This is a great question that leads to a similar answer.  There are a few possibilities here: all the systems could work out and leave one system.  Or, one of the equations could simply be repetitive (whether it be a multiple of one of the equations, the sum of two other equations, etc.), which leaves it no value and can be ignored.  Otherwise, the equations won't work together (this is the most common) and leads to no solutions.
+\end{remark}
+
+Often, for systems of equations with more than three variables, elimination is the best method.  This is usually since there isn't an equation only in terms of two variables.  To solve these, try to reduce the system to $3\times 3$ with the least number of operations, and solve from there.  The goal is to always reduce one variable at a time until you reach the $2\times 2$, which is easily solvable.
+
+Now, let's discuss the final type of larger system that there might be: when the question asks for an answer in terms of other variables.  This is somewhat common if there are less equations than variables, but is also seen when there are as many equations as variables.
+\begin{example}
+Find $x-y+z$ if $3x-y+5z=44$ and $x+2z=12$.
+\end{example}
+\begin{solution}
+We see that we have more variables than equations, so we either have to find each variable in terms of another or we can find $x-y+z$ head-on.  Let's work on getting there one variable at a time, starting with $x$.  Subtracting twice equation $2$ from equation $1$, we get $$(3x-y+5z)-2(x+2z)=(44)-2(12)=x-y+z=20.$$  Turns out, we made it without any extra work!  So the answer is $20$.  $\Box$
+\end{solution}
+These are the types of larger systems of equations.  Note that there wasn't much new in this section - we simply used what we knew and applied it in a larger scenario.  Now, let's move on to non-linear systems, where we will have to slightly modify our methods to solve them.
+\section{Solutions to Non-Linear Systems}
+This section is going to involve a lot of substitution.  Substitution will serve as the best method for nearly every problem in this section and the next section.  Most problems here will be $2\times 2$ systems.  Our goal is to combine the equations such that we have an equation we know how to solve - a high percentage of them will be quadratics (or hidden quadratics).  
+
+The best way to learn to solve these is by example.  Let's get started.
+\begin{example}
+Solve the system of equations $\begin{cases} x-y=3 \\ \dfrac{1}{x}+\dfrac{1}{y}=\dfrac{1}{2} \end{cases}$ using substitution.
+\end{example}
+\begin{solution}
+Substitution will be much easier with the top equation.  We see that $x=y+3$, so we plug that into the bottom equation.  Doing this and simplifying, we get $$\dfrac{1}{y+3}+\dfrac{1}{y}=\dfrac{1}{2} \implies \dfrac{2y+3}{y(y+3)}=\dfrac{1}{2}.$$  Cross-multiplying gives us the equation $$2(2y+3)=y^2+3y \implies 4y+6=y^2+3y \implies y^2-y-6=0.$$  This is a simple quadratic we can factor to solve.  This gives $(y-3)(y+2)=0 \implies \begin{matrix} y_1=-2 \\ y_2=3 \end{matrix}.$
+
+Before we continue, we need to make sure that both of these solutions are valid.  The only way they couldn't be valid is if $y=0$, which isn't true; thus, they are both valid.
+
+Now, we plug them back into the first equation (the easier equation) to solve for $x$.  This gives $\begin{matrix} x_1+2=3 \implies x_1=1 \\ x_2-3=3 \implies x_2=6 \end{matrix}$.  Thus, our two solutions are $\left(1,-2\right)$ and $\left(6,3\right)$.  $\Box$
+\end{solution}
+
+Let's look at an example where elimination may be the better choice.
+\begin{example}
+Find all solutions $(x,y)$ such that $\begin{cases} x^2+xy=126 \\ x^2-xy=36 \end{cases}$ holds true.
+\end{example}
+\begin{solution}
+In this case, we want to remove the $xy$ term, and we can do this very easy via adding the two equations.  Doing this gives us $2x^2=162$, meaning that $x^2=81$.  We get two solutions: $x_1=-9$ and $x_2=9$.  
+
+Quickly checking that there are no domain restrictions, we then move on to find $y$.  Plugging in the values of $x$ into the top equation, we get $\begin{matrix} 81-9y=126 \implies y=-5 \\ 81+9y=126 \implies y=5 \end{matrix}$.  This means that our two solutions are $(-9,-5)$ and $(9,5)$.  $\Box$
+\end{solution}
+\begin{note}
+Something you should always do after every problem is check the solutions to make sure that they're valid.  We haven't been doing this throughout the problems to maintain the brevity of the solutions; however, it is important you practice this in the review problems.
+\end{note}
+There are quite a few types of these and they all encompass the same methodology.  Thus, we aren't going to show any more examples.  When you encounter problems like this, we urge you to follow one of two ideas: (1) use elimination to get rid of the non-linear terms \textit{or} convert it to something you can eliminate (such as a perfect square trinomial), or (2) use substitution to get rid of a variable and solve the for the other.
+
+Now, let's expand on the idea of substitution to simplify the system.
+\section{Solutions Non-Linear Systems via Substitution}
+\noindent Throughout this chapter, we've covered the most basic use of substitution.  The goal of this substitution was to simplify the equation into a single-variable linear equation.  In this case, however, we are going to typically make two substitutions to make a system of equations that's easier to understand.  Let's look at the easiest type.
+\begin{example}
+Find all pairs $(x,y)$ such that $\begin{cases} x+y+\sqrt{x+y}=30 \\ x-y+\sqrt{x-y}=12 \end{cases}$ is satisfied.
+\end{example}
+\begin{solution}
+In this case, there is no simple way to isolate $x$ or $y$, and even if we add them, the square root terms will still be there.  To fix this, we need a way to get rid of the square root terms.  So, to fix this, we introduce two new variables.  We assign $u=\sqrt{x+y}$ and $v=\sqrt{x-y}$.
+
+Doing this allows us to remove the square roots from both equations and be left with two quadratic equations.  We now have the system $\begin{cases} u^2+u=30 \\ v^2+v=12 \end{cases}$.  Since the equations are independent of one another (they don't share variables), we solve each individually.
+
+The solutions to the first equation are $u=-6$ and $u=5$.  The solutions to the second equation are $v=-4$ and $v=3$.  Remember that $u$ and $v$ both represent square root quantities, so neither can be negative.  Thus, we are left with $u=5$ and $v=3$.  Substituting the values of $u$ and $v$, we get $\begin{cases} \sqrt{x+y}=5 \\ \sqrt{x-y}=3 \end{cases}$.  We can easily square both sides to get $\begin{cases} x+y=25 \\ x-y=9 \end{cases}$.  Solving both equations using basic elimination gives $(x,y)=(17,8)$.  $\Box$
+\end{solution}
+Let's try a different style of problem that still encompasses the same principle as the previous problem.
+\begin{example}
+Solve $\sqrt{3x^2-4x+34}+\sqrt{3x^2-4x-11}=9$ for $x$.
+\end{example}
+\begin{solution}
+The first thing you might be wondering is why this is in the Systems of Equations chapter.  It's not a system!  What we'll find out is that making a substitution like this will create a small system that we have to solve.  It won't be tough but it's part of the process.
+
+Let's let $a=\sqrt{3x^2-4x+34}$ and $b=\sqrt{3x^2-4x-11}$.  This means that $a+b=9$.  Let's take advantage of the fact that $a$ and $b$ only differ by a constant.  Squaring both terms and subtracting, we get $$a^2-b^2=(3x^2-4x+34)-(3x^2-4x-11)=45.$$  So, we now have the system $\begin{cases} a+b=9 \\ a^2-b^2=45 \end{cases}$.  Factoring the bottom and substituting the top equation, we get $(9)(a-b)=45 \implies a-b=5$.  This reduces the system to $\begin{cases} a+b=9 \\ a-b=5 \end{cases}$.  We can easily solve this to get $(a,b)=(7,2)$.  It doesn't matter which we use, so we'll use the second.  This gives $$b=\sqrt{3x^2-4x-11}=2 \implies 3x^2-4x-11=4 \implies 3x^2-4x-15=0 \implies \begin{matrix} x_1=-5/3 \\ x_2=3 \end{matrix}.$$$\Box$
+\end{solution}
+Let's try one that uses elimination to manipulate the equations into something solvable.
+\begin{example}
+Find all solutions to the system of equations $\begin{cases} 2x^2+3y^2-4xy=3 \\ 2x^2-y^2=7 \end{cases}$.
+\end{example}
+\begin{solution}
+We are going to do a style of elimination that eliminates the constants rather than the variables.  Thus, in this case, we are going to subtract three times the bottom equation from seven times the top equation.  This gives $$7(2x^2+3y^2-4xy)-3(2x^2-y^2)=7(3)-3(7) \implies 8x^2+24y^2-28xy=0.$$  Dividing by four on both sides gives $2x^2-7xy+6y^2=0.$  This is something that we can factor.  This factors to $(2x-3y)(x-2y)=0$.  This means that $x=\dfrac{3}{2}y$ or $x=2y$.  Plugging $x=2y$ into the bottom equation gives the solutions $(x,y)=(2,1)$ and $(x,y)=(-2,-1)$.  Letting $x=\dfrac{3}{2}y$ gives $(x,y)=\left(\dfrac{3}{2}\sqrt{2},\sqrt{2}\right)$ and $(x,y)=\left(-\dfrac{3}{2}\sqrt{2},-\sqrt{2}\right)$.  $\Box$
+\end{solution}
+
+\begin{remark}
+There are other solutions to this problem, but we felt that this was the most simple to understand.  Another solution involves removing the $2x^2$ term from both equations as it's the term they have in common.
+\end{remark}
+
+If you don't understand how we factored the multi-variable function, consider making another substitution.  If you divide both sides by $y^2$ and let $z=\dfrac{x}{y}$, it will reduce to a uni-variate quadratic that you can solve using any method from \hyperlink{chapter.5}{Chapter 5}.
+
+There isn't much more to cover in this section.  When you are given a non-linear system, consider whether it may be easier to substitute to simplify.  Other times, you must substitute; otherwise, there won't be a way to isolate one of the other variables or eliminate it.  Consider the use of eliminating constants, as sometimes it's the easiest way to solve.  
+
+You now have many tools in your repertoire to solve different types of systems.  As you traverse through these practice problems, try and think of the easiest method of solving these rather than the first that comes to mind, as there is almost always an easier way.
+\begin{reviewset}
+\item For each system, solve using the indicated method.  \newline 
+(a) $\begin{cases} 2x-5y=-2 \\ -3x+7y=4\end{cases}$ [elimination] \hspace{\stretch{1}}
+(b) $\begin{cases} 5x-y=-1 \\ -9x+2y=-2\end{cases}$ [substitution] \newline 
+(c) $\begin{cases} -3x+2y=2 \\ -5x+3y=0\end{cases}$ [elimination]\hspace{19mm}
+(d) $\begin{cases} 4x+2y=-6 \\ -3x+3y=18\end{cases}$ [graphing]\newline 
+(e) $\begin{cases} 6x-3y=9 \\ 4x+2y=18\end{cases}$ [substitution]
+\item For each part, determine whether the system of equations has $0$, $1$, or infinite solutions without any manipulation.  \newline 
+(a) $\begin{cases} 2x-3y=6 \\ -6x+9y=-18 \end{cases}$ \hspace{50mm} (b) $\begin{cases} 2x-8y=4 \\ -x+4y=-5 \end{cases}$ \newline
+\item Solve the following systems using a method of your choice.  \newline 
+(a) $\begin{cases} 2x-7y+2z=3 \\ x+4z=1 \\ x-6y-z=2\end{cases}$ \hspace{5mm} (b) $\begin{cases} x+y-2z=-2 \\ -y+3z=1 \\ 4x+y+2z=-4\end{cases}$ \hspace{5mm} (c) $\begin{cases} -5x+y+3z=2 \\ 3x+3y=-3 \\ 2x+4y+z=-3\end{cases}$ \newline
+\item Find all pairs $(x,y)$ such that $\begin{cases} xy=1 \\ y=x+1\end{cases}$ holds true.
+\end{reviewset}
+\begin{challengeset}
+\item Solve the system $\begin{cases} 4x+y+z=1 \\ 2x-y+z=3 \end{cases}$ using a method of your choice.
+\item Determine the geometric shape produced by $ax+by+cz=d$ where $a,b,c,d\in\mathbb{R}$.  (HINT: the intersection between two of these objects must be a line.)
+\item For what values of $k$ does the system of equations $\begin{cases} kx+y+z=k \\ x+ky+z=k \\ x+y+kz=k \end{cases}$ have no solution, infinite solutions, and exactly one solution?
+\item Solve the system $\begin{cases} -2x+3y-z=-2 \\ 4x-6y+2z=4 \\ -4x+6y-2z=-4\end{cases}$ using a method of your choice.
+\item Find all solutions to the linear piece-wise functions $f(x)=\begin{cases} 2x+2 & x<2 \\ \dfrac{x}{2}+4 & x\geq 2 \end{cases}$ and $g(x)=\begin{cases} 3x-6 & x\geq 0 \\ -6 & x<0\end{cases}$.  (HINT: Graphing may be a good option this time.)
+\item Find a set of functions $f(x,y)$, $g(x,y)$, and $h(x,y)$ and constants $k_1$, $k_2$, and $k_3$ such that the solution to the system $\begin{cases} f(x,y)=k_1 \\ g(x,y)=k_2 \\ h(x,y)=k_3 \end{cases}$ has its only solution at $(-1,2)$.
+\item Solve the system $\begin{cases} 3y+z-8w=1 \\ -2x+2y-w=-1 \\ x+4y-z+3w=2 \\ 3x+5y-z+2z=-1 \end{cases}$ using a method of your choice.
+\item Show that for any system $\begin{cases} f(x)=ax+b \\ f^{-1}(x) \end{cases}$ where $a,b\in\mathbb{R}$, the solution to the system either has no solution or it must lie on $y(x)=x$.
+\item Find the area of the region of points that satisfy the system $\begin{cases} y>x \\ x>-x \\ y<x+8 \\ y<-x+8 \end{cases}$.
+\item Find all ordered pairs of real numbers $(x,y)$ that satisfy $\begin{cases} x^2+xy=35 \\ y^2+xy=14 \\ x-y=3 \end{cases}$.
+\item Find all ordered pairs of real numbers $(x,y)$ that satisfy $\begin{cases} x^3-4y^3=4 \\ 3y^3-x^2y+xy^2=1 \end{cases}$.
+\end{challengeset}
+\end{document}
