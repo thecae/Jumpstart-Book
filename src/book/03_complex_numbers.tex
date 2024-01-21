@@ -1,0 +1,361 @@
+\documentclass[../book.tex]{subfiles}
+\graphicspath{{\subfix{../images/}}}
+
+\begin{document}
+\chapter{Complex Numbers}
+\begin{introduction}[Contents]
+\item Arithmetic of Complex Numbers
+\item The Argand Plane
+\item Real and Imaginary Parts
+\item Solving and Graphing in the Complex Plane
+\end{introduction}
+\noindent Anyone reading this text, up to this point, should know that the square of any real number is positive.  For example, $2^2=4$, $(-3)^2=9$, etc.  What would happen if the square of a number was negative?  What value of $x$ would make $x^2=-1$ or $x^2+1=0$ true?
+
+Some people might claim that there are no solutions.  As previously states, the square of any real number is positive, so this is impossible.  Even looking at the graph, it's not possible.  $y(x)=x^2+1$ never goes below the $x$-axis.  Mathematicians pondered this idea for centuries, wondering what type of number could satisfy this equation.  It wasn't until 1777 that Euler defined a constant to represent this value, $i$.  He defined $i$ such that $i^2=-1$, or $i=\sqrt{-1}$.
+
+An \textit{imaginary number} is a number whose square is a non-positive, real number.  A \textit{real number} is a number that can be plotted on the number line.
+
+A \textit{complex number} is any number in the form $z=a+bi$, where $a,b\in\mathbb{R}$.  Complex numbers contain two parts: the \textit{real part} and the \textit{imaginary part}.  $a$ represents the real part and $b$ represents the imaginary part.  Note that all numbers are complex numbers; real numbers are defined as $b=0$ and imaginary numbers are defined as $b\neq 0$.  The symbol $\mathbb{C}$ is used to represent the set of complex numbers.
+\section{Arithmetic of Complex Numbers}
+Complex numbers follow arithmetic very similar to real numbers.  The main difference comes in multiplication and division.  Let's consider complex numbers in the same way as linear functions; note the similarity between $f(x)=\alpha+\beta x$ and $z=a+bi$.  If you wanted to add or subtract two linear functions, $f_1(x)$ and $f_2(x)$, you would combine like terms: \begin{align*}
+    f_1(x)+f_2(x)&=\left(\alpha_1+\beta_1 x\right)+\left(\alpha_2+\beta_2 x\right)=\left(\alpha_1+\alpha_2\right)+\left(\beta_1+\beta_2 \right)x, \\
+    f_1(x)-f_2(x)&=\left(\alpha_1+\beta_1 x\right)-\left(\alpha_2+\beta_2 x\right)=\left(\alpha_1-\alpha_2\right)+\left(\beta_1-\beta_2 \right)x.
+\end{align*}
+Consider the addition and subtraction of complex numbers in the same way:
+\begin{align*}
+    z_1+z_2=\left(a_1+b_1i\right)+\left(a_2+b_2i\right)=\left(a_1+a_2\right)+\left(b_1+b_2\right)i, \\ 
+    z_1-z_2=\left(a_1+b_1i\right)-\left(a_2+b_2i\right)=\left(a_1-a_2\right)+\left(b_1-b_2\right)i.
+\end{align*}
+Using the same mentality, we will consider the multiplication of two complex numbers.  Let's multiply the same linear functions: \begin{align*}
+    f_1(x)\cdot f_2(x)&=\left(\alpha_1+\beta_1 x\right)\cdot \left(\alpha_2+\beta_2 x\right)=\alpha_1\left(\alpha_2+\beta_2 x\right)+\beta_1 x\left(\alpha_2+\beta_2 x\right) \\
+    &= \alpha_1\alpha_2+\alpha_1\beta_2 x+\alpha_2\beta_1x+\beta_1\beta_2x^2=\alpha_1\alpha_2+\left(\alpha_1\beta_2+\alpha_2\beta_1\right)x+\beta_1\beta_2x^2
+\end{align*}
+That looks like a mess.  We will learn a better way to think about this multiplication in Chapter 5.  Let's try to do the same thing with imaginary numbers:\begin{align*}
+    z_1\cdot z_2&=\left(a_1+b_1i\right)\cdot \left(a_2+b_2i\right)=a_1\left(a_2+b_2i\right)+b_1i\left(a_2+b_2i\right) \\
+    &=a_1a_2+a_1b_2i+a_2b_1i+b_1b_2i^2=a_1a_2+\left(a_1b_2+a_2b_1\right)i+b_1b_2i^2 \\
+    &=\left(a_1a_2-b_1b_2\right)+\left(a_1b_2+a_2b_1\right)i
+\end{align*}
+Note that, in that last step, $i^2=-1$!  We defined that at the beginning of the chapter, so it's important that we remember it when we do multiplication so we can further simplify.  
+
+The last operation we have is division and it's the trickiest of them all.  The form of $z_1/z_2$ is $\left(a_1+b_1i\right)/\left(a_2+b_2i\right)$, but there's an issue with that.  Unlike linear functions, we can't leave imaginary numbers like this.  Why?  Remember that $i=\sqrt{-1}$.  Keeping radical numbers in the denominator means the fraction is un-simplified, so we need to remove it.  How did we do that with radicals?  We multiplied by the \textit{conjugate}!
+\begin{definition}{Conjugate}{conj}
+The \textit{conjugate} of a complex number $z=a+bi$ is $\overline{z}=a-bi$.  
+\end{definition}
+\noindent Let's attempt to find a simplified form of the conjugate: $$\frac{a_1+b_1i}{a_2+b_2i}=\frac{a_1+b_1i}{a_2+b_2i}\cdot \left(\frac{a_2-b_2i}{a_2-b_2i}\right)=\frac{\left(a_1a_2+b_1b_2\right)+\left(a_2b_1-a_1b_2\right)i}{a_2^2+b_2^2}$$
+We skipped some steps in the process, so we'll leave it to you to check the final answer.  This, like multiplication, yields a messy answer in variable form; we don't recommend memorizing this formula, but rather computing each problem individually.
+
+Note the denominator is a real number.  This is always true, and important enough to put inside a note:
+\begin{note}
+The product of a complex number and its conjugate pair is a real number.
+\end{note}
+
+\noindent Let's consider a few examples below:
+\begin{example}
+Let $z_1=5-2i$ and $z_2=-1+3i$.  Compute $z_1+z_2$, $z_1-z_2$, $z_1\cdot z_2$, and $z_1/z_2$.
+\end{example}
+\begin{solution}
+We add complex numbers by adding the real and imaginary parts separately: $$z_1+z_2=\left(5-1\right)+\left(-2+3\right)i=4+i.$$
+We do the same thing for subtraction:
+$$z_1-z_2=\left(5+1\right)+\left(-2-3\right)i=6-5i.$$
+We use the distributive property to multiply complex numbers: \begin{align*}
+    z_1\cdot z_2&=\left(5-2i\right)\cdot\left(-1+3i\right)=5\left(-1+3i\right)-2i\left(-1+3i\right) \\
+    &=-5+15i+2i-6i^2=-5+17i+6=1+17i.
+\end{align*}
+We multiply by the conjugate to simply complex numbers:
+$$\frac{z_1}{z_2}=\frac{5-2i}{-1+3i}\cdot\left(\frac{-1-3i}{-1-3i}\right)=\frac{-5+2i-15i+6i^2}{1+9}=-\frac{11}{10}-\frac{13}{10}i.$$$\Box$
+\end{solution}
+\begin{example}
+Let $f(x)=\left(2-3i\right)x^2-\left(7-2i\right)x-4+5i$.  Compute $f(1)$, $f(i)$, and $f(1-2i)$.
+\end{example}
+\begin{solution}
+Finding $f(1)$ is simple enough:
+$$f(1)=\left(2-3i\right)(1)-\left(7-2i\right)(1)-4+5i=2-3i-7+2i-4+5i=-9+4i.$$
+$f(i)$ is also pretty easy to find.  Don't forget that $i^2=-1$:
+$$f(i)=\left(2-3i\right)(-1)-\left(7-2i\right)(i)-4+5i=-2+3i-7i-2-4+5i=-8+i.$$
+Finding $f(1-2i)$ is a much greater challenge.  Note that we have to distribute multiple times to find a simplified answer: \begin{align*}
+   f(1-2i)&=\left(2-3i\right)\left(1-2i\right)^2-\left(7-2i\right)\left(1-2i\right)-4+5i \\
+   &=\left(2-3i\right)\left(-3-4i\right)-\left(7-2i\right)\left(1-2i\right)-4+5i \\
+   &= \left(-18+i\right)-\left(3-16i\right)-4+5i = -25+22i
+\end{align*}$\Box$
+\end{solution}
+\noindent We've already dealt with the $i^2$, but what happens if $i$ is taken to a larger power?  Is there a way to evaluate $i^n$, where $n\in\mathbb{Z}$?  Let's do some multiplying and see what comes of it:
+$$i^2=\left(\sqrt{-1}\right)\left(\sqrt{-1}\right)=-1 \hspace{0.25in} i^3=\left(i^2\right)(i)=\left(-1\right)(i)=-i \hspace{0.25in} i^4=\left(i^2\right)^2=\left(-1\right)^2=1$$
+\noindent We don't need to go any beyond this.  Why?  Because $1$ multiplied by anything becomes itself, so there's no point.  So what does this tell us?  We now see that the powers of $i$ repeat every fourth power, so we now have an easy way of finding $i^n$.  All we need to do is find the remainder when $n$ is divided by four.  Then use that remainder to find the associated value.
+\begin{note}
+The powers of $i$ repeat with period four:
+\begin{align*}
+    i^1&=i^5=i^9 = \ldots=i \\
+    i^2&=i^6=i^{10}=\ldots=-1 \\
+    i^3&=i^7=i^{11}=\ldots=-i \\
+    i^4&=i^8=i^{12}=\ldots=1
+\end{align*}
+\end{note}
+\begin{example}
+Compute $i^{12}$, $i^{78}$, and $i^{2021}$.
+\end{example}
+\begin{solution}
+For the first part, note that $12/4=3\text{R}0$, so we know the answer $\left(i^4\right)^3\left(i^0\right)=1\cdot 1=1$.  For the second part, we see that $78/4=19\text{R}2$, so we see that $\left(i^4\right)^{19}\left(i^2\right)=1\cdot \left(-1\right)=-1$.  For the last part, we see that $2021/4=505\text{R}1$, thus $\left(i^4\right)^{505}\left(i^1\right)=1\cdot i=i$.$\Box$
+\end{solution}
+\begin{remark}
+  In the solution above, $R$ means remainder.
+\end{remark}
+\noindent The last thing that we need to cover in this section is solving simple equations with complex numbers.  Solving these are very similar to real-numbered equations, except we need to keep complex arithmetic in mind.  These examples will cover some of the more unique styles of questions, but overall, they aren't too difficult.  There's not much that needs to be said for this section, so let's look at two examples.  
+\begin{example}
+Find all values of $z$ such that $z^2+25=0$.
+\end{example}
+\begin{solution}
+Subtracting $25$ on both sides of the equation gives $z^2=-25$.  Thus, $z=\pm\sqrt{-25}=\pm 5\sqrt{-1}=\pm 5i.$$\Box$
+\end{solution}
+\begin{example}
+Find all complex numbers $z$ such that $\displaystyle \frac{2z+3i}{z-1}=-4+5i$.
+\end{example}
+\begin{solution}
+Multiplying both sides by the denominator gives  $$2z+3i=\left(-4+5i\right)\left(z-1\right)=-4z+5iz+4-5i.$$  Putting all the $z$ terms on the left side and the non-$z$ terms on the other gives $$2z+3i=-4z+5iz+4-5i \implies 6z-5iz=4-8i \implies \left(6-5i\right)z=4-8i.$$ Now we can solve for $z$.  $$\left(6-5i\right)z=4-8i \implies z=\frac{4-8i}{6-5i}=\frac{4-8i}{6-5i}\left(\frac{6+5i}{6+5i}\right)=\frac{44-28i}{61}.$$$\Box$
+\end{solution}
+\begin{remark}
+  Multiplying the denominator assumes it does not equal zero, in this case that $z\neq 1$, this must be kept in mind once we find our solution.
+\end{remark}
+\noindent There's nothing else that you need to know to solve most types of arithmetic equations.  It is possible to take the root of a complex number, like $\sqrt{i}$, but this is not something that we need to worry about.  Let's now look at the Complex Plane, referred to as the Argand Plane, and how to graph complex numbers.
+\section{The Argand Plane}
+\noindent Any complex number can be represented as a point on the Argand plane.  Like the Cartesian (coordinate) plane, the Argand plane is split into two axes: a horizontal axis and a vertical axis.  On the Argand plane, the horizontal axis is the \textit{real} axis and the vertical axis is the \textit{imaginary} axis.  To plot a point $(x,y)$ on the Argand plane, the complex number would have to be in the form $z=x+yi$.  Thus, for a complex number $z=a+bi$, $a$ is the number of units in the $x$-direction and $b$ is the number of units in the $y$-direction.
+
+Another similarity with the Cartesian plane is that its center or \textit{origin} is at 0.  Remember, in the Argand plane we deal with numbers instead of points: the origin of the Argand plane is $z=0$ while the origin of the Cartesian plane is $(0,0)$.
+
+The real axis of the Argand plane is labelled $\Re(z)$ and the imaginary axis of the Argand plane is denoted $\Im(z)$, where $\Re(z)$ is the real component of $z$ and $\Im(z)$ is the imaginary component of $z$.  For example, $\Re(3-2i)$=3 and $\Im(3-2i)=-2$.  Some sources (and most students) will use $Re(z)$ and $Im(z)$ as their notation; either is acceptable.
+
+Note that if $\Im(z)=0$, the real-valued points are plotted on the real axis.  This forms what we know as the number line.
+
+We are going to work through this section via example as this is the best way to understand the workings of the Argand plane.
+\begin{example}
+Plot $z=1+2i$ on the Argand plane.  On the same plane, plot $\overline{z}$ and $-z$.
+\end{example}
+\begin{solution}
+The graph is shown to the right.  $\Box$
+\end{solution}
+\begin{wrapfigure}{r}{7cm}
+    \centering
+\begin{tikzpicture}
+    \draw[line width=0.5mm, ->] (-3,0) -- (3,0) node[right] {$\Re(z)$};
+    \draw[line width=0.5mm, ->] (0,-3) -- (0,3) node[above] {$\Im(z)$};
+    \filldraw[blue] (1,2) circle[radius=1.5pt] node[above right] {$z$};
+    \filldraw[red] (1,-2) circle[radius=1.5pt] node[above right] {$\overline{z}$};
+    \filldraw[green] (-1,-2) circle[radius=1.5pt] node[above left] {$-z$};
+\end{tikzpicture}
+\end{wrapfigure}
+\noindent What do we notice? We see that $z$ and $\overline{z}$ are reflections of each other across the real axis, $z$ and $-z$ are $180$-degree rotations of each other about the origin, and $\overline{z}$ and $-z$ are reflections of each other across the imaginary axis.  
+\begin{note}
+For every complex number $z$, there exists:
+\begin{itemize}
+    \item The point $-z$ that is a $180$-degree rotation of $z$ about the origin.
+    \item The points $z$ and $\overline{z}$ which are reflections of each other over the real axis.
+    \item The points $\overline{z}$ and $-z$ which are reflections of each other over the imaginary axis.
+\end{itemize}
+\end{note}
+\noindent These are not something worth memorizing; they should become intuitive after working with the Argand plane for a little bit.
+
+Now let's move on to distances in the Argand plane.  In the coordinate plane, we have a distance formula for finding the distance between two points.  We said that the shortest distance between two points, $(x_1,y_1)$ and $(x_2,y_2)$ is $d=\sqrt{\left(x_2-x_1\right)^2+\left(y_2-y_1\right)^2}$.  Will this be the same in the complex plane?  The short answer is yes.  Remember that, in the Argand plane, we write points differently; we write points in the form $z=a+bi$ rather than $(a,b)$.  Once we get this out of the way, the method for distance finding is the same.  The distance between $z=a+bi$ and $z=0$ (or the distance between $(a,b)$ and $(0,0)$) is $\sqrt{a^2+b^2}$.
+\begin{note}
+In the Argand plane, we define the distance between some point and $z=0$ as the \textit{magnitude} of $z$.  The notation for magnitude is $||z||$.
+\end{note}
+Now, how do we find the distance between two points in the Argand plane?  We're going to use the same distance formula with the coordinate plane; this time, our goal is to find a notation in terms of the magnitude notation.  To find the distance between $z_1=a_1+b_1i$ and $z_2=a_2+b_2i$, we note that these points correspond with $\left(a_1,b_1\right)$ and $\left(a_2,b_2\right)$ in the coordinate plane.  That distance is $\sqrt{\left(a_2-a_1\right)^2+\left(b_2-b_1\right)^2}$.  How can we form that with the given complex numbers?  Subtract them!  Since $z_2-z_1=\left(a_2-a_1\right)+\left(b_2-b_1\right)i$, so the distance between two points in the Argand plane is $||z_2-z_1||$.  We restate this in the following note:
+\begin{note}
+The distance between two points in the Argand plane, $z_1$ and $z_2$, is $||z_2-z_1||$.
+\end{note}
+\noindent Now that we've covered the important aspects of the Argand plane, let's move on proving certain properties of complex numbers.
+\section{Real and Imaginary Parts}
+\noindent This section is going to involve more proofs than most students are used to.  No, these aren't the geometry proofs where you must list statements and reasons; these are simply using given information to reach a given end goal.  With the given information, you can take it in any way you desire, as long as you use mathematically-sound reasoning.  Math competitions such as the USAMO make students create very rigorous proofs where any formula or theorem used must be derived in the proof.
+
+Let's start off by proving some important ideas regarding the conjugates of complex numbers.  These proofs aren't that hard; it's simply ensuring that the generalizations work for any complex number.  Let's attempt to relate the combinations of two conjugates.  Let $z_1=a_1+b_1i$ and $z_2=a_2+b_2i$.  We then know that $\overline{z_1}=a_1-b_1i$ and $\overline{z_2}=a_2-b_2i$.  Let's find $\overline{z_1+z_2}$.  $$\overline{z_1+z_2}=\overline{\left(a_1+b_1i\right)+\left(a_2+b_2i\right)}=\overline{\left(a_1+a_2\right)+\left(b_1+b_2\right)i}=\left(a_1+a_2\right)-\left(b_1+b_2\right)i.$$
+Let's attempt to find a relation in terms of $\overline{z_1}$ and $\overline{z_2}$.  Adding them gives $$\overline{z_1}+\overline{z_2}=\left(a_1-b_1i\right)+\left(a_2-b_2i\right)=\left(a_1+a_2\right)-\left(b_1+b_2\right)i.$$  They're the same, that means we have $\overline{z_1+z_2}=\overline{z_1}+\overline{z_2}$.  Let's attempt to find a relation with the product.  Finding $\overline{z_1z_2}$ gives $$\overline{\left(a_1+b_1i\right)\left(a_2+b_2i\right)}=\overline{\left(a_1a_2-b_1b_2\right)+\left(a_1b_2+a_2b_1\right)i}=\left(a_1a_2-b_1b_2\right)-\left(a_1b_2+a_2b_1\right)i.$$
+Then, we multiply after taking the conjugates and see if they're equal:
+$$\overline{z_1}\cdot\overline{z_2}=\left(a_1-b_1i\right)\left(a_2-b_2i\right)=\left(a_1a_2-b_1b_2\right)-\left(a_1b_2+a_2b_1\right)i.$$
+We skipped a few steps in that process, so we'll leave the intermediate steps for you to check.  We do see they're equal!  Let's put these two conclusions in a note:
+\begin{note}
+For any complex numbers $z_1$ and $z_2$, $\overline{z_1z_2}=\overline{z_1}\cdot \overline{z_2}$ and $\overline{z_1+z_2}=\overline{z_1}+\overline{z_2}$.
+\end{note}
+
+The next three things we have to prove will seem very intuitive once we cover them.  Note the wordings of the proofs since each is worded slightly different.
+
+The first (and most obvious) thing we will show is that $\overline{\overline{z}}=z$ for any complex number $z$.  Since $\overline{z}=a-bi$, $\overline{\overline{z}}=\overline{a-bi}=a+bi=z$.  
+
+The next thing we want to find is when $\overline{z}=z$.  This happens when $a-bi=a+bi$, meaning that $b=0$ and $a$ can be any value.  What does that mean?  This only occurs when $z$ is a real number.
+
+The last thing we want to find is when $\overline{z}=-z$.  This happens when $a-bi=-a-bi$, meaning that $a=0$ and $b$ can be any value.  Thus, $z$ must be an imaginary number.  We summarize these in the following note:
+\begin{note}
+Given a complex number $z$, \begin{itemize}
+    \item $\overline{\overline{z}}=z$ for any value of $z$.
+    \item $\overline{z}=z$ if and only if $z$ is real.
+    \item $\overline{z}=-z$ if and only if $z$ is imaginary.
+\end{itemize}
+\end{note}
+\noindent Remember the difference between \textit{imaginary} and \textit{complex}.  Imaginary numbers don't have a real component, while complex numbers have both a real and an imaginary component.
+
+The last properties to be proven in this section deal with magnitudes of complex numbers.  As we've already found a relation using the distance formula (in \hyperlink{section.3.2}{Section 3.2}), we are going to worry about a new operation now: multiplication.
+
+The first thing we will prove is that $z\overline{z}=||z||^2$.  while this doesn't seem very intuitive, the proof is super simple.  $$z\overline{z}=\left(a+bi\right)\left(a-bi\right)=a^2+b^2=\left(\sqrt{a^2+b^2}\right)^2=||z||^2.$$
+The second thing we will prove is a bit more valuable, but a bit more difficult.  We want to prove that $||z_1z_2||=||z_1|| \cdot ||z_2||$.  We've found that $z_1z_2=\left(a_1a_2-b_1b_2\right)+\left(a_1b_2+a_2b_1\right)i$ before, so we won't show it again.  Let's find the magnitude: \begin{align*}
+    ||z_1z_2||&=\sqrt{\left(a_1a_2-b_1b_2\right)^2+\left(a_1b_2+a_2b_1\right)^2} \\
+    &= \sqrt{a_1^2a_2^2-2a_1a_2b_1b_2+b_1^2b_2^2+a_1^2b_2^2+2a_1a_2b_1b_2+a_2^2b_1^2} \\
+    &= \sqrt{a_1^2a_2^2+a_1^2b_2^2+a_2^2b_1^2+b_1^2b_2^2} \\ 
+    &= \sqrt{a_1^2\left(a_2^2+b_2^2\right)+b_1^2\left(a_2^2+b_2^2\right)} \\
+    &= \sqrt{\left(a_1^2+a_2^2\right)\left(b_1^2+b_2^2\right)} \\
+    &= \sqrt{a_1^2+a_2^2}\cdot \sqrt{b_1^2+b_2^2} \\
+    &=||z_1|| \cdot ||z_2||.
+\end{align*}
+An alternate solution involves some tricky manipulation using the first proof: $$||z_1z_2||^2=\left(z_1z_2\right)\left(\overline{z_1z_2}\right)=\left(z_1z_2\right)\left(\overline{z_1}\cdot \overline{z_2}\right)=\left(z_1\overline{z_1}\right)\left(z_2\overline{z_2}\right)=||z_1||\cdot ||z_2||.$$
+We summarize our findings in the following note: \begin{note}
+For any complex numbers $z_1$ and $z_2$, $||z_1z_2||=||z_1||\cdot ||z_2||$ and $z\overline{z}=||z||^2$.
+\end{note}
+\noindent We're going to end this section with these proofs.  The next section has a lot of information; we will cover solving equations and then further go into detail on graphing in the Argand plane.
+
+\section{Solving and Graphing in the Complex Plane}
+\noindent This is the last section, and definitely the most difficult, of the complex numbers chapter.  This section has a lot to cover, a lot of math behind it, and non-intuitive graphing.  
+
+There isn't a "general formula" or method to solving complex number equations.  You have to consider each one on its own.  However, it is typically beneficial to define a value $z=a+bi$ in most problems to simplify it.  In this case, you find values of $a$ and $b$ that make the given equation true; this is known in higher-level mathematics as the \textit{method of undetermined coefficients}.  Let's look at some examples to get an idea of what to expect:
+\begin{example}
+Solve $z+3\overline{z}=-3-7i$ for $z$.
+\end{example}
+\begin{solution}
+Let $z=a+bi$, where $a,b\in\mathbb{R}$.  Thus, $\left(a+bi\right)+3\left(a-bi\right)=-3-7i$.  Simplifying the left hand side gives $4a-2bi=-3-7i$.  Since we need to match the non-$i$ terms and the $i$ terms, we say $4a=-3$ and $-2b=-7$, meaning $a=-3/4$ and $b=7/2$, so the desired complex number is $\displaystyle z=-\frac{3}{4}+\frac{7}{2}i$.$\Box$
+\end{solution}
+\begin{example}
+Find all complex numbers $z$ such that $z^2=21-20i$.
+\end{example}
+\begin{solution}
+Let's follow the same strategy.  Let $z=a+bi$, where $a,b\in\mathbb{R}$.  Thus, $$\left(a+bi\right)^2=21-20i \implies a^2-b^2+2abi=21-20i.$$  We get two equations from this: $a^2-b^2=21$ and $ab=-10$.  You could experiment to find this and find that $a=5$ and $b=-2$ or $a=-5$ and $b=2$, but we'll do it algebraically.  Plugging in $\displaystyle a=-10/b$ into the first equation gives $$\displaystyle a^2-\frac{100}{a^2}=21 \implies a^4-21a^2-100=0.$$  You'll learn about solving different types of these in \hyperlink{section.5.6}{Section 5.6} when we discuss hidden quadratics.  Letting $x=a^2$, we get $$x^2-21x-100=0 \implies \begin{matrix} x_1=-4 \\ x_2=5 \end{matrix}.$$  Re-substituting, we get $a^2=-4$ and $a^2=25$.  Since $a\in\mathbb{R}$, the $a^2\neq -4$, so we get $a^2=25 \implies a=\pm 5$.  Using these values we get $b=\mp 2$, so our values of $z$ are $z=5-2i$ and $z=-5+2i$.$\Box$
+\end{solution}
+\begin{example}
+There exists a complex number $z$ such that $z+||z||=2+8i$ holds true.  Find $||z||$.
+\end{example}
+\begin{solution}
+Let $z=a+bi$, where $a,b\in\mathbb{R}$.  Thus, $a+bi+\sqrt{a^2+b^2}=2+8i$.  Obviously, $b=8$.  That leaves $a+\sqrt{a^2+64}=2$.  Subtracting $a$ and squaring both sides gives $a^2+64=a^2-4a+4$.  Solving this is simple, $a=-15$.  Since this value isn't extraneous, we can say the magnitude is $\sqrt{\left(-15\right)^2+\left(8\right)^2}=17$.$\Box$
+\end{solution}
+\noindent Now it's time to discuss the final part of the chapter: graphing.  Graphing in the Argand plane is similar to the coordinate plane; there are slight changes that require some algebraic manipulation before graphing.
+
+We will start with two simple proofs that will guide these manipulations.  We first will show that $\displaystyle \Re(z)=\frac{z+\overline{z}}{2}$ and then $\displaystyle \Im(z)=\frac{z-\overline{z}}{2i}$.  By letting $z=a+bi$, we get \begin{align*}
+    \frac{z+\overline{z}}{2}&=\frac{\left(a+bi\right)+\left(a-bi\right)}{2}=\frac{2a}{2}=a=\Re(z) \\
+    \frac{z-\overline{z}}{2i}&=\frac{\left(a+bi\right)-\left(a-bi\right)}{2i}=\frac{2bi}{2i}=b=\Im(z)
+\end{align*}
+These will be very valuable in this section.  \begin{note}
+For any complex number $z$, $\displaystyle \Re(z)=\frac{z+\overline{z}}{2}$ and $\displaystyle \Im(z)=\frac{z-\overline{z}}{2i}$.
+\end{note}
+\noindent In \hyperlink{section.3.2}{Section 3.2}, we said that the axes on the Argand plane are $\Re(z)$ and $\Im(z)$, meaning that $x \Longleftrightarrow \Re(z)$ and $y(x) \Longleftrightarrow \Im(z)$ on the coordinate plane.  Let's think about that conversion when we consider some of the next examples.
+\begin{example}
+Find the coordinate plane equivalent for the following graphs:
+
+(a) $\displaystyle \frac{z+\overline{z}}{2}=4$
+
+(b) $z-\overline{z}=-2\sqrt{5}i$
+
+(c) $\left(1+2i\right)z+\left(1-2i\right)\overline{z}=12$
+
+(d) $\Re(z)\Im(z)=1$.
+
+\end{example}
+
+\begin{wrapfigure}{r}{7cm}
+    \centering
+\begin{tikzpicture}
+    \draw[line width=0.5mm, ->] (-3,0) -- (3,0) node[right] {$\Re(z)$};
+    \draw[line width=0.5mm, ->] (0,-3) -- (0,3) node[above] {$\Im(z)$};
+    \draw[scale=0.5, domain=-6:6,smooth,variable=\y,blue] plot ({4},{\y}) node[right] {(a)};
+    \draw[scale=0.5,domain=-6:6,smooth,variable=\x,red] plot ({\x},{-2}) node[below] {(b)};
+    \draw[scale=0.5,domain=-6:6,smooth,variable=\x,green] plot ({\x},{\x/2-3}) node[below right=1mm and -1mm] {(c)};
+    \draw[scale=0.5,domain=-6:-0.75,smooth,variable=\x,orange] plot ({\x},{5/\x}) node[right] {(d)};
+    \draw[scale=0.5,domain=0.75:6,smooth,variable=\x,orange] plot ({\x},{5/\x});
+\end{tikzpicture}
+\end{wrapfigure}
+
+\begin{solution}
+
+(a) For the first equation, using the note above, we get $\Re(z)=4$, which is equivalent to $x=4$ on the coordinate plane.  This is a vertical line.
+
+(b) For the second equation, if we divide by $2i$, we get $\Im(z)=-\sqrt{5}$, which is equal to $y(x)=-\sqrt{5}$ on the coordinate plane.  This is a horizontal line.
+
+(c) The third one isn't so easy.  Letting $z=a+bi$, we get $(1+2i)(a+bi)+(1-2i)(a-bi)=12$.  Expanding, rearranging, and simplifying gives $a-2b=6$, or $\Re(z)-2\Im(z)=6$.  This is equal to $x-2y(x)=6$ or $\displaystyle y(x)=\frac{1}{2}x-3$.  This is a line of slope $1/2$ and $y$-intercept at $(0,-3)$.
+
+(d) The last one isn't too bad.  The equation is equal to $xy(x)=1$, or $y(x)=1/x$.  This is a standard rational function, or as seen in \hyperlink{section.13.5}{Section 13.5}, is a hyperbola rotated 45 degrees about the origin.$\Box$
+\end{solution}
+\noindent The final types of graphs in the Argand plane deal with magnitudes.  Remember that a magnitude is a scalar quantity representing the distance from the point to the origin.  With that in mind, let's consider the final example of the chapter.
+\newpage
+\begin{example}
+Identify and describe the shape of the graph for the following equations: 
+
+(a) $||z||=3$
+
+(b) $||z-1+i||=2$
+
+(c) $||z-z_0||=r$
+
+Note that $z_0\in\mathbb{C}$ and $r\in\mathbb{R}^+$.
+\end{example}
+\begin{wrapfigure}{r}{7cm}
+    \centering
+\begin{tikzpicture}[xscale=0.5,yscale=0.5]
+    \draw[line width=0.5mm, ->] (-6,0) -- (6,0) node[right] {$\Re(z)$};
+    \draw[line width=0.5mm, ->] (0,-6) -- (0,6) node[above] {$\Im(z)$};
+    \draw[blue] (0,0) circle (3) node[above left=10mm and 10mm] {(a)};
+    \draw[red] (1,-1) circle (2) node[below right=7mm and 7mm] {(b)};
+\end{tikzpicture}
+\end{wrapfigure}
+\begin{solution}
+Let's consider the first equation.  The equation denotes all $z$ such that the distance between $z$ and the origin is $3$.  Thus, we see this as a circle of radius $3$.
+
+Similar to how we shift a circle, the second equation is simple a shift of the circle.  Rewriting as $||z-(1-i)||=2$, we see a shift of $1$ to the right and $1$ unit down.  This is a circle of radius $2$ with center at $1-i$.
+
+The final equation is just a general form of the second.  It's a circle with center at $z_0$ and a radius of $r$.  We didn't draw this one.$\Box$
+\end{solution}
+\noindent Overall, this chapter wasn't too bad.  Simply remembering some of the rules that we derived, along with the fundamentals of graphing on the Argand plane, students should have no issue.  \vspace{3mm}
+\begin{reviewset}
+\item Let $z_1=1+3i$ and $z_2=2-5i$.  Express each of the following as a complex number: \newline
+{\centering (a) $\displaystyle \frac{1}{z_1}$ \hspace{1in} (b) $\displaystyle \frac{2}{z_1+\overline{z_2}}$ \hspace{1in} (c) $\displaystyle \frac{z_1^4+2z_1^3z_2+z_1^2z_2^2}{z_1^3z_2+z_1^3z_2^2}$}\vspace{3mm}
+
+\item Find the complex number $z$ that satisfies $\displaystyle \frac{z}{z+2}=1-i$.  \vspace{3mm}
+
+\item Convert each of the Cartesian equations into Argand equations.  \newline
+(a) $x=2$ \newline
+(b) $y(x)=\dfrac{3}{2}x-1$ \newline 
+(c) $(x-1)^2+y^2=4$ \vspace{3mm} 
+
+\item Find the area of the region enclosed by the graph of $||z-3+2i||=3\sqrt{2}$.\vspace{3mm}
+
+\item Simplify: $\displaystyle (i+1)^{3200}-(i-1)^{3200}$.\vspace{3mm}
+
+\item Solve each of the following linear equations for $z$.  \newline 
+(a) $z^2=2i$ \newline 
+(b) $3z+4\overline{z}=12-5i$ \newline 
+(c) $z^2=24-10i$ \vspace{3mm}
+
+\item Simplify: $\dfrac{1}{1+\dfrac{1}{1-\dfrac{1}{1+\dfrac{1}{1-i}}}}$.\vspace{3mm}
+
+\item Find all complex numbers $z$ such that $||z+2-3i||=||z+i||$.\vspace{3mm}
+
+\item Evaluate $i+2i^2+3i^3+4i^4+\ldots+ni^n$ in terms of $n$.  Note that $n$ is an even multiple of four.\vspace{3mm}
+
+\item Find all real numbers $k$ such that $3+i$ is five units from $6+ki$ on the Argand plane.\vspace{3mm}
+
+\item Find all complex numbers $z$ such that $\dfrac{z}{\overline{z}}$ is \newline 
+{\centering (a) a real number \hspace{55mm} (b) an imaginary number.}
+\item Let $S$ be the set of points in the Argand plane such that $(1+2i)z$ is a complex number.  Describe the graph of $S$.  \vspace{3mm}
+
+\item Let $z_1$ and $z_2$ be complex numbers.  Show that $\displaystyle \frac{z_1}{\overline{z_2}}+\frac{\overline{z_1}}{z_2}$ is a real number.  \vspace{3mm}
+\end{reviewset}
+\begin{challengeset}
+\item For each part, find an equivalent equation in the Cartesian plane.  \newline 
+(a) $(1-2i)z+(1+2i)\overline{z}=10$ \newline 
+(b) $|z+2-5i|=3\sqrt{2}$ \newline 
+(c) $|z-4-i|=|z-7+2i|$ \vspace{3mm}
+
+\item Two solutions of $x^4-2x^3+8x^2+18x-153=0$ are complex numbers.  Find these two solutions.  (HINT: try to factor by grouping!) \vspace{3mm}
+
+\item Find the area of the region of points such that $|z+4-4i|\leq 4\sqrt{2}$ and $|z-4-4i|\geq 4\sqrt{2}$.  (HINT: make sure you know what area you're finding.  Try connecting the intersection points to the centers.  What shapes form?) [$\star$]\vspace{3mm}
+
+\item Let, for a non-zero complex number, $f(z)=1/\overline{z}$.  \newline 
+(a) Show that $f(f(z))=z$ for all $z\neq 0$.  \newline 
+(b) Let $x=f(z)$.  As $z$ varies along the line $(1+i)z-(1-i)\overline{z}=i$, what curve does $x$ trace?\vspace{3mm}
+
+\item Find all ordered pairs $(x,y)$ that satisfy the system of equations $\begin{cases} x+\dfrac{x+8y}{x^2+y^2}=2 \\ y+\dfrac{8x-y}{x^2+y^2}=0 \end{cases}$.  (HINT: this is in the complex numbers chapter for a reason ...)\vspace{3mm}
+
+\item Let $z_1$ and $z_2$ be complex numbers such that $||z_1||=||z_2||=1$, $z_1\neq z_2$ and $z_1\neq -z_2$.  Prove that $\displaystyle \frac{4z_1z_2}{\left(z_1+z_2\right)^2}$ is real and $\displaystyle \frac{z_1+z_2}{z_1-z_2}$ is imaginary.
+\end{challengeset}
+\end{document}
