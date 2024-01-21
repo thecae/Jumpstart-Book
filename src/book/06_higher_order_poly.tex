@@ -1,0 +1,394 @@
+\documentclass[../book.tex]{subfiles}
+\graphicspath{{\subfix{../images/}}}
+
+\begin{document}
+\chapter{Higher-Order Polynomials}
+\begin{introduction}[Contents]
+\item Theory of Graphing Higher-Order Polynomials
+\item Theory in Solving Higher-Order Polynomials, Part I
+\item Theory in Solving Higher-Order Polynomials, Part II
+\item The Special Cases
+\item Graphing Polynomial Functions
+\end{introduction}
+\noindent A polynomial is an expression in the form $$P(x)=a_0+a_1x+a_2x^2+a_3x^3+\ldots+a_nx^n$$ for some real constants $a_1$,$a_2$,$a_3$,$\ldots$,$a_n$.  We define polynomials by their \textit{degree}, which is considered to be the highest power of the polynomial (for example, a quadratic has degree $2$).
+
+We then can name the polynomial based on its degree; a polynomial of the third degree is considered a \textit{cubic}, a fourth-degree polynomial is a \textit{quartic}, and so on.  These first few names are important to be able to identify; after that, we simply use the degree number (i.e seventh-degree polynomial).
+
+The goal of this chapter is to extend the theory of quadratic functions into higher-orders (degrees) and determine various properties associated with them.  Our goal is to see how similar polynomials of different degrees are and how we can predict behavior based on certain aspects of the function.
+\section{Basic Theory of Higher-Order Polynomials}
+\noindent To begin our discussion of higher order polynomials, we will delve into the various theories that surround them. Now you may be wondering, why are these polynomials different from a normal quadratic or a line? Well, the reason for this is because unlike quadratics or lines, there isn't exactly a guaranteed way to solve for zeros, nor an "easy" way to graph them precisely.  We need to consider a few things about polynomials to help us better understand them and graph them.
+
+We begin with degree.  The definition of a degree was explained in the introduction to the chapter.  The numeric value of the degree is important, but so is whether it is even or odd.  Below are the two rules: \begin{itemize}
+    \item If the degree of the polynomial is even, the end behavior is even.  This means that as $x\to-\infty$ and as $x\to\infty$, they will travel in the same direction.  The direction is determined by the sign of the leading coefficient ($a_n$): if $a_n<0$, the shape of the polynomial will go both down ($f(x)\to-\infty$); if $a_n>0$, both ends will go up ($f(x)\to\infty$).
+    \item If the degree of the polynomial is odd, the end behavior is odd.  This means that as $x\to-\infty$ and as $x\to\infty$, they will travel in opposite directions.  Again, the direction is determined by the sign of the leading coefficient ($a_n$): if $a_n<0$, the left side ($f(-\infty)\to\infty$ and $f(\infty)\to-\infty$); if $a_n>0$, both ends will go up ($f(-\infty)\to-\infty$ and $f(\infty)\to\infty$).
+\end{itemize}
+The next thing we need to understand are \textit{extrema}.  Polynomials can have turns in the graph $-$ there can be $n-1$ turns (where $n$ is the degree).  This means that quadratics can have up to $1$ turn (they all do), cubics can have $2$, and so on.  There are two types of extrema: \textit{local extrema} and \textit{global extrema}. Let's explore the difference:
+\begin{itemize}
+    \item Local extrema are the maximum and minimum of a function in a given interval. For example, many cubic graphs have two turns as seen below.  The local maximum is at the top of the left "crest" and the local minimum is at the bottom of the right "trough".
+    \item Global extrema are the highest and lowest points of a function over its entire domain.  For example, on the cubic graph below, we see that the global maximum is $\infty$ and the global minimum is $-\infty$.
+\end{itemize}
+\begin{figure}[!h]
+    \centering
+    \hspace{\stretch{1}}
+    \begin{tikzpicture}[xscale=0.4,yscale=0.4]
+        \draw[<->] (-5,0) -- (5,0) node[right] {$x$};
+        \draw[<->] (0,-5) -- (0,5) node[above] {$f(x)$};
+        \draw[blue,domain=-2:2] plot ({\x},{\x*\x*\x-2*\x});
+    \end{tikzpicture} \hspace{\stretch{1}}
+    \begin{tikzpicture}[xscale=0.4,yscale=0.4]
+        \draw[<->] (-5,0) -- (5,0) node[right] {$x$};
+        \draw[<->] (0,-5) -- (0,5) node[above] {$f(x)$};
+        \draw[blue,domain=-1.5:1.5] plot ({\x},{\x*\x*\x*\x});
+    \end{tikzpicture} \hspace{\stretch{1}}
+\end{figure}
+We should note that there's not always $n-1$ turns in the graph.  Consider the graph of $f(x)=x^4$ above, where there is one turning point. So how do we know when there will be a turn? There's not a great method, but we will explore a good method when we discuss finding the roots of a polynomial.
+
+The final theorem to discuss is the \textit{Intermediate Value Theorem}.  
+
+\begin{theorem}{The Intermediate Value Theorem}{intval}
+Given a polynomial $f(x)$ that is continuous on the interval $(a,b)$, where $a,b\in\mathbb{R}$ and $a<b$, and if $f(a)<0$ and $f(b)>0$ or vice-versa, then somewhere along this interval, there exists some value of $c$ where $a<c<b$ such that $f(c)=0$.
+\end{theorem}
+
+This theorem is really common sense of you think about it. If a function is below the $x$-axis at some point, and further on down the line, it is above, somewhere in between the function had to cross the $x$-axis, provided the function doesn't have any asymptotes or holes or anything. (This, of course, is true in reverse $-$ starting above the $x$-axis.)
+
+This concludes our discussion of theories regarding graphing. You may be wondering; this wasn't that bad? Well for starters, whenever math is easy, it has to get hard. And secondly, why did you jinx it? 
+
+\section{Theory in Solving Higher-Order Polynomials, Part I}
+\noindent In this section, we’re going to delve into the theories of solving polynomial equations and inequalities. Now a lingering question may remain from the last section: you showed me how to graph this, but how do I actually figure out things about the function rather than guessing how it looks? We're now going to do just that.
+
+Polynomial equations are often in the form $k=a_0+a_0+a_1x+a_2x^2+a_3x^3+\ldots+a_nx^n$.  We seek to solve functions in the form $f(x)=0$, so we subtract. $$0=(a_0-k)+a_1x+a_2x^2+a_3x^3+\ldots+a_nx^n \implies 0=a_0'+a_1x+a_2x^2+a_3x^3+\ldots+a_nx^n,$$ where $a_0'=a_0-k$.  There are loads of methods to solve these, but in order to hone in on those methods, we need to discuss any attributes of these zeroes first.  First, we want to count how many there are.  Is there a general form for that?
+
+Consider the polynomial $0=1-x+x^2-x^3$. How many solutions should we expect? Well, for a line we expect one solution.  For a quadratic, it has two solutions.  If we extrapolate this to the $n^{\text{th}}$ degree, we make the following conjecture: \textit{A polynomial of degree $n$ has $n$ roots}.  This is actually known as the \textit{Fundamental Theorem of Algebra}. It's pretty common sense, we know. We even put it in a box because it's important.
+\begin{theorem}{Fundamental Theorem of Algebra}{fundtheorem}
+A polynomial of degree $n$ has $n$ roots.
+\end{theorem}
+
+\begin{remark}
+Side note, most fundamental theorems are common sense.  Here's another (called the Trivial Inequality): $x^2\geq 0$.
+\end{remark}
+
+There's more we can tell about the roots.  Descartes, a renown mathematician and philosopher, created a rule to outline expectations we have for the solutions to the equation.  
+\begin{theorem}{Descartes' Rule of Signs}{desc}
+Descartes' Rule of Signs predicts how many solutions will be positive, how many will be negative, how many might be real, etc.
+\begin{enumerate}
+    \item For some polynomial $f(x)$, count the number of sign changes. \begin{itemize}
+        \item If the number of sign changes is odd, then there is at least $1$ positive real solution.
+        \item If the number of sign changes is even, then there is at least $0$ positive real solutions.
+        \end{itemize}
+    \item For the polynomial $f(-x)$, count the number of sign changes. \begin{itemize}
+        \item If the number of sign changes is odd, then there is at least $1$ negative real solution.
+        \item If the number of sign changes is even, then there is at least $0$ negative real solutions.
+    \end{itemize}
+\end{enumerate}
+This will be useful for predicting what roots a polynomial has.
+\end{theorem}
+\begin{remark}
+Remember that complex roots come in pairs.  This means that if there is one positive real solution for a cubic, and no negatives, then the other two must be complex conjugate roots.
+\end{remark}
+
+Why is there an "at least"? ”. Well remember above, Descartes’ Rule of Signs gives us expectations, so we cannot know for sure how many.  Let’s apply it on the example above: $f(x)=1-x+x^2-x^3$.
+
+There are three sign changes, meaning that there is at least $1$ positive real root (but there could be up to $3$).  Finding $f(-x)$, we get that $f(-x)=1+x+x^2+x^3$, which has no sign changes.  This means that there are no negative real solutions. Note that this result means there can't be $2$ positive roots since the complex roots must come in pairs.
+
+Summing up the two options, $f(x)$ could have: \begin{enumerate}
+    \item $1$ positive real root and $2$ complex conjugate roots, or
+    \item $3$ positive real roots.
+\end{enumerate}
+So how do we actually figure out what the roots are? Well there are many strategies for this, and they will be broken up into many sections.  But before we close, let’s speak about he importance of Descartes’ Rules of Signs and the Fundamental Theorem of Algebra.
+
+For starters, the Fundamental Theorem of Algebra is important because I should let us know how many solutions we have after going through the solving process. So, if we don’t have that many solutions, we did something wrong. 
+
+Secondly, Descartes’ Rule of Signs may seem unnecessary upon seeing how to solve these in the following sections, but when we get to the process of synthetic division and Rational Root Theorem, Descartes’ Rule of Signs may lower the number of numbers we have to test in each. These processes may seem like words for now, but in the next few sections we’ll see how they can be implemented to solve polynomial equations.
+
+\section{Theories in Solving Higher-Order Polynomials, Part II}
+\noindent We’ve been dancing around the bush for two lessons now, how do we actually solve these equations? Well to start, let’s begin with the \textit{Rational Root Theorem}.
+\begin{theorem}{The Rational Root Theorem}{ratroot}
+Given a polynomial equation of the form $0=a_0+a_1x+a_2x^2+\ldots+a_{n-1}x^{n-1}+a_nx^n$, the possible real roots are in the form $x=\pm\dfrac{p}{q}$, where $p$ is the set of integral facots of $|a_0|$ and $q$ is the set of integral factors of $|a_n|$.
+\end{theorem}
+Let's put this to the test.
+\begin{example}
+Use the rational root theorem to find the possible real roots of $0=x^5+2x^4+3x^3-5x^2+5x-6$.
+\end{example}
+\begin{solution}
+Using the rational root theorem, we know the important values are $a_0=-6$ and $a_5=1$.  The factors of $6$ are $1,2,3,6$ and the factors of $1$ are just $1$.  So, $$x=\pm\dfrac{p}{q}=\pm\dfrac{1,2,3,6}{1}=\pm 1,\pm 2,\pm 3,\pm 6.$$ $\Box$
+\end{solution}
+Now that we know which ones could be the roots, how do we go about figuring out which ones of our narrowed list are the roots? \textit{You plug them in}.
+
+You might be thinking: that's a lot of work!  In this case, that's $8$ roots and some high-valued numbers.  Well, we can get around this using Synthetic Division.  If you don't remember how to do this, refer to \hyperlink{section.7.3}{Section 7.3} on how to do long division and synthetic division.
+
+\begin{remark}
+Although this section is further ahead where you are now, note that it requires no knowledge from \hyperlink{section.7.1}{Section 7.1} and \hyperlink{section.7.2}{Section 7.2} to read this section.  If you need a refresh, please go there.
+\end{remark}
+
+I shall continue on assuming you've done a refresh on long division and synthetic division, if necessary.  Let's say we wanted to divide $\dfrac{x^2-3x+2}{x-1}$.  Here are the steps for long division:
+
+\polylongdiv{x^2-3x+2}{x-1}
+
+Here are the steps for synthetic division:
+
+\polyhornerscheme[x=1]{x^2-3x+2}
+
+Either way, when we divide these, we get $x-2$ with no remainder.  If we did $\dfrac{x^2-3x+3}{x+1}$, we get 
+
+\polyhornerscheme[x=-1]{x^2-3x+3}
+
+which translates to $x-4+\frac{7}{x+1}$.  Not too bad.
+
+Now, let's go over the the general process.  Suppose $Q(x)$ represents the quotient of the division $D(x)$, the dividend, and $d(x)$, the divisor. Assuming this divides perfectly, as in there’s no remainder, we would have $$\dfrac{D(x)}{d(x)}=Q(x).$$ But if there is a remainder, our function turns into this (where $R(x)$ is the remainder function): $$\dfrac{D(x)}{d(x)}=Q(x)+R(x).$$ We know that $R(x)=\dfrac{r(x)}{d(x)}$, where $r(x)$ is the remainder.  Solving for $D(x)$, we get $D(x)=Q(x)d(x)+r(x)$.  If there exists some value $c$ such that $d(c)=0$, the $D(c)=r(c)$.
+
+If we apply this to the function above, we get $$\dfrac{x^2-3x+2}{x-1}=x-2+\dfrac{0}{x-1}.$$ If we follow the steps above for the general case, we get $$x^2-3x+2=\left((x-2)+\dfrac{0}{x-1}\right)(x-1) \implies x^2-3x+2=(x-2)(x-1).$$ If we plug in $x=1$, we get $D(1)=0.$ We could even do this if there's a remainder: $$\dfrac{x^2-3x+3}{x+1}=x-4+\frac{7}{x+1} \implies x^2-3x+3=(x-4)(x+1)+7.$$ Plugging in $x=3$, we get that $f(3)=2$. This means that whenever we plug in a value, we get the remainder when you divide by the corresponding root! This is called the \textit{Remainder Theorem}.
+\begin{theorem}{Remainder Theorem}{remthe}
+Suppose a given function $p(x)$ is divided by $x-a$, where $a\in\mathbb{R}$. The quotient can be expressed as: $$\dfrac{p(x)}{x-a}=Q(x)+\dfrac{r}{x-a},$$ given $r\in\mathbb{R}$. Rearranging and plugging in $x=a$, we obtain $p(a)=r(a)$, meaning $$\dfrac{p(x)}{x-a}=p(a).$$
+\end{theorem}
+Check out an example.
+\begin{example}
+Evaluate $f(x)=x^4-x^3-x^2-x-1$ at $x=6$.
+\end{example}
+\begin{solution}
+Using synthetic division, we get
+
+\polyhornerscheme[x=6]{x^4-x^3-x^2-x-1}
+
+Using this, we see that $f(6)=1037$. $\Box$
+\end{solution}
+We have one final trick to determine zeroes, and it's quite related to Descartes' Rule of Signs.  It's called the \textit{Boundness Theorem}.
+\begin{theorem}{The Boundness Theorem}{boundthe}
+Given a polynomial function $f(x)$ and some real constant $c$, \begin{itemize}
+    \item If you synthetically divide $f(x)$ by $x-c$, and all the signs in the resulting division are positive, then that value $c$ represents the upper bound to the real roots of $f(x)$.
+    \item If you synthetically divide $f(x)$ by $x+c$,and all the signs in the resulting division alternate, then $c$ represents the lower bound to the real roots of $f(x)$.
+\end{itemize}
+\end{theorem}
+With these in mind, we can go back to finding the roots of $0=x^5+2x^4+3x^3-5x^2+5x-6$.  We know the potential roots to be $\pm 1,\pm 2,\pm 3,\pm 6$.  Using Descartes' Rule of Signs, we find that there's either $0$ or $2$ positive roots and $0$ or $2$ negative roots.  Not too helpful.  Let's start by making a good guess and moving from there.  A good starting guess is $x=1$ (then $x=-1$ if it fails); we find that $x=1$ works.  Doing the synthetic division, we get
+
+\polyhornerscheme[x=1]{x^5+2x^4+3x^3-5x^2+5x-6}
+
+This leaves us with the resultant polynomial $x^4+3x^3+6x^2+x+6$ and now have to find another root.  Using Descartes' rule of signs again, we see that there are no positive roots and $0$, $2$, or $4$ negative roots.  Before we starting checking all the roots, we can notice that there are all positice signs, meaning there is a very small chance this graph actually touches the $x$-axis (it doesn't!). This means that all the roots are imaginary, and we can use a graphing calculator for this (if you don't know how, consult \hyperlink{section.15.4}{Section 15.4} on how to do this).  We get the roots to be $$x_1=1 \hspace{10mm} x_{2,3}=-1.679\pm 1.849i \hspace{10mm} x_{4,5}=0.179\pm 0.964i.$$ 
+We did it! We found the roots of a polynomial! We have 5 solutions, so we satisfied the Fundamental Theorem of Algebra, and that is it. We have finally gotten through all of this. Now you may be asking yourself, do we need to use the Rational Root Theorem all of the time? Not necessarily, and in the next section, we will cover some special cases of (specifically cubic) functions where we can avoid using it. 
+\section{The Special Cases}
+\noindent Our goal is to go through some special cases that will allow us to skip the rational root theorem process.
+\subsection{Sum and Difference of Cubes}
+\noindent This is the first and most common type you will see.  This requires a very specific form to use but does a good job in skipping steps. 
+
+Given a function in the form $a^3\pm b^3$, where $a$ and $b$ are functions of the independent variable, we can factor into the following: \begin{itemize}
+    \item $a^3+b^3=(a+b)(a^2-ab+b^2)$,
+    \item $a^3-b^3=(a+b)(a^2+ab+b^2)$.
+\end{itemize}
+This seems hard to memorize.  Are there any tricks? Yes! The important thing to memorize are the signs, for which we have an acronym: SOAP.
+
+SOAP stands for Same, Opposite, Always Positive, and tells us how to mark the signs given the original sign.  This will come in handy and will be referenced frequently throughout factoring.
+
+To memorize the terms, we can note that the second term is almost like a perfect square.  It's just missing the $2$!
+
+A helpful hint is that the second term doesn't factor again 99\% of the time.  We couldn't think of a time when it did, but we didn't want to leave any unproven certainties.
+
+Here come the examples.
+\begin{example}
+Factor completely: $f(x)=x^3-64$.
+\end{example}
+\begin{solution}
+Here, we see that $a=x$ and $b=4$ and we need to use difference of cubes.  Following SOAP, we know that we have $a^3+b^3=(a+b)(a^2-ab+b^2)$. Plugging in values, we get $$x^3+64=(x+4)(x^2-4x+16).$$ The second term does not factor, so we are done. $\Box$
+\end{solution}
+\begin{example}
+Factor completely: $x^6+729$.
+\end{example}
+\begin{solution}
+Here, we see that the two cubes are $x^2$ and $9$.  Using sum of cubes, we have $a^3-b^3=(a-b)(a^2+ab+b^2)$. Plugging in, we get $$x^6-729=(x^2-9)(x^4+9x^2+81).$$ $x^2-9$ does factor again, so the complete factorization is $$x^6-729=(x+3)(x-3)(x^4+9x^2+81).$$ $\Box$
+\end{solution}
+\begin{example}
+Factor completely: $x^3-4$.
+\end{example}
+\begin{solution}
+You probably immediately noticed that $4$ is not a perfect cube.  So what cubed makes $4$? $\sqrt[3]{4}$ does!  So, we use this instead. Factoring, we get $$x^3-4=(x-\sqrt[3]{4})(x^2+\sqrt[3]{4}x+\sqrt[3]{16}).$$ We simplify the constant in the second term to get $$x^3-4=(x-\sqrt[3]{4})(x^2+\sqrt[3]{4}x+2\sqrt[3]{2}).$$ $\Box$
+\end{solution}
+These don't get harder than this, so we move on.
+\subsection{Factoring by Grouping}
+\noindent We've already done factoring by grouping before in \hyperlink{chapter.5}{Chapter 5}, but we will review it again and try to extend it to higher-order.
+
+The idea behind factoring by grouping is to split the polynomial in two parts (usually the highest degrees and the lowest degrees) such that each part can be factored (a common factor can be pulled out).  To do this, there's two types of cases we have to consider: \begin{itemize}
+    \item If the number of terms is even, there's nothing we have to do.  We just need to separate the two halves.
+    \item If the number of terms is odd, we need to split the middle term to make an even number of terms.  We need to split it such that both sides factor.  This is not always possible.
+\end{itemize}
+Let's look at some examples.
+\begin{example}
+Factor completely: $f(x)=x^4-x^3-x+1.$
+\end{example}
+\begin{solution}
+We split the first two terms from the last two terms and factor the greatest common factor. $$f(x)=x^4-x^3-x+1=x^3(x-1)-1(x-1).$$ Then, of the two terms, we can factor out the $(x-1)$ term to get $f(x)=(x-1)(x^3-1).$ Now, using the difference of cubes, we get $$f(x)=(x-1)^2(x^2+x+1).$$ $\Box$
+\end{solution}
+That wasn't too bad.  But what about the second case? Well that's not so easy to see.
+\begin{example}
+Factor completely: $f(x)=x^4-x^3-7x^2+x+6$.
+\end{example}
+\begin{solution}
+This time, we need to split the middle term.  We see that on the left side, we have coefficients of $1$ and $-1$.  On the right side, our coefficients are $1$ and $6$.  The secret is in matching the second and second-to-last terms.  Knowing that we can't factor anything from the left side (since the leading coefficient is $1$), we need to strategically make the right side factorable. We know that to match these two terms, we need a factor of $-1$.  If we split $-7x^2=-6x^2-x^2$, we get two factorable terms: $$f(x)=(x^4-x^3-6x^2)+(-x^2+x+6)=x^2(x^2-x-6)-1(x^2-x-6)=(x^2-1)(x^2-x-6).$$ Now, we simply factor the quadratics as normal: $$f(x)=(x-3)(x-1)(x+1)(x+2).$$ $\Box$
+\end{solution}
+Okay, we've factored the polynomial.  Now, we need to find the roots.  We already know how to do this, we just need to do it. There will also be one more vocabulary term we need to discuss that will greatly help us in the \hyperlink{section.6.5}{next} section and in \hyperlink{chapter.15}{Chapter 15}.
+\begin{example}
+Find the roots of the polynomial from Example 6.6: $f(x)=x^4-x^3-x+1$.
+\end{example}
+\begin{solution}
+We've already factored the polynomial to $(x-1)^2(x^2+x+1)$.  We should be expecting four roots $-$ two from each factor.  Using the quadratic formula on the second factor, we get $$x=\dfrac{-1\pm\sqrt{(-1)^2-4(1)(1)}}{2}=\dfrac{-1\pm i\sqrt{3}}{2}.$$ This gives us two roots; the other two are $x=1$. Summarizing below, we get that $$x_{1,2}=1 \hspace{15mm} x_3=-\dfrac{1}{2}-i\dfrac{\sqrt{3}}{2} \hspace{15mm} x_4=-\dfrac{1}{2}+i\dfrac{\sqrt{3}}{2}.$$ $\Box$
+\end{solution}
+\begin{remark}
+Notice how we've labeled the roots by number to ensure we have the right number.  This is also useful in Differential Equations later on when finding solutions to problems.
+\end{remark}
+If you don't want to use the subscripts, or you want to make your work a bit more clear, you could write that $x=1$ has \textit{multiplicity} $2$. What does that mean? It means it counts as a root twice.  This has a graphical meaning that we will discuss shortly.
+
+With this, we will look at one last case: the binomial theorem.
+\subsection{The Binomial Theorem}
+\noindent The Binomial Theorem is an advanced method of factoring and expanding polynomials that we can use to greatly speed up our time in special cases.  Don't worry if you don't understand what's happening in this section; it will be covered again in Pre-calculus more in depth.
+
+Here is the official definition of the binomial theorem:
+\begin{theorem}{The Binomial Theorem}{binthe}
+Given $x$ and $y$ and positive real constant $n$, we define the binomial theorem as $$(x+y)^n=\sum_{k=0}^{n}{\binom{n}{k}x^ky^{x-k}}.$$
+\end{theorem}
+So what does this mean? You've probably seen summations before, but what's the stacked term? Well it's not a fraction.  That's what we call the "choose function" and it has its own formula: $$\binom{n}{k}=\dfrac{n!}{k!(n-k)!},$$ where $x!=x(x-1)(x-2)\ldots(3)(2)(1).$ How can we use this? It's primary use is for expanding polynomials but you can use it to factor as well.  We do have a nice trick though, called \textit{Pascal's Triangle}.  This may be a familiar term, and it tells us the coefficients (the "choose function" values) that we need.  Below is a depiction of the first seven rows of the triangle.
+
+\begin{figure}[!h]
+    \centering
+    \[
+    \begin{array}{{ccccccccccccccc}}
+    n=0 & & & & & & & 1 & & & & & & \\
+    n=1 & & & & & & 1 & & 1 & & & & & \\
+    n=2 & & & & & 1 & & 2 & & 1 & & & & \\
+    n=3 & & & & 1 & & 3 & & 3 & & 1 & & & \\
+    n=4 & & & 1 & & 4 & & 6 & & 4 & & 1 & & \\
+    n=5 & & 1 & & 5 & & 10 & & 10 & & 5 & & 1 & \\
+    n=6 & 1 & & 6 & & 15 & & 20 & & 15 & & 6 & & 1 \\
+    \end{array}
+    \]
+\end{figure}
+
+
+We include the values of $n$ for a reason.  Those values of $n$ are the exponents of the function to expand, and the line represents each of the coefficients.  Let's try to use this.
+\begin{example}
+Expand $(x+1)^3$.
+\end{example}
+\begin{solution}
+Looking to line $n=3$, we see the coefficients are $1|3|3|1$. So, we follow the binomial theorem for each term: $$(x+1)^3=1(x)^0(1)^3+3(x)^1(1)^2+3(x)^2(1)^1+1(x)^3(1)^0=1+3x+3x^2+x^3.$$ $\Box$
+\end{solution}
+\begin{example}
+Expand $(x-4)^5$.
+\end{example}
+\begin{solution}
+At $n=5$, the coefficients are $1|5|10|10|5|1$.  Then, we use the binomial theorem: $$(x-4)^3=1(x)^0(-4)^5+5(x)^1(-4)^4+10(x)^2(-4)^3+10(x)^3(-4)^2+5(x)^4(-4)^1+1(x)^5(-4)^0$$$$=-1024+1280x-640x^2+160x^3-20x^4+x^5.$$ $\Box$
+\end{solution}
+How do we find more rows on the triangle? Well, try to find a pattern between consecutive rows.  A number is always the sum of the two numbers above it. Notice this "mini-triangle" between each set of terms within the triangle and see how to expand rows.
+
+Can we use this to factor? Yes! If you see a polynomial in this form, you can immediately factor it.  It's not common at all but it is possible.
+
+With this, we conclude our study on special cases.  Let's bring this all together and discuss the final section: graphing.
+\section{Graphing Polynomial Functions}
+\noindent We've made it to the end.  This section is going to be very example-based because we find it important for you to practice (plus, there's not much more to teach).  Before we begin, we need to go back to multiplicity and understand the theory behind it.
+
+To do this, let's consider basic cases: $f_1(x)=x$, $f_2(x)=x^2$, and $f_3(x)=x^3$.  They all have one intercept at $(0,0)$ and its multiplicity equals the order of the polynomial.  Let's look at the graphs of each:
+\begin{figure}[!h]
+    \centering
+    \begin{tikzpicture}[xscale=0.2,yscale=0.2]
+        \draw[<->] (-10,0) -- (10,0) node[right] {$x$};
+        \draw[<->] (0,-10) -- (0,10) node[above] {$f(x)$};
+        \draw[blue,scale=1,domain=-10:10,variable=\x] plot ({\x},{\x});
+    \end{tikzpicture}
+    \begin{tikzpicture}[xscale=0.2,yscale=0.2]
+        \draw[<->] (-10,0) -- (10,0) node[right] {$x$};
+        \draw[<->] (0,-10) -- (0,10) node[above] {$f(x)$};
+        \draw[blue,scale=1,domain=-3.2:3.2,variable=\x] plot ({\x},{\x*\x});
+    \end{tikzpicture}
+    \begin{tikzpicture}[xscale=0.2,yscale=0.2]
+        \draw[<->] (-10,0) -- (10,0) node[right] {$x$};
+        \draw[<->] (0,-10) -- (0,10) node[above] {$f(x)$};
+        \draw[blue,scale=1,domain=-2.1:2.1,variable=\x] plot ({\x},{\x*\x*\x});
+    \end{tikzpicture}
+\end{figure}
+Look at how the graph approaches the root from both sides.  \begin{itemize}
+    \item For the linear function (multiplicity$=1$), it \textit{crosses} through it.  
+    \item For the quadratic function (even multiplicity), it \textit{bounces} over the root.
+    \item For the cubic function (odd multiplicity), it \textit{curves} through the root.
+\end{itemize}
+These are vital for understanding how to graph the next functions. How should we graph them? Here's a list of steps that you should follow:\begin{enumerate}
+    \item Find the $y$-intercept,
+    \item Determine the end behavior,
+    \item Find the $x$-intercepts,
+    \item Plot the intercepts and use the end behavior to graph.
+\end{enumerate}
+
+\begin{wrapfigure}{r}{5cm}
+    \begin{tikzpicture}
+        \draw[<->] (-2,0) -- (2,0) node[right] {$x$};
+        \draw[<->] (0,-2) -- (0,2) node[above] {$f(x)$};
+        \draw[blue,scale=1,domain=-1.35:1.35,variable=\x] plot ({\x},{\x*\x*\x*\x*\x-\x*\x*\x});
+    \end{tikzpicture}
+\end{wrapfigure}
+
+The hard part is Step 3, but the other steps are just as important.  Let's get started.
+
+\begin{example}
+Graph $f(x)=x^5-x^3$.
+\end{example}
+\begin{solution}
+We first note that $f(0)=0$, so the $y$-intercept is $(0,0)$. The degree of the function is $5$, and the leading coefficient is positive, so we know that we have $f(-\infty)=-\infty$ and $f(\infty)=\infty$.  Now to find the $x$-intercepts. $$0=x^5-x^3=x^3(x^2-1)=x^3(x-1)(x+1) \implies \begin{matrix} x_1=-1 \\ x_{2,3,4}=0 \\ x_5=1 \end{matrix}.$$ 
+\end{solution}
+\noindent So $x=-1$ has multiplicity $1$ (cross), $x=0$ has multiplicity $3$ (curve), and $x=1$ has multiplicity 
+
+\begin{wrapfigure}{r}{5cm}
+    \begin{tikzpicture}[scale=0.2]
+        \draw[<->] (-10,0) -- (10,0) node[right] {$x$};
+        \draw[<->] (0,-10) -- (0,10) node[above] {$f(x)$};
+        \draw[blue,scale=1,domain=-3.143:1.744,variable=\x] plot ({\x},{-\x*\x*\x*\x-2*\x*\x*\x+3*\x*\x+\x-1});
+    \end{tikzpicture}
+\end{wrapfigure}
+
+\noindent $1$ (curve). Using this, we obtain the graph on the right. $\Box$
+\begin{example}
+Graph the function $f(x)=-x^4-2x^3+3x^2+x-1.$ (Note: graphing calculator required.)
+\end{example}
+\begin{solution}
+Plugging in $x=0$, we find that $f(0)=-1$, so the $y$-intercept is $(0,-1)$. The leading coefficient is negative with an even degree, so $f(-\infty)=-\infty$ and $f(\infty)=\infty$.  Now, it's time to factor using synthetic division.  We check $x=1$ and it works, which gives us
+
+\polyhornerscheme[x=1]{-x^4-2x^3+3x^2+x-1}
+
+We can quickly find that $x^3+3x^2-1$ does not factor because the only rational roots are $1$ and $-1$.  This is where the graphing calculator comes into play.  We find the other roots to be $$x_1=-2.879 \hspace{10mm} x_2=-0.653 \hspace{10mm} x_3=0.532.$$ Using this, we get the graph to the right. $\Box$
+\end{solution}
+
+Let's finish the chapter with one last question.
+\begin{example}
+Graph $f(x)=-2x^3+9x^2-3x-14$.
+\end{example}
+\begin{solution}
+We first find that $f(0)=-14$, so the $y$-intercept is $(0,-14)$.  Then, we have a negative leading coefficient with an odd degree, so $f(-\infty)=\infty$ and $f(\infty)=-\infty$. Now to find the intercepts.  We check $x=1$ and it works.  We can use synthetic division to pull out this term and 
+\end{solution}
+
+\begin{wrapfigure}{r}{5cm}
+    \begin{tikzpicture}[scale=0.15]
+        \draw[<->] (-15,0) -- (15,0) node[right] {$x$};
+        \draw[<->] (0,-15) -- (0,15) node[above] {$f(x)$};
+        \draw[blue,scale=1,domain=-1.44:4.17,variable=\x] plot ({\x},{-2*\x*\x*\x+9*\x*\x-3*\x-14});
+    \end{tikzpicture}
+\end{wrapfigure}
+
+\noindent hope for a factorable quadratic leftover.
+
+\polyhornerscheme[x=1]{-2x^3+9x^2-3x-14}
+
+\noindent This leaves us with $2x^2+3x-14$, which can be factored into $(2x+7)(x-2)$.  This means that our three roots are $$x_1=-\dfrac{7}{2}\hspace{10mm} x_2=1\hspace{10mm} x_3=2.$$ We can see the graph to the right. $\Box$
+
+With this final problem, we conclude our study of graphing polynomials.  This shouldn't have been to difficult when compared to the previous chapter, so these problems shouldn't be terribly difficult.  Since they are longer, we put less problems.  More problems will always be available if necessary through other sources.
+
+\begin{reviewset}
+\item Find all solutions to $x^5+2x^4+11x^3+22x^2+24x+48=0$. \vspace{1mm}
+\item Use the boundness theorem to find the upper and lower bound for the zeroes of the function $f(x)=x^4-8x^2+14x^2+8x-15$. \vspace{1mm}
+\item Find all solutions to $x^3+3x^2-14x-20\geq 0$. \vspace{1mm}
+\item Graph the function $f(x)=3x^4-2x^3-10x^2$. \vspace{1mm}
+\item Find the remainder when $1+x^{13}$ is divided by $x-1$. \vspace{1mm}
+\item Graph $f(x)=5x^3+16x^2+13x+2$. \vspace{1mm}
+\end{reviewset}
+\begin{challengeset}
+\item Find the roots of $f(x)=x^5-4x^4+x^3+10x^2-4x-8$. \vspace{1mm}
+\item Find the roots of $f(x)=2x^4-9x^3-72x^2-81x+21$. \vspace{1mm}
+\item Answer the following parts. \newline
+(a) Consider the resultant Sum of Cubes quadratic after factoring a cubic in the form $(ax)^2+b^2$. Determine the complex pair of roots in terms of $a$ and $b$. \newline 
+(b) Repeat part (a) using the Difference of Cubes. \vspace{1mm}
+\item Find the remainder when the polynomial $x^{81}+x^{49}+x^{25}+x^{9}+x$ is divided by $x^3-x$. (HINT: Do not try to use long division! Think about the form of the remainder and use the remainder theorem to set up a system of equations.) \vspace{1mm}
+\item Find a polynomial $f(x)$ of degree $5$ such that $f(x)-1$ is divisible by $(x-1)^3$ and $f(x)$ is divisible by $x^3$. \vspace{1mm}
+\end{challengeset}
+\end{document}

@@ -5,6 +5,8 @@
 *.log
 *.toc
 *.synctex.gz
+*.synctex(busy)
+*.synctex
 
 # Misc Files
 .DS_Store
